@@ -22,6 +22,12 @@
     <loc>https://fei-gao-ec.github.io/cello.html</loc>
     <lastmod>2025-05-02</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://fei-gao-ec.github.io/Miscellaneous_talk.html</loc>
+    <lastmod>2025-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
