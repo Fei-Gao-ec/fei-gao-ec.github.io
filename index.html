@@ -12,7 +12,8 @@
   <meta property="og:image" content="https://fei-gao-ec.github.io/assets/fei-gao.jpg" />
   <meta property="og:url" content="https://fei-gao-ec.github.io/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" href="assets/favicon_v2.png" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
   <style>
     body {
       font-family: Georgia, serif;
@@ -52,7 +53,7 @@
     nav a {
       margin-right: 18px;
       text-decoration: none;
-      color: #0066cc;
+      color: #71c7d4;
     }
     .section-title {
       font-weight: bold;
@@ -71,7 +72,7 @@
       padding-left: 1.5em;
     }
     a {
-      color: #0066cc;
+      color: #71c7d4;
       text-decoration: none;
     }
     a:hover {
@@ -93,11 +94,43 @@
       margin-right: 0;
     }
 }
+    nav ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    nav li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 2em;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 768px) {
+      nav a {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #111;
+        color: #eee;
+      }
+
+      a {
+        color: #4fc3f7;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="header">
+    <header class="header">
       <div class="intro">
         <h1>Fei Gao</h1>
         <p>
@@ -112,10 +145,12 @@
           Outside of research, I am a classical cellist.
         </p>
         <nav>
-          <a href="cv.html" target="_blank" rel="noopener noreferrer">CV</a> |
-          <a href="research.html" target="_blank" rel="noopener noreferrer">Research</a> |
-          <a href="cello.html" target="_blank" rel="noopener noreferrer">Cello (Forthcoming)</a> |
-          <a href="Miscellaneous_talk.html" target="_blank" rel="noopener noreferrer">Miscellaneous Talk</a>
+          <ul>
+            <li><a href="cv.html" target="_blank" rel="noopener noreferrer">CV</a></li>
+            <li><a href="research.html" target="_blank" rel="noopener noreferrer">Research</a></li>
+            <li><a href="cello.html" target="_blank" rel="noopener noreferrer">Cello (Forthcoming)</a></li>
+            <li><a href="Miscellaneous_talk.html" target="_blank" rel="noopener noreferrer">Miscellaneous Talk</a></li>
+          </ul>
         </nav>
         <p>Email: gaogoofyfei[at]suou.waseda.jp</p>
       </div>
@@ -124,7 +159,7 @@
           <img src="assets/fei-gao.jpg" alt="Fei Gao" />
         </div>
       </div>
-    </div>
+    </header>
 
     <section>
       <div class="section-title">Working Papers</div>
@@ -167,8 +202,9 @@
       </p>
     </section>
   </div>
-  <footer style="text-align:center; margin-top: 2em; font-size: 0.9em;">
-    &copy; 2025 Fei Gao | Last updated: May 2025
+  <footer>
+    <p>&copy; 2025 Fei Gao | Last updated: <time datetime="2025-05-04">May 2025</time></p>
+    <p><a href="sitemap.xml">Sitemap</a></p>
   </footer>
 </body>
 </html>
