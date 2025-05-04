@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+    <style>
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 20px 0;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+      .gallery img:hover {
+        transform: scale(1.03);
+      }
+    </style>
+    <title>Mount Yōtei Gallery</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="title-large">Mount Yōtei Climb</h1>
+      <p>Photos from my trip up Mount Yōtei.</p>
+
+      <div class="gallery">
+        <img src="assets/yotei/IMG_2789.jpg" alt="Yotei Photo 1">
+        <img src="assets/yotei/IMG_2794.jpg" alt="Yotei Photo 2">
+        <img src="assets/yotei/IMG_2800.jpg" alt="Yotei Photo 3">
+        <img src="assets/yotei/IMG_2807.jpg" alt="Yotei Photo 4">
+        <img src="assets/yotei/IMG_2817.jpg" alt="Yotei Photo 5">
+        <img src="assets/yotei/IMG_2820.jpg" alt="Yotei Photo 6">
+        <img src="assets/yotei/IMG_2825.jpg" alt="Yotei Photo 7">
+        <img src="assets/yotei/IMG_6993.jpg" alt="Yotei Photo 8">
+        <!-- Add more as needed -->
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
