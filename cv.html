@@ -9,13 +9,14 @@ layout: default
 <body>
   <main>
     <h1 class="title-large">Fei Gao — Curriculum Vitae</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="cello.html">Cello (Forthcoming)</a></li>
-        <li><a href="Miscellaneous_talk.html">Miscellaneous Talk</a></li>
-      </ul>
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="cello.html">Cello (Forthcoming)</a>
+        <a href="Miscellaneous_talk.html">Miscellaneous Talk</a>
+      </div>
+      <button onclick="document.body.classList.toggle('dark-theme')" style="padding: 4px 8px;">🌓 Theme</button>
     </nav>
 
     <section class="cv-section">
@@ -65,8 +66,6 @@ layout: default
       </ul>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025 Fei Gao | Last updated: <time datetime="2025-05-04">May 2025</time></p>
-  </footer>
+  {% include footer.html %}
 </body>
 </html>
