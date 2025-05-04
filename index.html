@@ -4,7 +4,15 @@
   <meta name="google-site-verification" content="6Q-QGdpjr6IeTcehDqEvqAWr6QR0xHFYDti7St1cM2Y" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fei Gao is a macroeconomist and PhD student at Waseda University, researching tax policy, labor, and household behavior using large-scale data. Fei Gao is also a cellist, a fan of TWICE and a fan of NMIXX." />
   <title>Fei Gao | Macroeconomist</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fei Gao | Macroeconomist" />
+  <meta property="og:description" content="PhD student at Waseda University researching macroeconomics, taxes, and household behavior." />
+  <meta property="og:image" content="https://fei-gao-ec.github.io/assets/fei-gao.jpg" />
+  <meta property="og:url" content="https://fei-gao-ec.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
   <style>
     body {
       font-family: Georgia, serif;
@@ -14,8 +22,9 @@
       color: #000;
     }
     .container {
-      max-width: 1000px;
-      margin: auto;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .header {
       display: flex;
@@ -68,6 +77,22 @@
     a:hover {
       text-decoration: underline;
     }
+    @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .photo img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+    }
+
+    .intro {
+      margin-right: 0;
+    }
+}
   </style>
 </head>
 <body>
@@ -77,20 +102,20 @@
         <h1>Fei Gao</h1>
         <p>
           I'm a PhD student in Economics at Waseda University in Tokyo, working under the supervision of 
-          <a href="https://sites.google.com/site/kozoueda" target="_blank">Kozo Ueda (上田晃三)</a>.
+          <a href="https://sites.google.com/site/kozoueda" target="_blank" rel="noopener noreferrer">Kozo Ueda (<span lang="ja">上田晃三</span>)</a>.
         </p>
         <p>
           My research focuses on macroeconomics and household behavior. I also work with large-scale commercial bank data — see the 
-          <a href="https://www.waseda.jp/inst/cds/news/338" target="_blank">Waseda CDS announcement</a> (in Japanese).
+          <a href="https://www.waseda.jp/inst/cds/news/338" target="_blank" rel="noopener noreferrer">Waseda CDS announcement</a> (in Japanese).
         </p>
         <p>
           Outside of research, I am a classical cellist.
         </p>
         <nav>
-          <a href="cv.html">CV</a> |
-          <a href="research.html">Research</a> |
-          <a href="cello.html">Cello (Forthcoming)</a> |
-          <a href="Miscellaneous_talk.html">Miscellaneous Talk</a>
+          <a href="cv.html" target="_blank" rel="noopener noreferrer">CV</a> |
+          <a href="research.html" target="_blank" rel="noopener noreferrer">Research</a> |
+          <a href="cello.html" target="_blank" rel="noopener noreferrer">Cello (Forthcoming)</a> |
+          <a href="Miscellaneous_talk.html" target="_blank" rel="noopener noreferrer">Miscellaneous Talk</a>
         </nav>
         <p>Email: gaogoofyfei[at]suou.waseda.jp</p>
       </div>
@@ -101,40 +126,49 @@
       </div>
     </div>
 
-    <div class="section-title">Working Papers</div>
+    <section>
+      <div class="section-title">Working Papers</div>
 
-    <p class="paper-title">Redistribution through Consumption Taxes: Evaluating Japan’s Dual-Rate Reform</p>
-    <div class="paper-meta">
+      <p class="paper-title">Redistribution through Consumption Taxes: Evaluating Japan’s Dual-Rate Reform</p>
+      <div class="paper-meta">
+        <ul>
+          <li><em>Under review</em></li>
+          <li>Retitled from “Consumption Taxes, Inequality, and Welfare: Insights from Japan”</li>
+          <li><a href="https://drive.google.com/file/d/1vBFG5YsmxpyYk-zppaPN30IVrIQPuQyQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Draft</a></li>
+        </ul>
+      </div>
+
+      <p class="paper-title">How Do Gamblers React to Wins? Evidence from Bank Account Data</p>
+      <div class="paper-meta">
+        <ul>
+          <li>With Kozo Ueda</li>
+          <li><em>Under review</em></li>
+          <li>
+            <a href="https://cigs.canon/en/uploads/2024/10/WP24-019E_ueda.pdf" target="_blank" rel="noopener noreferrer">Draft</a> |
+            <a href="https://drive.google.com/file/d/1onLkA4YwT4lF00C-nnJ-BRLUPZCk_hNz/view?usp=sharing" target="_blank" rel="noopener noreferrer">Slide</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Work in Progress</div>
       <ul>
-        <li><em>Under review</em></li>
-        <li>Retitled from “Consumption Taxes, Inequality, and Welfare: Insights from Japan”</li>
-        <li><a href="https://drive.google.com/file/d/1vBFG5YsmxpyYk-zppaPN30IVrIQPuQyQ/view?usp=sharing">Draft</a></li>
+        <li>Structural Estimation of Reference Point with Gambling Data</li>
+        <li>Unemployment Insurance</li>
       </ul>
-    </div>
+    </section>
 
-    <p class="paper-title">How Do Gamblers React to Wins? Evidence from Bank Account Data</p>
-    <div class="paper-meta">
-      <ul>
-        <li>With Kozo Ueda</li>
-        <li><em>Under review</em></li>
-        <li>
-          <a href="https://cigs.canon/en/uploads/2024/10/WP24-019E_ueda.pdf">Draft</a> |
-          <a href="https://drive.google.com/file/d/1onLkA4YwT4lF00C-nnJ-BRLUPZCk_hNz/view?usp=sharing">Slide</a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="section-title">Work in Progress</div>
-    <ul>
-      <li>Structural Estimation of Reference Point with Gambling Data</li>
-      <li>Unemployment Insurance</li>
-    </ul>
-
-    <div class="section-title">Pre-PhD Work</div>
-    <p>
-      Consumption tax reform and its welfare implication in Japan
-      <br /><em>Master's dissertation</em>
-    </p>
+    <section>
+      <div class="section-title">Pre-PhD Work</div>
+      <p>
+        Consumption tax reform and its welfare implication in Japan
+        <br /><em>Master's dissertation</em>
+      </p>
+    </section>
   </div>
+  <footer style="text-align:center; margin-top: 2em; font-size: 0.9em;">
+    &copy; 2025 Fei Gao | Last updated: May 2025
+  </footer>
 </body>
 </html>
