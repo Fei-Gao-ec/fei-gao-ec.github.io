@@ -7,48 +7,66 @@ layout: default
     {% include head.html %}
   </head>
 <body>
-  <h1>Fei Gao — Research</h1>
-  <nav style="display: flex; justify-content: space-between; align-items: center;">
-    <div>
-      <a href="index.html">Home</a> |
-      <a href="cv.html">CV</a> |
-      <a href="cello.html">Cello (Forthcoming)</a> |
-      <a href="Miscellaneous_talk.html">Miscellaneous Talk</a>
-    </div>
-    <button onclick="document.body.classList.toggle('dark-theme')" style="padding: 4px 8px;">🌓 Theme</button>
-  </nav>
+  <main class="container">
+    <h1 class="title-large">Fei Gao — Research</h1>
 
-  <h2>Working Papers</h2>
-  <p>
-    <strong>Redistribution through Consumption Taxes: Evaluating Japan’s Dual-Rate Reform</strong><br />
-    <ul>
-        <li><em>Submitted</em></li>
-        <li>Retitled from “Consumption Taxes, Inequality, and Welfare: Insights from Japan”</li>
-        <li><a href="https://drive.google.com/file/d/1vBFG5YsmxpyYk-zppaPN30IVrIQPuQyQ/view?usp=sharing">Draft</a></li>
-      </ul> 
-    <strong>How Do Gamblers React to Wins? Evidence from Bank Account Data</strong><br />
-    <ul>
-        <li>With Kozo Ueda</li>
-        <li><em>Submitted</em></li>
-        <li><a href="https://cigs.canon/en/uploads/2024/10/WP24-019E_ueda.pdf">Draft</a> |
-          <a href="https://drive.google.com/file/d/1onLkA4YwT4lF00C-nnJ-BRLUPZCk_hNz/view?usp=sharing">Slide</a></li>
-      </ul> 
-  </p>
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <a href="index.html">Home</a> |
+        <a href="cv.html">CV</a> |
+        <a href="cello.html">Cello</a> |
+        <a href="Miscellaneous_talk.html">Miscellaneous Talk</a>
+      </div>
+      <button onclick="document.body.classList.toggle('dark-theme')" style="padding: 4px 8px;">🌓 Theme</button>
+    </nav>
 
-  <h2>Work in Progress</h2>
-  <ul>
-      <li>Structural Estimation of Reference Point with Gambling Data</li>
-      <li>Unemployment Insurance</li>
-  </ul>
+    <section class="Research-section">
+      <h2 class="section-title">Working Papers</h2>
 
-  <h2>Selected Conference and Workshop Presentations</h2>
-  <ul>
-   <li> 第19回応用計量経済学コンファレンス</li>
-   <li>日本経済学会2025年度春季大会</li>
-   <li>Econometric Society World Congress 2025</li>
-  </ul>
-  <footer>
-    <p>&copy; 2025 Fei Gao | Last updated: <time datetime="2025-05-04">May 2025</time></p>
-  </footer>
+      <article>
+        <p><strong>Redistribution through Consumption Taxes: Evaluating Japan’s Dual-Rate Reform</strong></p>
+        <ul class="paper-meta">
+          <li><em>Submitted</em></li>
+          <li><a href="https://drive.google.com/file/d/1vBFG5YsmxpyYk-zppaPN30IVrIQPuQyQ/view?usp=sharing">Draft</a></li>
+          <li>Retitled from “Consumption Taxes, Inequality, and Welfare: Insights from Japan”</li>
+        </ul>
+      </article>
+
+      <article>
+        <p><strong>How Do Gamblers React to Wins? Evidence from Bank Account Data</strong></p>
+        <ul class="paper-meta">
+          <li>With Kozo Ueda</li>
+          <li><em>Submitted</em></li>
+          <li>
+            <a href="https://cigs.canon/en/uploads/2024/10/WP24-019E_ueda.pdf">Draft</a> |
+            <a href="https://drive.google.com/file/d/1onLkA4YwT4lF00C-nnJ-BRLUPZCk_hNz/view?usp=sharing">Slide</a>
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="Research-section">
+      <h2 class="section-title">Work in Progress</h2>
+
+      <article>
+        <p><strong>Structural Estimation of Reference Point with Gambling Data</strong></p>
+      </article>
+
+      <article>
+        <p><strong>Unemployment Insurance</strong></p>
+      </article>
+    </section>
+
+    <section class="Research-section">
+      <h2 class="section-title">Selected Conference and Workshop Presentations</h2>
+      <ul>
+        <li>第19回応用計量経済学コンファレンス</li>
+        <li>日本経済学会2025年度春季大会</li>
+        <li>Econometric Society World Congress 2025</li>
+      </ul>
+    </section>
+  </main>
+
+  {% include footer.html %}
 </body>
 </html>
