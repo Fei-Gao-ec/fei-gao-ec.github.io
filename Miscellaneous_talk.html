@@ -1,44 +1,61 @@
+---
+layout: default
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fei Gao | Miscellaneous Talk</title>
-  <style>
-    body {
-      font-family: Georgia, serif;
-      line-height: 1.6;
-      margin: 40px;
-      max-width: 800px;
-      background-color: #fff;
-      color: #000;
-    }
-    nav a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #0066cc;
-    }
-  </style>
+  {% include head.html %}
 </head>
+
 <body>
-  <h1>Miscellaneous Talk</h1>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="cv.html">CV</a> |
-    <a href="research.html">Research</a> |
-    <a href="cello.html">Cello</a>
-  </nav>
+  <main class="container">
+    <h1 class="title-large">Fei Gao — Miscellaneous Talks</h1>
+    <nav style="display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <a href="index.html">Home</a> |
+        <a href="cv.html">CV</a> |
+        <a href="research.html">Research</a> |
+        <a href="Miscellaneous_talk.html">Miscellaneous Talk</a>
+      </div>
+      <button onclick="document.body.classList.toggle('dark-theme')" style="padding: 4px 8px;">🌓 Theme</button>
+    </nav>
 
-  <p>This page is for notes, informal thoughts, and commentary on academic life, music, data, or anything I find worth sharing.</p>
+    <p>This page is for notes and reflections beyond academia.</p>
 
-  <p>Topics I might include here:</p>
-  <ul>
-    <li>Thoughts on working with big data</li>
-    <li>Behind the scenes of economic modeling</li>
-    <li>Balancing cello and research</li>
-    <li>Personal experiences from academic travel and workshops</li>
-  </ul>
+    <section class="cv-section">
+      <h2 class="section-title">TWICE</h2>
+      <ul>
+        <li>You might have guessed who my favorites are from this website.</li>
+        <li>I'm excited for my upcoming conference trip to Seoul this August.</li>
+        <li>Dear TWICE, please launch a 10th anniversary Japan tour!</li>
+      </ul>
+    </section>
 
-  <p>More to come as inspiration strikes.</p>
+    <section class="cv-section">
+      <h2 class="section-title">NMIXX</h2>
+      <ul>
+        <li>I GOT TWO VVIP TICKETS FOR NMIXX's UPCOMING CONCERTS IN TOKYO!!</li>
+        <li>Lily is GOAT.</li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h2 class="section-title">Coffee</h2>
+      <ul>
+        <li>I drink a lot of coffee — typically 15–25 grams of beans a day.</li>
+        <li>My favorite supplier in Japan is: <a href="https://namamame.jp/" target="_blank">namamame.jp</a> (not sponsored).</li>
+        <li>Current favorite bean: <a href="https://www.namamame.jp/index.php?main_page=product_amountselling_info&products_id=1745" target="_blank">コロンビア／ブリサス・セレクション</a></li>
+        <li>My recipe: 1:15 drip ratio, followed by a quick cooling method.</li>
+      </ul>
+    </section>
+
+    <section class="cv-section">
+      <h2 class="section-title">Mountains</h2>
+      <ul>
+        <li>I love mountain climbing and hiking.</li>
+        <li>I hiked Mount Yōtei last year. Here are some pictures from the trip: <a href="YoteiMountain.html">View Photos</a></li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
