@@ -1,41 +1,67 @@
+---
+layout: default
+---
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fei Gao | Cello</title>
-  <style>
-    body {
-      font-family: Georgia, serif;
-      line-height: 1.6;
-      margin: 40px;
-      max-width: 800px;
-      background-color: #fff;
-      color: #000;
-    }
-    nav a {
-      margin-right: 15px;
-      text-decoration: none;
-      color: #0066cc;
-    }
-  </style>
-</head>
-<body>
-  <h1>Cello</h1>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="cv.html">CV</a> |
-    <a href="research.html">Research</a> |
-    <a href="Miscellaneous_talk.html">Miscellaneous Talk</a>
-  </nav>
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="title-large">Fei Gao — Cello</h1>
+      <nav style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+          <a href="index.html">Home</a> |
+          <a href="cv.html">CV</a> |
+          <a href="research.html">Research</a> |
+          <a href="Miscellaneous_talk.html">Miscellaneous Talk</a>
+        </div>
+        <button onclick="document.body.classList.toggle('dark-theme')" style="padding: 4px 8px;">🌓 Theme</button>
+      </nav>
 
-  <p>I am a classical cellist. I have played in orchestras and quartets in Tokyo.</p>
+      <section class="cv-section">
+        <h2 class="section-title">Upcoming Events</h2>
+        <ul>
+          <li>
+            <strong>Solo event: 2025 July 2</strong>
+            <p>8th Campus Piano at The Waseda International House of Literature (The Haruki Murakami Library).<br>
+            ~15-minute program. Time and repertoire TBA.</p>
+          </li>
+          <li> 
+            <strong>213th Regular Concert of 神奈川県青少年交響楽団 (Kanagawa Youth Orchestra) — July 20, 2025 (Sun), 13:30 start</strong>
+            <p>Venue: Kanagawa Prefectural Youth Center Hall (<a href="https://g.co/kgs/Hg2sYYL" target="_blank">Map</a>)<br>
+            Program: Verdi's Aida Triumphal March, Brahms' Variations on a Theme by Haydn Op.56a, Mozart Symphony No. 35 "Haffner", and more.<br>
+            I will also perform solo and chamber music repertoire in lobby concert. Detail information TBA.</p>
+          </li>
+          <li>
+            <strong>Upcoming Chamber Music Recital in 2025 Winter (or 2026 Spring)</strong>
+            <p>(TBA)</p>
+          </li>
+        </ul>
+      </section>
 
-  <p>This page will soon feature:</p>
-  <ul>
-    <li>Photos and audio production notes</li>
-  </ul>
+      <section class="cv-section">
+        <h2 class="section-title">Past Events</h2>
+        <ul>
+          <li>To be added</li>
+        </ul>
+      </section>
 
-  <p>Please check back soon!</p>
-</body>
+      <section class="cv-section">
+        <h2 class="section-title">My Own Challenge</h2>
+        <ul>
+          <li>
+            <strong>Popper Project</strong>
+            <p>Upcoming videos of Popper etudes.</p>
+          </li>
+          <li>
+            <strong>Bach Project</strong>
+            <p>Upcoming videos of Bach Cello Suites.</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    {% include footer.html %}
+  </body>
 </html>
