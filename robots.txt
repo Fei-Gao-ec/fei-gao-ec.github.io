@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://fei-gao-ec.github.io/sitemap.xml
+Sitemap: https://fei-gao-ec.github.io/sitemap_index.xml
