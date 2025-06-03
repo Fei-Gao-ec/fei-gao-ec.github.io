@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+    <style>
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 20px 0;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+      }
+      .gallery img:hover {
+        transform: scale(1.03);
+      }
+    </style>
+    <title>NMIXX Tokyo Encore Concerts Gallery</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="title-large">NMIXX Tokyo Encore Concerts 2025 (2025 May 31 - June 1)</h1>
+      <p>Photos during the photo session.</p>
+
+      <div class="gallery">
+        <img src="https://drive.google.com/file/d/1OUHQ42tBLuM8eR8f93KFeCwlPzaSXSyr/view?usp=drive_link" alt="TokyoEncore 1" />
+        <img src="https://drive.google.com/file/d/18i0sz1LGPd7lj1aHvDpfLj0jK7zIH7l0/view?usp=drive_link" alt="TokyoEncore 2" />
+        <img src="https://drive.google.com/file/d/1_mAx0YqgHKmlAydb76CXFKRrhxOz7i_1/view?usp=drive_link" alt="TokyoEncore 3" />
+        <img src="https://drive.google.com/file/d/1kDY9zEqKM0ilLMwilBploVVNjbFt6OxI/view?usp=drive_link" alt="TokyoEncore 4" /> 
+        <img src="https://drive.google.com/file/d/1qjAB6czWB9M3Jin_XH62kg0cyqsK5-HH/view?usp=drive_link" alt="TokyoEncore 5" /> 
+      </div>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>
