@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Research - Interactive Regression Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="UI_Regression_Results_styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-chart-line me-2"></i>
+                UI Research - Interactive Results
+            </a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-light">
+                        <h2 class="mb-0">
+                            <i class="fas fa-university me-2"></i>
+                            Unemployment Insurance Effects on Reemployment Wages
+                        </h2>
+                        <p class="text-muted mb-0 mt-2">
+                            Interactive exploration of regression results with different specifications and variable definitions
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="specification-panel">
+                                    <h5><i class="fas fa-cogs me-2"></i>Specification Controls</h5>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Main Specification:</label>
+                                        <select id="mainSpec" class="form-select">
+                                            <option value="baseline" selected>Baseline</option>
+                                            <option value="iv">IV (Instrumental Variables)</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="documentBenchmark" checked>
+                                            <label class="form-check-label fw-bold" for="documentBenchmark">📋 Document Benchmark</label>
+                                        </div>
+                                        <label class="form-label">Dependent Variable:</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="depVar3m" value="3m" checked>
+                                            <label class="form-check-label" for="depVar3m">3-Month Salary Change Rate</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="depVar3mLog" value="3m_log">
+                                            <label class="form-check-label" for="depVar3mLog">3-Month Salary Change Rate (Log)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="depVar6m" value="6m">
+                                            <label class="form-check-label" for="depVar6m">6-Month Salary Change Rate</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="depVar6mLog" value="6m_log">
+                                            <label class="form-check-label" for="depVar6mLog">6-Month Salary Change Rate (Log)</label>
+                                        </div>
+                                         <div class="form-check">
+                                             <input class="form-check-input" type="checkbox" id="depVarWealth" value="wealth">
+                                             <label class="form-check-label" for="depVarWealth">Wealth at end (IV first stage)</label>
+                                         </div>
+                                    </div>
+
+                                    <div class="mb-3" id="ivControls">
+                                        <label class="form-label">IV Stage:</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="ivStageFirst" checked>
+                                            <label class="form-check-label" for="ivStageFirst">First stage</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="ivStageSecond" checked>
+                                            <label class="form-check-label" for="ivStageSecond">Second stage</label>
+                                        </div>
+                                        <label class="form-label mt-3">IV Sample:</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="ivSubsetWhole" checked>
+                                            <label class="form-check-label" for="ivSubsetWhole">Whole data</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="ivSubsetLotteryScp" checked>
+                                            <label class="form-check-label" for="ivSubsetLotteryScp">Only lottery and SCP data</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="ivSubsetLotteryOnly" checked>
+                                            <label class="form-check-label" for="ivSubsetLotteryOnly">Only lottery</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">UI Size:</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="uiSizeAvgLinear" value="avg_ui_linear">
+                                            <label class="form-check-label" for="uiSizeAvgLinear">Average Monthly UI (Linear)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="uiSizeAvgLog" value="avg_ui_log">
+                                            <label class="form-check-label" for="uiSizeAvgLog">Average Monthly UI (Log)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="uiSizeMedian" value="median_ui">
+                                            <label class="form-check-label" for="uiSizeMedian">Median Daily UI (Linear)</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="uiSizeMedianLog" value="median_ui_log">
+                                            <label class="form-check-label" for="uiSizeMedianLog">Median Daily UI (Log)</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="form-label">Age and Gender Controls:</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="colExcludeAge" value="exclude" checked>
+                                            <label class="form-check-label" for="colExcludeAge">Exclude Age</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="colIncludeAge" value="include" checked>
+                                            <label class="form-check-label" for="colIncludeAge">Include Age</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="colAgeInteraction" value="interaction" checked>
+                                            <label class="form-check-label" for="colAgeInteraction">Age × Gender Interaction</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="colAge2Control" value="age2_control">
+                                            <label class="form-check-label" for="colAge2Control">Higher-order Age Control</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="colAge2Interaction" value="age2_interaction">
+                                            <label class="form-check-label" for="colAge2Interaction">Higher-order Age Control + Gender Interaction</label>
+                                        </div>
+                                    </div>
+
+                                    <button id="updateTable" class="btn btn-primary w-100">
+                                        <i class="fas fa-sync-alt me-2"></i>Update Results
+                                    </button>
+
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-9">
+                                <div class="results-panel">
+                                    <div class="table-header">
+                                        <h4 id="tableTitle">IV Results: Effect of UI on Reemployment Wages</h4>
+                                        <div class="table-info">
+                                            <span class="badge bg-info" id="sampleSize">N = 17,700</span>
+                                            <span class="badge bg-success" id="rSquared">R² = 0.245</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover" id="regressionTable">
+                                            <thead class="table-dark" id="tableHeader">
+                                                <tr>
+                                                    <th>Variable</th>
+                                                    <!-- Dynamic headers will be populated by JavaScript -->
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tableBody">
+                                                <!-- Table content will be populated by JavaScript -->
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="table-footer">
+                                        <small class="text-muted">
+                                            <i class="fas fa-info-circle me-1"></i>
+                                            Standard errors in parentheses. * p<0.1, ** p<0.05, *** p<0.01
+                                        </small>
+                                    </div>
+
+                                    <!-- Additional results removed; unified table shows multiple DVs as independent columns -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light mt-5 py-3">
+        <div class="container text-center">
+            <p class="text-muted mb-0">
+                <i class="fas fa-graduation-cap me-1"></i>
+                Research on Unemployment Insurance Effects - Interactive Results Dashboard
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="UI_Regression_Results_data.js"></script>
+    <script src="UI_Regression_Results_scripts.js"></script>
+</body>
+</html>
