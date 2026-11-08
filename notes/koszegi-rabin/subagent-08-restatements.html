@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Subagent: the two restatements</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Subagent: the two restatements</h1>
+<p class="kicker">Reading for the follow-up on the personal-equilibrium restatement and what the papers are studying.</p>
+<main>
+<p>Restatement 1 is mostly right about the equilibrium test and slightly off about when the reference equals beliefs. Restatement 2 reverses what the papers do. A belief is a distribution over outcomes, and the reference is that whole distribution.</p>
+<h2>Restatement 1</h2>
+<p><strong>What is right.</strong> A personal equilibrium is a plan that is optimal once the reference is the distribution that plan itself induces. If, in some contingency, another available lottery gives higher utility against that same reference, the plan is not a personal equilibrium. A plan she would not carry out does not count. There can be more than one such plan; preferred personal equilibrium picks the one with the highest ex ante utility.</p>
+<p><strong>What is slightly off.</strong> The reference is recent beliefs by the psychological assumption, in and out of equilibrium. Rational expectations is the extra consistency requirement used to close the model, not the moment at which the reference becomes an expectation. The 2006 abstract bundles the two, but the body separates them. Section II defines utility for an arbitrary reference lottery. Section III then says the utility theory can be paired with any theory of how expectations are formed, and only as a first pass imposes rational expectations (Kőszegi and Rabin 2006, 1143). The same separation is in Kőszegi and Rabin (2007, 1048).</p>
+<p>Planted expectations are still the reference, and they need not be a personal equilibrium. A surprise decision is the extreme case in which expectations are given from outside the actual choice set (2007, 1048), or the limit in which that choice set had near-zero probability, so the reference stays the lottery she expected in the likely contingency (2007, 1056). The lowball is the same idea out of equilibrium: the buyer believes the price is lower than it is, that belief is her reference, and the dealer uses the attachment effect. A personal equilibrium would have required her to forecast the true price distribution and her own reaction to it (2006, 1143, 1149).</p>
+<p>The deviation test uses total utility, \(u = m + n\), not gain-loss alone. “Satisfies the expectation” means both steps in the definition. Constructing the reference from the plan is step (i). The optimality inequality is step (ii).</p>
+<p><strong>Corrected statement.</strong> A person’s reference is the probabilistic belief she held recently about outcomes. That belief can come from a rational plan, or it can be planted by a surprise or a lowball; either way it is the reference. Rational expectations adds a consistency requirement. Let \(Q\) be her belief over contingencies \(l\), and let the plan say that in contingency \(l\) she will take lottery \(F_l\) from the choice set \(D_l\). The plan induces the reference lottery \(G = \int F_l\, dQ(l)\). The plan is a personal equilibrium if, for every \(l\) and every alternative \(F'_l \in D_l\),</p>
+\[
+U(F_l \mid G) \ge U(F'_l \mid G),
+\]
+<p>where \(U\) integrates \(u(c\mid r) = m(c) + n(c\mid r)\). If she would switch in any contingency, the plan is not a personal equilibrium. Among the plans that survive, a preferred personal equilibrium is one with the highest utility of its own induced lottery, \(U(G\mid G)\).</p>
+<p><strong>Shoe regions</strong> (Kőszegi and Rabin 2006, 1146–1147). Intrinsic value of the shoes is 1. Gain-loss utility is piecewise linear: weight \(\eta \ge 0\) on gains and losses, and loss aversion \(\lambda \ge 1\). Write</p>
+\[
+p_{\min} = \frac{1+\eta}{1+\eta\lambda}, \qquad p_{\max} = \frac{1+\eta\lambda}{1+\eta}.
+\]
+<p>At a known price \(p\):</p>
+<ul>
+<li>If \(p &gt; p_{\max}\), “expect to buy” is not a personal equilibrium. The unique personal equilibrium is not to buy. Given a reference of buying, paying \(p\) is still worse in total utility than giving up the shoes.</li>
+<li>If \(p &lt; p_{\min}\), “expect not to buy” is not a personal equilibrium. The unique personal equilibrium is to buy.</li>
+<li>If \(p \in [p_{\min}, p_{\max}]\), both “buy for sure” and “not buy for sure” are personal equilibria. Expecting the shoes makes not buying feel like a loss of shoes; expecting not to buy makes buying feel like a loss of money.</li>
+<li>The preferred personal equilibrium buys if and only if \(p \le 1\). So on \((1, p_{\max}]\) “expect to buy” is a personal equilibrium and is not the preferred one.</li>
+</ul>
+<p><strong>UPE and CPE.</strong> The 2006 personal equilibrium is what the 2007 paper calls an unacclimating personal equilibrium. The choice is made shortly before the outcome, so the reference is already fixed and she can plan only what she will still want to do given that reference. Preferred personal equilibrium selects her favorite plan among those. A choice-acclimating personal equilibrium is the other timing: she commits long before outcomes, the chosen lottery becomes the reference, and she picks \(F\) to maximize \(u(F\mid F)\). These are the same preferences under two commitment timings (Kőszegi and Rabin 2007, 1049, 1056, 1058–1059). The 2009 paper uses preferred personal equilibrium in a dynamic consumption problem: the implemented plan must be optimal given the beliefs it generates, and continuation plans must themselves be credible.</p>
+<h2>Restatement 2</h2>
+<p><strong>Verdict.</strong> The first clause is only loosely right: they do embed gain-loss utility in an optimization model. The rest reverses the papers. They are centrally interested in what the reference point is, and they do study gain-loss attitudes around it. The phrase “the expectation that is based on the reference point” also runs the dependence backward. The reference is the recent belief.</p>
+<p><strong>Corrected statement.</strong> Kahneman and Tversky (1979) take a reference as given, usually the current asset position, and characterize how a person evaluates a fixed prospect relative to that reference: outcomes are coded as gains and losses, and probabilities are replaced by decision weights. They fit that descriptive form to choices between given prospects. They are not solving for a plan that confirms the expectations the plan creates. Kőszegi and Rabin take a simplified version of that preference, linear in probabilities and often piecewise linear in gains and losses, and define the reference as recent probabilistic beliefs. They then ask which plans are consistent with the expectations those plans create, and how those expectations change risk attitudes, willingness to pay, labor supply, and consumption plans.</p>
+<p>They import the Kahneman–Tversky value function as \(\mu\), with loss aversion and diminishing sensitivity as assumptions A0–A4 (2006, 1139; 2007, 1051; 2009, 914). They then use it. In surprise settings the model reproduces the classical prospect-theory dislike of insuring a modest loss; once the risk and the chance to insure it are anticipated, the same preferences produce first-order risk aversion, because a planned premium is not coded as a loss and a bad draw is (2007, 1047–1049). The shoe application is about attachment and comparison around the expected purchase (2006, 1146–1149). They also discuss the endowment effect (2006, 1134–1135, 1142) and an endowment effect for risk (2007, 1049). The simplification is explicit: “contrary to Kahneman and Tversky (1979),” probabilities enter linearly (2006, 1137; 2007, 1050), and A3′ often shuts off diminishing sensitivity so that loss aversion can be studied on its own.</p>
+<p>What they add is the equilibrium closure. The decision and the expectation are solved together: behavior must be optimal given the reference that behavior induces.</p>
+<h2>What a probabilistic belief is</h2>
+<p>A belief is a probability distribution over outcomes, or over contingencies. It is not a single expected value, and the reference is not the mean of that distribution.</p>
+<p>In the 2006 model the objects are:</p>
+<ul>
+<li>\(Q\), the distribution over contingencies \(l\) (which choice set she might face).</li>
+<li>The plan \(\{F_l\}\): in contingency \(l\) she selects a lottery \(F_l \in D_l\). Each \(F_l\) is itself a distribution over consumption bundles.</li>
+<li>The induced reference lottery \(G = \int F_l\, dQ(l)\), the mixture of those planned outcome distributions.</li>
+</ul>
+<p>Utility compares the realized bundle with the whole reference lottery (2006, 1137, equation (2)):</p>
+\[
+U(F\mid G) = \iint u(c\mid r)\, dG(r)\, dF(c).
+\]
+<p>An outcome of $50 against a reference that is 50–50 between $0 and $100 is a mixture of a gain relative to $0 and a loss relative to $100 (2006, 1137–1138; 2007, 1050). They reject collapsing the reference lottery to its certainty equivalent, because two references with the same certainty equivalent would then induce the same risk attitude, and their model says that expecting risk itself reduces aversion to further risk (2007, 1050–1051).</p>
+<p>“Recent” means lagged. The reference is the belief held between the time she first focused on the decision and shortly before consumption (2006, 1141; 2007, 1051). Preferences do not jump the moment beliefs do: if she learns five minutes ahead that a long-expected $100 will not arrive, she updates the belief immediately and still assesses the missing $100 as a loss five minutes later (2006, 1141, footnote 9; 2007, 1051, footnote 6).</p>
+<p>In the 2009 model, beliefs are distributions over consumption. She enters period \(t\) with beliefs \(f_{t-1} = \{f_{t-1,\tau}\}\), a distribution for each future period and each consumption dimension, and then forms new beliefs \(f_t\). Instantaneous utility is consumption utility plus gain-loss utility from the change in those distributions (2009, 912, equation (1)):</p>
+\[
+u_t = m(c_t) + \sum_{\tau=t}^{T} \gamma_{t,\tau}\, n(f_{t,\tau}\mid f_{t-1,\tau}).
+\]
+<p>The comparison is percentile by percentile across the old and new distributions, not a comparison of means (2009, 914). Gain-loss is felt when the distribution changes: bad news about consumption is more painful than good news is pleasant (2009, 909).</p>
+<h2>Quotes</h2>
+<p>Kőszegi and Rabin (2006, 1133), abstract: “We assume that a person’s reference point is her rational expectations held in the recent past about outcomes, which are determined in a personal equilibrium by the requirement that they must be consistent with optimal behavior given expectations.”</p>
+<p>Kőszegi and Rabin (2006, 1134): “In addition to the widely investigated question of how people react to departures from a posited reference point, predictions of reference-dependent theories also depend crucially on the understudied issue of what the reference point is. In Section III we propose that a person’s reference point is the probabilistic beliefs she held in the recent past about outcomes.”</p>
+<p>Kőszegi and Rabin (2006, 1135): “we define a ‘personal equilibrium’ as a situation where the stochastic outcome implied by optimal behavior conditional on expectations coincides with expectations. We also define a notion of ‘preferred personal equilibrium,’ which selects the (typically unique) personal equilibrium with highest expected utility.”</p>
+<p>Kőszegi and Rabin (2006, 1141): “our model makes the extreme assumption that the reference point is fully determined by the expectations a person held in the recent past. Specifically, a person’s reference point is her probabilistic beliefs about the relevant consumption outcome held between the time she first focused on the decision determining the outcome and shortly before consumption occurs.”</p>
+<p>Kőszegi and Rabin (2006, 1143): “Our model of how utility depends on expectations could be combined with any theory of how these expectations are formed. But as a disciplined and largely realistic first pass, we assume that expectations are fully rational.” Definition 1 on the same page: a selection \(\{F_l \in D_l\}\) is a personal equilibrium if for every contingency and every alternative in that contingency, \(U(F_l \mid \int F_l\, dQ(l)) \ge U(F'_l \mid \int F_l\, dQ(l))\).</p>
+<p>Kőszegi and Rabin (2006, 1149): the lowball is a “nonequilibrium situation in which buyers believe that the price is lower than it actually is,” and the dealer tries to sell “at a price that would otherwise be too high.”</p>
+<p>Kőszegi and Rabin (2007, 1047), abstract: “Because our theory equates the reference point with recent probabilistic beliefs about outcomes, it predicts specific ways in which the environment influences attitudes toward modest-scale risk. It replicates ‘classical’ prospect theory—including the prediction of distaste for insuring losses—when exposure to risk is a surprise, but implies first-order risk aversion when a risk, and the possibility of insuring it, are anticipated.”</p>
+<p>Kőszegi and Rabin (2007, 1048): “surprise (low-probability) decisions, modelled in extreme form as situations where expectations are given exogenously to the actual choice set.”</p>
+<p>Kőszegi and Rabin (2007, 1050): “For simplicity and contrary to Kahneman and Tversky (1979) and its extensions, we assume that preferences are linear in probabilities.”</p>
+<p>Kőszegi and Rabin (2007, 1058–1059): a lottery \(F\) is a choice-acclimating personal equilibrium if \(u(F\mid F) \ge u(F'\mid F')\) for every alternative \(F'\). “UPE/PPE and CPE are not different theories of what outcomes people prefer… the two concepts are motivated by the same theory of preference, as manifested differently depending on whether the person can commit to her choice ahead of time.”</p>
+<p>Kőszegi and Rabin (2009, 909), abstract: “We develop a rational dynamic model in which people are loss averse over changes in beliefs about present and future consumption.”</p>
+<p>Kahneman and Tversky (1979, 263), abstract: the paper “presents a critique of expected utility theory as a descriptive model of decision making under risk,” and in the alternative “value is assigned to gains and losses rather than to final assets and in which probabilities are replaced by decision weights. The value function is normally concave for gains, commonly convex for losses, and is generally steeper for losses than for gains.”</p>
+<p>Kahneman and Tversky (1979, 274): “The reference point usually corresponds to the current asset position, in which case gains and losses coincide with the actual amounts that are received or paid. However, the location of the reference point, and the consequent coding of outcomes as gains or losses, can be affected by the formulation of the offered prospects, and by the expectations of the decision maker.” Expectations can move the coding. They are not solved as a self-confirming plan.</p>
+</main>
+<nav class="pager"><a href="subagent-07-money-and-news.html">← Subagent: 2007 risk and 2009 news</a><span></span></nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Answer: follow-up</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Answer: follow-up</h1>
+<p class="kicker">The second written answer. Kahneman–Tversky, probabilistic beliefs, surprise and news, and the equilibrium reading.</p>
+<main>
+<p>Kahneman and Tversky put the gain-loss value function in by assumption, and so do Kőszegi and Rabin. The two papers then do different jobs with it. Kahneman and Tversky use that function together with probability weights to describe choices between given bets. Kőszegi and Rabin keep a simplified version of the same feeling, set the benchmark equal to recent beliefs, and solve for the plan that those beliefs can support.</p>
+<h2>1.1 Gain-loss is assumed in both papers</h2>
+<p>Kahneman and Tversky (1979) is a descriptive model of choices under risk. They write that the data compel two assumptions: value is attached to changes rather than to final wealth, and decision weights do not equal stated probabilities. The value function \(v\) is hypothesized to be concave for gains, convex for losses, and steeper for losses. They motivate the steepness with the observation that a fifty-fifty bet of \(+x\) or \(-x\) is unattractive, so \(v(x) &lt; -v(-x)\). They do not derive that inequality from a theory of why a loss hurts more. There is no loss-aversion coefficient \(\lambda\) in the 1979 paper. The coefficient comes later.</p>
+<p>Kőszegi and Rabin take that same shape as a preference. Overall utility is consumption utility plus gain-loss utility,</p>
+\[
+u(c \mid r) = m(c) + \mu\bigl(m(c) - m(r)\bigr),
+\]
+<p>and \(\mu\) is assumed to satisfy the Kahneman–Tversky properties, including \(\lambda &gt; 1\). Equilibrium does not produce \(\mu\). If the person receives exactly the sure outcome she expected, the gain-loss term is zero. What the equilibrium does produce is the benchmark \(r\), and therefore which outcomes are coded as gains and which as losses.</p>
+<p>So your reading of the division of labor is right. Kőszegi and Rabin are not explaining why gain-loss feelings exist. They put those feelings into preferences, then explain which choices are consistent with them once the benchmark is the person’s own recent beliefs.</p>
+<h2>1.2 Probability weights and the value function answer different facts</h2>
+<p>Expected utility of final wealth does fail on the patterns in the 1979 paper. The repair is one theory with two ingredients at once,</p>
+\[
+V(x,p;\, y,q) = \pi(p)\, v(x) + \pi(q)\, v(y).
+\]
+<p>\(v\) is defined on gains and losses relative to a reference point, usually current assets. \(\pi(p)\) is a decision weight, and it is not a probability: \(\pi(p)+\pi(1-p)\) is typically less than 1, small probabilities are overweighted, and \(\pi\) is not a measure of belief. Kahneman and Tversky say attitudes toward risk are determined jointly by \(v\) and \(\pi\).</p>
+<p>The two ingredients are aimed at different violations. Replacing only one of them does not reproduce the whole set of observations.</p>
+<p><strong>Independence survives any curvature of utility.</strong> Their Allais-type pair is the clean case. Most subjects prefer 2,400 for sure to a prospect that pays 2,500 with probability 0.33, 2,400 with probability 0.66, and 0 with probability 0.01. The same subjects prefer a 0.33 chance of 2,500 to a 0.34 chance of 2,400, which is what remains after a 0.66 chance of 2,400 is deleted from both options. Expected utility cannot do this for any function \(u\). The substitution axiom says that mixing both sides with the same probability preserves the ranking, and curvature never breaks that axiom.</p>
+<p>A gain-loss value function with linear probabilities does not break it either, as long as the reference stays fixed. That combination is expected utility with \(v\) in place of \(u\). Kahneman and Tversky say this explicitly about Markowitz, who defined utility on gains and losses but kept the expectation principle, and so could not account for the violations in their first table. They attribute those violations to \(\pi\): subcertainty and subproportionality of the weighting function.</p>
+<p>The same point shows up in the famous 3,000 / 4,000 pair. Eighty of 95 subjects prefer 3,000 for sure to an 80 percent chance of 4,000. Sixty-five of 95 prefer a 20 percent chance of 4,000 to a 25 percent chance of 3,000. The second problem is the first one mixed with probability 1/4. Linear probabilities, whether applied to \(u(\text{wealth})\) or to \(v(\text{gains})\), cannot reverse the ranking. Overweighting certainty can.</p>
+<p><strong>Reflection needs the value function, and part of it also comes from certainty.</strong> Subjects who avoid the risky gain in the problem above seek the risky loss: 92 of 95 prefer an 80 percent chance of losing 4,000 to a sure loss of 3,000. One concave utility of final wealth is risk averse on both sides, so it predicts the opposite. The value function they propose is concave above the reference and convex below it. They isolate that curvature in a pair where the probability weight cancels: a 25 percent chance of 6,000 is rejected in favor of a 25 percent chance of 4,000 and a 25 percent chance of 2,000, while the reflected loss pair goes the other way.</p>
+<p>They also warn that the sign flip of the certainty-effect problems is not, by itself, evidence of convexity. Overweighting a sure thing favors caution among gains and acceptance of a risky loss. They note that decision weights could produce risk aversion and risk seeking even with a linear value function. Convexity of losses is a separate claim.</p>
+<p><strong>One more pattern shows the two ingredients are not substitutes.</strong> In one problem, subjects are given 1,000 and then prefer an extra 500 for sure to a fifty-fifty chance of an extra 1,000. In the matched problem they are given 2,000 and then prefer a fifty-fifty chance of losing 1,000 to a sure loss of 500. Final wealth is identical in the two problems, and so are the probabilities. Any weighting of those probabilities, applied to utility of final wealth, gives the same ranking. The choices come apart only because the shared bonus is edited out and the remainder is coded once as a gain and once as a loss.</p>
+<p>At small probabilities the two ingredients push in opposite directions. Overweighting a small chance favors both buying a long-shot gamble and buying insurance. The S-shaped value function works against both. Kahneman and Tversky treat that tension as a reason their account of insurance and gambling is still incomplete.</p>
+<p>Kőszegi and Rabin deliberately keep the linear-probability half and drop \(\pi\). They say this will get some predictions wrong, and they name the example: insurance against low-probability losses, where ordinary prospect theory’s overweighting is doing the work. Their model is the “linear probability, reference-dependent utility” branch, and they do not claim it reproduces the certainty effect.</p>
+<h2>1.3 What “probabilistic belief” means</h2>
+<p>A probabilistic belief is a probability distribution, not a hunch and not a single forecast of the average.</p>
+<p>In the 2006 model there are two layers. The person has a distribution \(Q\) over contingencies \(l\): which price, which choice set, which state she might face. A plan says which lottery \(F_l\) she will pick in each contingency. Each \(F_l\) is itself a distribution over outcomes. The belief that becomes the reference is the mixture</p>
+\[
+G = \int F_l \, dQ(l).
+\]
+<p>If she is sure the price will be 10 and she plans to buy, \(G\) is the sure bundle “shoes, wealth minus 10.” If she thinks the price is low with probability 0.6 and high with probability 0.4, and she plans to buy only when it is low, \(G\) puts probability 0.6 on “buy” and 0.4 on “don’t buy.” The reference is that whole distribution. An outcome is compared with every point in it. Receiving the mean of a spread-out lottery is still a mixture of gains relative to the worse points and losses relative to the better points.</p>
+<p>“Recent” means lagged. The reference is the distribution she believed between the time she started focusing on the decision and shortly before consumption. If she learns five minutes ahead that a long-expected $100 will not arrive, she updates the forecast immediately. Five minutes later the missing $100 is still coded as a loss, because preferences do not jump at the moment beliefs do.</p>
+<p>In the 2009 model the same idea is applied period by period. She enters the period with a distribution over today’s consumption and over each future period’s consumption. News is the change from that distribution to the new one.</p>
+<h2>1.4 Surprise, the fixed point, and news</h2>
+<h3>A belief handed in from outside still generates feelings</h3>
+<p>Gain-loss utility is defined before any equilibrium. For any reference distribution \(G\),</p>
+\[
+U(F \mid G) = \iint u(c \mid r)\, dG(r)\, dF(c).
+\]
+<p>Nothing in this formula requires that \(G\) equal the lottery she is about to choose. If a dealer, an experimenter, or yesterday’s plan has fixed \(G\), she still feels gains and losses against it, and she chooses the available option with the highest \(U(\cdot \mid G)\). Both papers say the utility theory can sit on top of any story about where beliefs come from. Rational expectations is the story they use to close the model, not a condition for the feeling to exist.</p>
+<h3>Surprise means the choice set was not in the beliefs</h3>
+<p>A surprise decision is a low-probability choice set. She formed beliefs for an environment she thought she would face. The choice in front of her was, from the point of view of those beliefs, almost not going to happen. The reference stays approximately the lottery she expected in the likely environment. She then optimizes against that fixed reference. She does not rebuild the belief to match the surprise choice.</p>
+<p>The insurance story is the paper’s illustration. She can pay $55 to avoid a 50 percent chance of paying $100. Suppose she had expected to keep $0, and the offer arrives as a surprise. Both options are losses relative to $0: a sure loss of $55, or a coin flip between losing $100 and losing nothing. Diminishing sensitivity makes her risk-seeking among losses, which is the classical prospect-theory prediction, so she does not buy the insurance. Loss aversion is not the force in this comparison, because she is not choosing between a gain and a loss. She is choosing between two losses. The match with prospect theory is only the version in which decision weights equal probabilities. A rare loss, of the extended-warranty kind, is exactly where that omission matters.</p>
+<p>Change only the belief. Suppose she had expected to pay the $55. Paying it then matches the reference and generates no gain or loss. Refusing it is a fifty-fifty chance of losing $45 (paying $100 rather than the expected $55) or gaining $55 (paying nothing rather than $55). With losses counted about twice as much as gains, that mixture is painful, and she buys the insurance. The premium was a cost she had already budgeted. The uninsured bad draw is a loss either way. That is their formal version of Kahneman and Tversky’s distinction between costs and losses.</p>
+<p>The same coding, outside insurance, is the salary example. An unexpected cash payment in a lab is a gain relative to the status quo. A salary of $50,000, when she had expected $60,000, is a loss relative to the expectation. It is not a large gain relative to older wealth. Someone who expected a $30,000 tax bill treats a $20,000 bill as a gain.</p>
+<h3>What the fixed point adds</h3>
+<p>Personal equilibrium is the requirement that the belief equal the behavior it causes. She can rank plans by how they feel in advance. She will carry a plan out only if, once the plan has set the reference, she still wants to follow it. If there is some contingency in which she would abandon the plan, the theory says she should not have expected that plan. Among the plans that survive, preferred personal equilibrium picks the one with the highest ex ante utility.</p>
+<p>The shoe market makes the test concrete. A pair of shoes has intrinsic value 1. Wealth and shoes are perfect substitutes in consumption utility, and the endowment is zero. Gain-loss utility is piecewise linear, with weight \(\eta &gt; 0\) on the sensations and loss aversion \(\lambda &gt; 1\). Paying a price is more or less painful depending on what she expected to pay, and getting the shoes is more or less pleasant depending on whether she expected to get them. The expectations most favorable to buying still refuse any price above</p>
+\[
+p_{\max} = \frac{1+\eta\lambda}{1+\eta}.
+\]
+<p>The expectations least favorable to buying still accept any price below</p>
+\[
+p_{\min} = \frac{1+\eta}{1+\eta\lambda}.
+\]
+<p>The paper leaves \(\eta\) and \(\lambda\) as symbols. Putting in \(\eta = 1\) and \(\lambda = 2\), which is arithmetic from those formulas, gives \(p_{\min} = 2/3\) and \(p_{\max} = 3/2\). At a known price:</p>
+<ul>
+<li>Above \(3/2\), even the belief “I am going to get the shoes” cannot make her buy. The only personal equilibrium is not to buy.</li>
+<li>Below \(2/3\), even the belief “I am not going to buy” cannot keep her out. The only personal equilibrium is to buy.</li>
+<li>Between \(2/3\) and \(3/2\), both plans survive. Expecting the shoes makes not buying a loss of shoes, so she pays a price above intrinsic value to avoid that loss. Expecting not to buy makes paying a loss of money, so she walks away from a price below intrinsic value.</li>
+<li>The preferred plan follows intrinsic value: she buys when the price is below 1. On the interval from 1 up to \(3/2\), “expect to buy” is a personal equilibrium, and it is the one she does not select if she can choose which credible plan to adopt. She would follow it if she had already come to expect it. She would rather have expected not to buy.</li>
+</ul>
+<p>That gap is the content of the fixed point. \(\mu\) was already there. The fixed point restricts which of those feelings she is allowed to anticipate, and it produces comparative statics that a fixed status quo does not.</p>
+<p><strong>Attachment.</strong> Suppose a low price at which she would certainly buy occurs with probability \(q_L\), and a high price at which she would certainly not buy occurs with the remaining probability. An intermediate price arrives as a surprise. A higher \(q_L\) means she more strongly expected to end up with the shoes. Failing to buy is then a more likely loss of shoes, so she pays more to avoid it. Expecting the good raises willingness to pay.</p>
+<p><strong>Comparison.</strong> Suppose she was sure she would buy, and the only uncertainty was whether the price would be a low \(p_L\) or a high \(p_M\). Both the expected purchase and the actual purchase include the shoes, so there is no shoe sensation either way. The high price is a pure loss of \(p_M - p_L\) dollars relative to the price she expected to pay. A lower expected price therefore makes a realized high price more painful, and willingness to pay falls. For any frozen expectation her demand still slopes downward. The law-of-demand reversal comes only from the feedback of the price distribution into the expectation.</p>
+<p><strong>The lowball is the same mechanism off the equilibrium path.</strong> A dealer quotes a very low price. The buyer gets used to expecting the car. The dealer then raises the price. Attachment to the expected purchase can make her pay a price she would have refused. The strategy backfires if the raised price looks too bad next to the promised price. The promised price is not a personal equilibrium: it is not the price she will face. The planted belief is still the reference, and it still moves the choice.</p>
+<h3>The 2007 paper: one money preference, three clocks</h3>
+<p>The 2007 question is why the same person sometimes refuses insurance and sometimes pays a great deal for it, on stakes too small for the curvature of lifetime wealth to matter. The preference is the one above, applied to wealth, with probabilities kept linear. The environment decides which belief is in place when she chooses.</p>
+<p>Return to the $55 premium and the 50 percent chance of paying $100.</p>
+<ul>
+<li><strong>Surprise, reference $0.</strong> She refuses, by diminishing sensitivity over losses, as above.</li>
+<li><strong>The decision was expected, but she chooses at the last minute.</strong> This is unacclimating personal equilibrium, which is the 2006 personal equilibrium under a new name. The reference is already fixed, so a deviation is judged against the old plan. If the plan was to bear the risk, then paying $55 at the last minute is half a gain of $45 (relative to the state in which she would have paid $100) and half a loss of $55 (relative to the state in which she would have paid nothing). If that loss looms large, she sticks with the risk she already expected, even when expecting the insurance would have felt better in advance. Several plans can be self-confirming. Preferred personal equilibrium keeps the best one she will actually follow. Because the reference is already fixed, she does not get to enjoy, at the moment of choice, the calmer belief a different plan would have created.</li>
+<li><strong>She commits long before the outcome.</strong> This is choice-acclimating personal equilibrium. The chosen lottery becomes the reference. The premium, once it is the plan, produces no gain-loss sensation. The uninsured lottery still does: inside that lottery a loss of 100 is matched by an equally likely gain of 100, and the loss counts more, so expected gain-loss utility is negative. She can commit to the calm of the sure premium, including a premium she would refuse if she waited until the reference had already settled on the risk. In their numerical table, for a tiny fifty-fifty risk around $1,000,000, the insurance premium she will pay is $48 if she cannot commit and $71 if she can.</li>
+</ul>
+<p>First-order risk aversion is the small-bet version of the same kink. If the reference is a sure amount, a small symmetric bet is a gain on one side and a loss on the other, equally likely, and the loss counts more. The penalty scales with the size of the bet. A classical smooth utility rejects a small bet only because of curvature, which is second order. Here she turns down a small better-than-fair bet unless the edge is large enough to overcome the kink.</p>
+<p>Background risk weakens that. If she already expected a widely spread lottery, a further small bet rarely turns a gain into a loss or the reverse. Its good outcomes partly fill in losses she already expected, and its bad outcomes partly give back gains she already expected. In the same table, an unavoidable risk on the order of $100 cuts the $48 premium to about $9, and a risk on the order of $1,000 drives it essentially to zero. She does not like the original risk. She is already bearing it. She is simply less sensitive to a small change around it.</p>
+<p>At large stakes the environment stops mattering. Most outcomes sit far from the reference, diminishing sensitivity flattens the gain-loss comparison, and ordinary curvature of \(m\) dominates. Their large gamble has an insurance premium of roughly the same size in every row of the table.</p>
+<h3>The 2009 paper: the feeling is the news</h3>
+<p>The 2009 question is consumption and saving when the painful object is a change in beliefs about consumption, now and later. A change in wealth matters because it is news about what she will consume.</p>
+<p>Period-\(t\) utility is today’s consumption utility, plus contemporaneous gain-loss, plus prospective gain-loss. Contemporaneous gain-loss compares today’s consumption with the belief about today that she held yesterday. Prospective gain-loss compares today’s belief about a future date with yesterday’s belief about that same date. Near dates can be weighted more than distant ones. The 2006 and 2007 models are the special case in which prospective weights are zero: only the contrast between consumption and a prior expectation counts.</p>
+<p>A change in beliefs is scored percentile by percentile. She lines the old distribution up with the new one, worst with worst and best with best, and applies \(\mu\) to the gap in consumption utility at each percentile. If the two distributions are the same, every gap is zero. They reject the 2006 alternative, comparing every outcome under the new belief with every outcome under the old one, because that formula would generate gain-loss even when the belief does not change.</p>
+<p>Their Johnny Depp example is the whole idea in one lottery. She had believed in a fifty-fifty chance of 0 or 100 minutes.</p>
+<ul>
+<li>The new belief is fifty-fifty of 20 or 120. Every percentile moved up by 20. That is a pure gain of 20 minutes.</li>
+<li>The new belief is fifty-fifty of 20 or 80. She feels a gain from comparing 20 with 0 and a loss from comparing 80 with 100.</li>
+<li>The lottery was right, and it is now resolved. Getting 0 feels like a one-half chance of losing 100 minutes. Getting 100 feels like a one-half chance of gaining 100 minutes.</li>
+</ul>
+<p>So a sure thing carries no gain-loss utility only after beliefs have settled on it. Resolving a lottery she fully expected is still news, because the distribution changes from the lottery to a point. That is the precise sense of the sentence in the earlier answer.</p>
+<p>The plans have to be credible in the same fixed-point sense, now period by period. With no uncertainty, the ex ante optimum is to smooth consumption. Any deterministic plan has expected gain-loss utility of zero, and any random plan has negative expected gain-loss utility. Whether smoothing survives depends on how heavily she weights prospective news. If future losses are weighted enough, cutting tomorrow in order to raise today is too painful, and the smooth plan is a preferred personal equilibrium. If future news is discounted heavily, she is tempted to surprise herself with extra consumption today. Period 0 knows she would do this, so the plan “I will smooth” is not credible, and every credible plan front-loads consumption. The preferences are time consistent. The plan can still fail because the later self takes the reference as given and chases a pleasant surprise.</p>
+<p>Two further predictions are the ones worth keeping.</p>
+<p>A deterministic future level is a bright line. Raising consumption today and lowering a planned future level feels like a gain today and a larger loss tomorrow. Once the future level is already random, a revision is scored more symmetrically and the discipline weakens. Knowing any one wealth level in advance would have prevented the overconsumption that appears when the same wealth is still a lottery.</p>
+<p>Small surprises are absorbed asymmetrically. A small windfall is consumed immediately, because consuming it now is more pleasant than revising future plans upward. A small loss is absorbed later, because cutting consumption now is more painful than revising future plans downward. Larger shocks are split.</p>
+<h2>2/3/4.1 Your personal-equilibrium reading</h2>
+<p>The test you describe is the right test. The timing of the word “expectation” needs one adjustment.</p>
+<p>The reference is recent beliefs by assumption, whether or not those beliefs are rational. A surprise menu and a dealer’s lowball both set the reference, and neither is a personal equilibrium. Rational expectations is the extra requirement used when they close the model: the belief has to be the distribution generated by a plan she will still follow.</p>
+<p>A plan “satisfies the expectation” in two steps, and both are required. The plan induces \(G = \int F_l\, dQ(l)\). That is how the reference is built. The plan is a personal equilibrium only if, against that same \(G\), she still wants \(F_l\) in every contingency. The comparison uses total utility, consumption utility plus gain-loss utility. If she would switch, the plan is not a personal equilibrium.</p>
+<p>Gain-loss is why a plan can fail even when it looks attractive in consumption terms, and also why a plan can survive when it does not maximize consumption utility. In the shoe market, at a price between \(p_{\min}\) and \(p_{\max}\), expecting to buy makes her buy in order to avoid a loss of shoes. That plan is a personal equilibrium. If the price is above intrinsic value, it is not the preferred one. Above \(p_{\max}\), expecting to buy fails the test itself: even with the shoes already in the reference, paying that much is worse than giving them up.</p>
+<p>There are two clocks, already in the insurance example. Unacclimating personal equilibrium is the test above: she chooses when the reference is already fixed, so a last-minute deviation is judged against the old plan. Choice-acclimating personal equilibrium is early commitment: she picks the lottery whose fully expected version, \(U(F \mid F)\), is best. The 2009 paper uses the preferred-personal-equilibrium idea on consumption plans, with the added requirement that future selves will carry out the continuation.</p>
+<h2>2/3/4.2 What they are studying</h2>
+<p>They do justify the choices with optimization. The rest of the sentence runs the project backward.</p>
+<p>Kőszegi and Rabin say that reference-dependent theories have studied how people react to departures from a posited reference, and that predictions also depend on what the reference is. Their proposal is that the reference is the probabilistic belief she held in the recent past. The expectation is not built from a reference point. The reference is the expectation.</p>
+<p>They are also interested in how gains and losses feel around that benchmark. They import \(\mu\), then use it: a budgeted premium is not a loss, a bad draw is, expecting the shoes raises willingness to pay, expecting a risk softens aversion to a further small risk. What they simplify, relative to Kahneman and Tversky, is the shape of the evaluation. Probabilities stay linear, and many of the formal results shut down diminishing sensitivity so that loss aversion can be seen on its own.</p>
+<p>Kahneman and Tversky take the reference as given, usually current assets, and they do note that formulation and expectations can move it. They do not solve for a plan that confirms itself. Their question is how a person evaluates the prospects in front of her. Kőszegi and Rabin’s question is which of those evaluations can be the ones she rationally walks into, and how the environment, by changing what she expects, changes willingness to pay, insurance, labor supply, and consumption.</p>
+</main>
+<nav class="pager"><a href="answer-1.html">← Answer: questions 1–4</a><a href="subagent-01-endogenous-reference.html">Next: Subagent: endogenous reference →</a></nav>
+</div>
+</body>
+</html>

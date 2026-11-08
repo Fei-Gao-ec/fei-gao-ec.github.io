@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Subagent: expectations and shocks</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Subagent: expectations and shocks</h1>
+<p class="kicker">Reading for question 2. Whether uncertainty is what turns gain-loss on.</p>
+<main>
+<p>The restatement is not correct. Expectations set the reference point, and people then choose to maximize a utility that already includes gain-loss. Gain-loss is a preference around the whole reference lottery. It is present when a correctly expected risk realizes. It is not a bias that switches on only after an uncertain shock, and it is not the contrast between an optimal solution and human error.</p>
+<h2>Verdict, clause by clause</h2>
+<p><strong>“Expectations make decisions.”</strong> Half right. Recent expectations are the reference point. Given that reference, the person chooses the option with the highest reference-dependent utility. In a personal equilibrium those expectations must match the behavior they induce. Expectations do not replace the choice; they enter the utility function the choice maximizes.</p>
+<p><strong>“Assume certainty, decisions are optimal.”</strong> Wrong as a description of the model. Certainty is a special case, not the setup. In a fully deterministic environment, the preferred personal equilibrium does maximize consumption utility, because if you expected \(c\) and you get \(c\), gain-loss utility is zero. That optimum is with respect to \(u(c \mid r) = m(c) + n(c \mid r)\), which already contains gain-loss. It coincides with classical consumption utility only because \(n(c \mid c) = 0\). Even with a sure price, a non-preferred personal equilibrium can stick with buying, or with not buying, purely to avoid a loss. Under uncertainty, the preferred plan itself need not maximize consumption utility, and the plan with the highest ex ante utility is often not an equilibrium, because the person does not internalize how today’s plan changes the reference point.</p>
+<p><strong>“With uncertainty, when a shock occurs, the gap between the realized outcome and the reference creates gain-loss behavior.”</strong> Wrong in the mechanism. Gain-loss is in the utility function whenever an outcome is compared with the reference lottery. It does not wait for a shock, and it does not appear only under uncertainty. A realized draw from a correctly expected distribution still generates gain-loss. The comparison is to every outcome in the reference lottery, not to the mean. People put the expected value of those sensations into the choice, and they feel the mixture when the outcome arrives. Because losses weigh more than equal gains, expected gain-loss utility of any nondegenerate lottery is negative even when beliefs are right.</p>
+<p><strong>“Is gain-loss modeled as expectation (optimal solutions) versus uncertainty (human bias)?”</strong> No. Gain-loss is a preference: loss aversion around expectations. Beliefs are required to be rational in the equilibrium concepts (personal equilibrium, preferred personal equilibrium, and, in 2007, choice-acclimating personal equilibrium). The papers separately say that some real behavior looks like a mistake their rational model does not include: narrow bracketing, and underestimating how fast the reference point adjusts. Those are caveats, not the definition of gain-loss. They also allow surprise and out-of-equilibrium cases, where the reference point was formed as if the choice set had low probability, or the person was led to expect a different price.</p>
+<p><strong>Corrected statement.</strong> A person’s reference point is her recent probabilistic beliefs about outcomes. She chooses to maximize consumption utility plus gain-loss utility relative to that reference. If the environment and her plan are deterministic and she follows the preferred plan, she gets what she expected, gain-loss is zero, and the choice looks like ordinary utility maximization. If she expected a lottery, she still compares the realized outcome with the whole lottery, anticipates that those comparisons hurt on average, and feels them when the outcome arrives. Loss aversion is the preference. Rational expectations are the belief restriction. Uncertainty changes which attitudes that same preference produces. It does not turn an optimum into a bias.</p>
+<h2>What the papers actually use</h2>
+<p>They do not run a mug example by name. They do use these cases.</p>
+<p><strong>Shopping for shoes (2006, pp. 1146–1150).</strong> At a sure price between two thresholds, both “buy” and “don’t buy” can be personal equilibria: expecting the shoes makes not buying feel like a loss of shoes; expecting not to buy makes paying feel like a loss of money. The preferred equilibrium buys only if the price is below intrinsic value, here normalized to 1. With price risk, a higher probability of buying raises willingness to pay (attachment), and a lower expected purchase price lowers willingness to pay a high price (comparison). A shopper can be led, out of equilibrium, to expect a low “lowball” price.</p>
+<p><strong>Endowment, wages, concerts (2006, pp. 1134–1135, 1142–1143).</strong> Owners who expect to keep an object value it more than nonowners. Merchants who expect to sell do not code a sale as a loss of inventory. A salary of $50,000 when $60,000 was expected is a loss relative to expectations. Missing a concert you expected to attend is a loss even though nothing was “owned.”</p>
+<p><strong>Taxi drivers (2006, pp. 1133, 1150–1155).</strong> An unexpectedly high morning income makes the driver less willing to keep working. A predictably high wage raises the chance she shows up, and does not by itself cut afternoon work.</p>
+<p><strong>Insurance and small bets (2007).</strong> Pay $55 to avoid a 50 percent chance of losing $100. If she expected to stay at $0, diminishing sensitivity makes her refuse the insurance, as in prospect theory. If she expected to pay the $55, the premium is not a loss and the uninsured gamble is a fifty-fifty loss of $45 or gain of $55, so two-to-one loss aversion makes her insure. If she already expected the risk, the same gamble is less aversive. The same logic is applied to low deductibles, extended warranties, and expensive service contracts, and to rejecting small better-than-fair bets when the risk was anticipated.</p>
+<h2>1. Expectations, and what “optimal” means</h2>
+<p>The reference point is recent rational expectations, and “optimal” means optimal for reference-dependent utility given that reference.</p>
+<blockquote>
+<p>“We assume that a person’s reference point is her rational expectations held in the recent past about outcomes, which are determined in a personal equilibrium by the requirement that they must be consistent with optimal behavior given expectations. In deterministic environments, choices maximize consumption utility, but gain-loss utility influences behavior when there is uncertainty.” (Kőszegi and Rabin 2006, 1133)</p>
+<p>“Overall utility is given by \(u(c \mid r) = m(c) + n(c \mid r)\), where \(n(c \mid r)\) is ‘gain-loss utility.’” (2006, 1134)</p>
+</blockquote>
+<p>In the deterministic preferred equilibrium this collapses to consumption utility, because the person gets the sure bundle she expected:</p>
+<blockquote>
+<p>“Because \(u(c \mid c) = m(c)\), Proposition 3 implies that in deterministic environments, not only does loss aversion not affect behavior, it also does not affect welfare. These statements are not true for PE: … if a person comes to anticipate choosing an option that does not maximize consumption utility, she may carry it out to avoid the sensation of loss associated with switching to another option.” (2006, 1146)</p>
+</blockquote>
+<p>Under price uncertainty, even the best response to expectations can fail to maximize ex ante utility:</p>
+<blockquote>
+<p>“While buying is her best response to her expectations, it is still worse than if she could have avoided the risk of loss by avoiding the expectation of getting the shoes in the first place. More generally, because the consumer does not internalize the effect of her ex post behavior on ex ante expectations, the strategy that maximizes ex ante expected utility is often not a PE.” (2006, 1150)</p>
+</blockquote>
+<p>So “optimal” means: maximize \(m + n\) given the reference, and, in equilibrium, expect only a plan you will still want. It does not mean classical expected utility of consumption, and it does not mean “certainty first, shocks later.”</p>
+<h2>2. Gain-loss is not switched on by a shock</h2>
+<p>The utility function always compares the outcome with the reference. In a deterministic preferred equilibrium the comparison is zero, so behavior is unaffected. The term is still there. It matters as soon as the outcome and the expectation differ, including surprises in otherwise ordinary shopping and work.</p>
+<p>Shoes at a sure price (2006, 1147): expecting the shoes makes failure to buy a loss of shoes; expecting not to buy makes paying a loss of money. Both plans can be equilibria. The preferred one follows intrinsic value.</p>
+<blockquote>
+<p>“a salary of $50,000 to an employee who expected $60,000 will not be assessed as a large gain relative to status-quo wealth, but rather as a loss relative to expectations of wealth.” (2006, 1135)</p>
+</blockquote>
+<p>They use the missed concert to say a status-quo theory would give the same gain-loss utility of zero whether or not the concert was expected. Their model treats the missed expected concert as a loss (2006, 1135). Labor supply turns on whether the wage news was expected (2006, 1133, 1151).</p>
+<h2>3. A correctly expected risk still generates gain-loss</h2>
+<p>The reference is the lottery, not its mean. Each realized outcome is scored against every outcome in that lottery.</p>
+<blockquote>
+<p>“if the reference lottery is a gamble between $0 and $100, an outcome of $50 feels like a gain relative to $0, and like a loss relative to $100, and the overall sensation is a mixture of these two feelings.” (2006, 1137)</p>
+<p>“losses relative to a stochastic reference point count more than gains, so that a person who gets $50 is more distressed by how it compares with a possible $100 than she is pleased by how it compares with a possible $0.” (2006, 1138)</p>
+</blockquote>
+<p>The 2007 paper repeats the example and adds that $50 against \(\{\$0, \$100\}\) yields negative gain-loss utility (2007, 1050). Ex ante, the person knows this and puts it into expected utility:</p>
+<blockquote>
+<p>“ex ante expected gain-loss utility is zero for deterministic outcomes, and because losses from comparing an outcome to a counterfactual loom larger than the symmetric gains, it is negative for nondeterministic lotteries.” (2006, 1145)</p>
+</blockquote>
+<p>When the chosen lottery is the reference, every gain is matched by an equally likely loss, and the losses count more:</p>
+<blockquote>
+<p>“In a personal equilibrium of any sort, every possible sensation of gain—say from comparing an outcome \(x\) to a counterfactual \(y &lt; x\)—is matched by an equally likely and equally large loss—from comparing \(y\) to \(x\). Because the losses are more heavily felt, net gain-loss utility will be proportional to the negative of the average of these distances.” (2007, 1064)</p>
+</blockquote>
+<p>So there are two moments, and neither is “surprise relative to the mean.” Ex ante, she chooses using the expected gain-loss utility of the lottery. Ex post, the realized draw is compared with the whole reference lottery. Getting the mean of a spread-out lottery is still a mixture of gain and loss, and under their formula that mixture is negative.</p>
+<h2>4. Preference, with rational beliefs</h2>
+<p>They treat gain-loss as experienced utility and impose rational expectations as the belief rule.</p>
+<blockquote>
+<p>“As an imperfect but at the same time disciplined and largely realistic first pass, we assume that a person correctly predicts her probabilistic environment and her own behavior in that environment, so that her beliefs fully reflect the true probability distribution of outcomes.” (2007, 1048–1050)</p>
+<p>“While the utility-maximization approach in this paper suggests that people maximize reference-dependent preferences corresponding to true experienced well-being, there are reasons to doubt that this is so. … On both of these accounts, the nature and scope of reference-dependent choices seems to reflect mistakes our fully rational model does not capture.” (2006, 1157)</p>
+</blockquote>
+<p>The mistakes they name are narrow bracketing and underestimating adaptation (projection bias). In 2007 they say the model fails to capture ways reference-dependent risk attitudes reflect failures of full rationality, and that the right welfare measure may be closer to consumption utility than the behavioral model assumes (2007, 1061–1062). That is a welfare caveat. It does not redefine gain-loss as the bias and classical utility as the solution.</p>
+<p>They do allow behavior off the equilibrium forecast. Surprise decisions are the limit in which the choice set had very low probability, so expectations are fixed outside the choice (2007, 1052). Nonequilibrium price beliefs are the car dealer’s “lowball”: the buyer was led to expect a lower price than the one she faces (2006, 1149).</p>
+<h2>5. What uncertainty does in the 2007 paper</h2>
+<p>Uncertainty sorts the same preferences into different risk attitudes. It does not create the gain-loss term.</p>
+<p>When the risk is a surprise and the reference is the status quo, the model reproduces prospect theory with linear probabilities, including a distaste for insuring losses. Diminishing sensitivity away from the reference makes the sure premium unattractive (2007, 1047–1048).</p>
+<p>When the person anticipated both the risk and the chance to insure it, she is first-order risk averse. A planned premium is already in her beliefs, so paying it is not coded as a loss. A bad draw of the lottery is coded as a loss whether or not she had planned to insure. Loss aversion therefore favors insurance (2007, 1049, 1057). The $55 versus a 50 percent chance of losing $100 is the worked example: status-quo expectations refuse the policy; expectations of paying $55 accept it; expectations of bearing the risk make the gamble less aversive, which they call an endowment effect for risk (2007, 1048, 1053).</p>
+<p>Expecting risk, or already facing background risk, lowers aversion to further risk. A bet that is small relative to a widely spread reference lottery is treated as approximately risk neutral (Propositions 1, 2, 5, and 6; Table 1). In their example, unavoidable risk on the order of $100 cuts the insurance premium on a $100 gamble from $48 to about $9, and risk on the order of $1,000 drives it near zero (2007, 1055–1058). She is not indifferent to the original risk. Expecting it means she is already exposed to utility-decreasing sensations of loss (2007, 1054).</p>
+<p>Timing matters. If she decides shortly before the outcome, the reference is already fixed (unacclimating personal equilibrium, and its preferred selection). She can plan only what she will still want given that reference. If she commits long before outcomes, the choice sets both the outcome and the reference lottery (choice-acclimating personal equilibrium). That produces stronger risk aversion: she can commit to the calm of expecting the sure premium. Sometimes expecting to buy expensive insurance would raise expected utility, but without commitment she refuses the premium at the last minute (2007, 1049, 1056–1060). For very large stakes, diminishing marginal consumption utility dominates, so measured risk aversion is similar across surprise, anticipated, and committed environments (2007, 1061; Gamble III in Table 1).</p>
+<p>Attachment is to lagged beliefs, not to beliefs updated at the moment of consumption. Someone told five minutes ahead that a long-expected $100 will not arrive updates the forecast immediately and still codes the outcome as a loss (2007, 1051).</p>
+<h2>2009, only on plans and news</h2>
+<p>The 2009 paper is a dynamic extension. People are loss averse over changes in rational beliefs about present and future consumption. A credible plan is a preferred personal equilibrium: in each period it maximizes expected reference-dependent utility given the expectations the plan itself generates (2009, 909–910). “Surprises” are low-probability changes in wealth. Small surprise gains are consumed immediately; small surprise losses are absorbed later (2009, 911).</p>
+<p>Two points bear directly on the restatement. First, resolving a risk whose distribution was correct is still news, and it still generates gain-loss. If someone expected a fifty-fifty chance of 0 or 100 minutes with Johnny Depp and then gets 0, that feels like a one-half chance of losing 100 minutes (2009, 914). Second, they reject a formula that would produce gain-loss while beliefs stay unchanged: comparing every outcome in a lottery with every other outcome in the same lottery “would imply that she experiences gain-loss utility even if she does not change her beliefs, which seems unrealistic” (2009, 914). So 2009 locates the sensation in the change in beliefs, including the change from a lottery to the realized point. It does not locate it in a mistake, and it does not locate it in a deviation from the mean alone.</p>
+<p>They also note that a person may overconsume early, relative to the optimal committed plan, in order to generate a pleasant surprise (2009, 909, 911). A deterministic plan can act as a bright line that a stochastic plan does not. That gap between the committed plan and later behavior is still preference, given loss aversion over news. It is not modeled as irrational beliefs.</p>
+</main>
+<nav class="pager"><a href="subagent-01-endogenous-reference.html">← Subagent: endogenous reference</a><a href="subagent-03-personal-equilibrium.html">Next: Subagent: personal equilibrium →</a></nav>
+</div>
+</body>
+</html>

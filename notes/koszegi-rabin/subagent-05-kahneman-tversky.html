@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Subagent: Kahneman–Tversky 1979</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Subagent: Kahneman–Tversky 1979</h1>
+<p class="kicker">Reading for the follow-up on what the 1979 paper assumes, and what probability weights are doing.</p>
+<main>
+<p><strong>Claim A holds. Claim B does not.</strong> In Kahneman and Tversky (1979), the gain-loss value function and the weighting function are joint ingredients of one descriptive theory, aimed at different facts. They are not two alternative repairs that each reproduce the same observations. There is no loss-aversion coefficient λ.</p>
+<p>Amounts are Israeli pounds. They note that median net monthly family income was about 3,000 (p. 264).</p>
+<h2>Verdict on A</h2>
+<p>The theory is descriptive, and the shape of v and π is posited to organize the choice data. It is not derived from a theory of why losses feel worse.</p>
+<p>They say so at the outset and again when the model is introduced. The abstract calls the paper “a critique of expected utility theory as a descriptive model of decision making under risk” and “an alternative model, called prospect theory” (p. 263). Section 3 opens: “several empirical effects which appear to invalidate expected utility theory as a descriptive model. The remainder of the paper presents an alternative account” (p. 274). The close calls the two themes “a useful framework for the descriptive analysis of choice under risk” (p. 289).</p>
+<p>“Coding” is their name for an editing operation, not a derived result: “people normally perceive outcomes as gains and losses, rather than as final states of wealth or welfare. Gains and losses, of course, are defined relative to some neutral reference point. The reference point usually corresponds to the current asset position” (p. 274). Later: “the reference point was taken to be the status quo, or one’s current assets” (p. 286). The location of that point “can be affected by the formulation of the offered prospects, and by the expectations of the decision maker” (p. 274).</p>
+<p>They state the two departures as assumptions forced by the data: “we are compelled to assume that values are attached to changes rather than to final states, and that decision weights do not coincide with stated probabilities” (p. 277).</p>
+<p>What they assume about v (pp. 275–279):</p>
+<ul>
+<li>v assigns to each outcome “the subjective value of that outcome.” Outcomes “are defined relative to a reference point, which serves as the zero point of the value scale. Hence, v measures the value of deviations from that reference point, i.e., gains and losses” (p. 275). And v(0) = 0 (p. 276).</li>
+<li>“We hypothesize that the value function for changes of wealth is normally concave above the reference point (v''(x) &lt; 0, for x &gt; 0) and often convex below it (v''(x) &gt; 0, for x &lt; 0)” (p. 278). The concavity claim for gains is tied to diminishing sensitivity, by analogy with sensory dimensions, and to Galanter and Pliner’s riskless magnitude scaling. Problems 13 and 13' are then offered as the risky-choice check.</li>
+<li>“In summary, we have proposed that the value function is (i) defined on deviations from the reference point; (ii) generally concave for gains and commonly convex for losses; (iii) steeper for losses than for gains” (p. 279).</li>
+<li>Strictly, value “should be treated as a function in two arguments: the asset position that serves as reference point, and the magnitude of the change.” A one-argument v is “a satisfactory approximation” (pp. 277–278).</li>
+</ul>
+<p>What they assume about π (pp. 275–276, 280–283):</p>
+<ul>
+<li>“The first scale, π, associates with each probability p a decision weight π(p), which reflects the impact of p on the over-all value of the prospect. However, π is not a probability measure, and it will be shown later that π(p) + π(1 − p) is typically less than unity” (p. 275).</li>
+<li>“Decision weights are not probabilities: they do not obey the probability axioms and they should not be interpreted as measures of degree or belief. … Decision weights measure the impact of events on the desirability of prospects, and not merely the perceived likelihood of these events. The two scales coincide (i.e., π(p) = p) if the expectation principle holds, but not otherwise” (p. 280).</li>
+<li>π is increasing, with π(0) = 0 and π(1) = 1 (p. 280). Further properties, read off the choices rather than derived: subadditivity for small p, overweighting π(p) &gt; p for small p, subcertainty π(p) + π(1 − p) &lt; 1, and subproportionality (pp. 281–282). Figure 4 is “a hypothetical weighting function.” No closed form is estimated.</li>
+</ul>
+<p>Two qualifications that stay inside the paper. The curvature and the steepness have a stated rationale: diminishing sensitivity, plus the observation that symmetric bets are unattractive. The appendix then gives measurement axioms (conjoint independence, cancellation, solvability, distributivity) sufficient for the bilinear form. That is a representation theorem for V. It is not an account of why a loss hurts more than the same-sized gain pleases.</p>
+<h2>Verdict on B</h2>
+<p>The two clauses that survive are narrow. Any expected-utility preference satisfies independence, so no curvature of u(wealth) repairs the certainty effect. A single concave utility of final wealth does not produce the reflection effect.</p>
+<p>The rest of Claim B is not the paper’s position. Probability weights with an ordinary utility of wealth, and linear probabilities with a reference-dependent utility, are not alternative fixes that each fit the same facts. The paper’s model uses both, for different patterns. Markowitz is their explicit counterexample to the second fix: he “was the first to propose that utility be defined on gains and losses rather than on final asset positions,” but “his treatment, however, retains the expectation principle; hence it cannot account for the many violations of this principle; see, e.g., Table I” (p. 276). And: “attitudes toward risk are determined jointly by v and π, and not solely by the utility function” (p. 285).</p>
+<p>They do not say that probability weighting alone, with ordinary utility of wealth, fits all their problems. They do not say that the value function alone, with linear probabilities, fits the certainty effect. The second is what they deny by the Markowitz sentence and by attributing Allais to π.</p>
+<h3>Which anomaly kills which repair</h3>
+<p><strong>Certainty effect / Allais / common consequence (Problems 1–8).</strong> This violates the substitution axiom. The demonstration never uses concavity. For Problems 3 and 4, with u(0) = 0, choosing the sure 3,000 “implies u(3,000)/u(4,000) &gt; 4/5, whereas the choice of C implies the reverse inequality” (p. 266). The substitution axiom “asserts that if B is preferred to A, then any (probability) mixture (B, p) must be preferred to the mixture (A, p). Our subjects did not obey this axiom” (p. 266). The same reversal is written out for Problems 1 and 2 (p. 266).</p>
+<p>A value function on gains and losses with linear probabilities, reference held fixed, is the same algebra with v in place of u. It satisfies substitution. That is the content of the Markowitz sentence above. Equation (1) “generalizes expected utility theory by relaxing the expectation principle” (p. 276). For strictly positive prospects, equation (2) “reduces to equation (1) if π(p) + π(1 − p) = 1. As will be shown later, this condition is not generally satisfied” (p. 276).</p>
+<p>They assign the violation to π, not to v. For Problems 1 and 2: “the violation of the independence axiom is attributed in this case to subcertainty, and more specifically to the inequality π(.34) &lt; 1 − π(.66)” (p. 285). For Problems 3–8: “The violation of the substitution axiom is attributed in this case to the subproportionality of π” (p. 285). “The same analysis applies to other violations of the substitution axiom, both in the positive and in the negative domain” (p. 285).</p>
+<p><strong>Reflection (Table I).</strong> Risk aversion over gains and risk seeking over losses. “The reflection effect implies that risk aversion in the positive domain is accompanied by risk seeking in the negative domain” (p. 268). In Problem 3', most subjects “accept a risk of .80 to lose 4,000, in preference to a sure loss of 3,000, although the gamble has a lower expected value” (p. 268). A single concave u of final wealth is globally risk averse (p. 264: “risk aversion is equivalent to the concavity of the utility function”), so it predicts the opposite preference in Problem 3'. They also reject a mean-variance repair: “(−3,000) has both higher expected value and lower variance than (−4,000, .80),” so that account “entails that the sure loss should be preferred, contrary to the data” (p. 269).</p>
+<p>What they conclude v must look like is the summary on p. 279, quoted under Claim A: concave gains, convex losses, steeper for losses. The curvature itself is read from Problems 13 and 13', where the common weight π(.25) cancels, leaving v(6,000) &lt; v(4,000) + v(2,000) and v(−6,000) &gt; v(−4,000) + v(−2,000) (p. 278).</p>
+<p>One split inside “reflection” matters for teaching. The sign-reversal of the certainty-effect pairs is attributed to weighting, not to convexity: “The same psychological principle—the overweighting of certainty—favors risk aversion in the domain of gains and risk seeking in the domain of losses” (p. 269). They also note that “decision weights could produce risk aversion and risk seeking even with a linear value function” (p. 280). Convexity of losses is a further claim, identified where π cancels.</p>
+<p><strong>Loss aversion.</strong> λ is not stated. The paper says only that losses loom larger, and then derives two inequalities. “A salient characteristic of attitudes to changes in welfare is that losses loom larger than gains. The aggravation that one experiences in losing a sum of money appears to be greater than the pleasure associated with gaining the same amount. Indeed, most people find symmetric bets of the form (x, .50; −x, .50) distinctly unattractive” (p. 279). From equation (1): setting y = 0 “yields v(x) &lt; −v(−x), and letting y approach x yields v'(x) &lt; v'(−x).” “Thus, the value function for losses is steeper than the value function for gains” (p. 279). The same inequality is used as v(−z) &lt; −v(z) in the reference-shift proof (p. 287). No coefficient multiplies v on the loss side.</p>
+<p><strong>Isolation effect.</strong> This is editing, not a repair of u or of π. “People often disregard components that the alternatives share” (p. 271). Problem 10 is the two-stage game whose final probabilities are Problem 4, but 78 percent of 141 subjects chose as in Problem 3, the sure 3,000 inside the second stage. “Evidently, people ignored the first stage of the game, whose outcomes are shared by both prospects” (p. 271). Problems 11 and 12 change the representation of outcomes rather than of probabilities: the same final wealth distribution is chosen differently once a shared bonus is ignored. “The carriers of value or utility are changes of wealth, rather than final asset positions that include current wealth. This conclusion is the cornerstone of an alternative theory” (p. 273). In the theory section: “the inconsistencies associated with the isolation effect result from the cancellation of common components” (p. 275).</p>
+<p>Problems 11 and 12 are what kill “probability weights with a usual utility of final wealth.” The two problems have the same final states and the same probabilities. Any weighting of those probabilities, applied to u(wealth), gives the same ranking. Only the coding of the bonus as a change of reference separates them.</p>
+<p><strong>Probabilistic insurance (Problem 9).</strong> This is aimed at the concavity-of-u account of insurance, and the later proof uses both ingredients. If full insurance at premium y is just acceptable, then “expected utility theory (with a concave u) implies that probabilistic insurance is superior to regular insurance” (p. 270). Subjects reject it: N = 95, Yes 20, No 80 (p. 270). “The intuitive notion of risk is not adequately captured by the assumed concavity of the utility function for wealth” (p. 270). The prospect-theory proof that regular insurance is preferred uses convexity of v on losses, written as concavity of f(x) = −v(−x), and finishes with “π(p)/2 ≤ π(p/2), which follows from the subadditivity of π” (p. 285). The hypothesis stated at the start of that proof is that “the probability of loss is overweighted” (p. 285).</p>
+<p><strong>Small probabilities, gambling and insurance (Problems 14 and 14').</strong> Here the two ingredients push opposite ways, which is another reason they are not substitute repairs. “In prospect theory, the overweighting of small probabilities favors both gambling and insurance, while the S-shaped value function tends to inhibit both behaviors” (p. 286). Overweighting is “necessary but not sufficient” for risk seeking over gains and for risk aversion over losses, and both are thereby “restrict[ed] … to small probabilities” (p. 285). They add that this “falls far short of a fully adequate account” of insurance and gambling (p. 286).</p>
+<h2>The functional</h2>
+<p>For a regular prospect (p. 276):</p>
+<p>(1) V(x, p; y, q) = π(p)v(x) + π(q)v(y),</p>
+<p>where v(0) = 0, π(0) = 0, and π(1) = 1. For sure prospects, V(x, 1.0) = v(x).</p>
+<p>For a strictly positive or strictly negative prospect, p + q = 1 and either x &gt; y &gt; 0 or x &lt; y &lt; 0 (p. 276):</p>
+<p>(2) V(x, p; y, q) = v(y) + π(p)[v(x) − v(y)].</p>
+<p>The right-hand side “equals π(p)v(x) + [1 − π(p)]v(y).” The riskless component v(y) is not weighted; the weight multiplies only the risky increment.</p>
+<p>Reference point, in their words: “some neutral reference point,” which “usually corresponds to the current asset position, in which case gains and losses coincide with the actual amounts that are received or paid” (p. 274); taken in the main analysis as “the status quo, or one’s current assets” (p. 286). It can instead be an expectation or aspiration level, or a prior asset position to which the person has not yet adapted (pp. 286–287).</p>
+<h2>Teaching numbers</h2>
+<p>Certainty effect, the 3,000 / 4,000 pair (p. 266). An asterisk is their .01 level.</p>
+<ul>
+<li>Problem 3. A: (4,000, .80) or B: (3,000). N = 95. A 20, B 80*.</li>
+<li>Problem 4. C: (4,000, .20) or D: (3,000, .25). N = 95. C 65*, D 35.</li>
+</ul>
+<p>Modal pattern: sure 3,000 over an 80 percent chance of 4,000, but a 20 percent chance of 4,000 over a 25 percent chance of 3,000. Problem 4 is Problem 3 mixed with probability .25. “Over half the respondents violated expected utility theory” in every pair in that section (p. 266).</p>
+<p>The Allais variant they put first (pp. 265–266):</p>
+<ul>
+<li>Problem 1. A: 2,500 with probability .33, 2,400 with probability .66, 0 with probability .01. B: 2,400 with certainty. N = 72. A 18, B 82*.</li>
+<li>Problem 2. C: 2,500 with probability .33, 0 with probability .67. D: 2,400 with probability .34, 0 with probability .66. N = 72. C 83*, D 17.</li>
+</ul>
+<p>“82 per cent of the subjects chose B in Problem 1, and 83 per cent of the subjects chose C in Problem 2.” “A majority of respondents (61 per cent) made the modal choice in both problems” (p. 266). Problem 2 deletes a .66 chance of 2,400 from both sides of Problem 1.</p>
+<p>Reflection, Table I (p. 268). The symbol is the majority preference.</p>
+<ul>
+<li>Problem 3: (4,000, .80) &lt; (3,000). N = 95 [20] [80]<em>. Problem 3': (−4,000, .80) &gt; (−3,000). N = 95 [92]</em> [8].</li>
+<li>Problem 4: (4,000, .20) &gt; (3,000, .25). N = 95 [65]* [35]. Problem 4': (−4,000, .20) &lt; (−3,000, .25). N = 95 [42] [58]. The 58 percent cell is printed without an asterisk.</li>
+<li>Problem 7: (3,000, .90) &gt; (6,000, .45). N = 66 [86]<em> [14]. Problem 7': (−3,000, .90) &lt; (−6,000, .45). N = 66 [8] [92]</em>.</li>
+<li>Problem 8: (3,000, .002) &lt; (6,000, .001). N = 66 [27] [73]<em>. Problem 8': (−3,000, .002) &gt; (−6,000, .001). N = 66 [70]</em> [30].</li>
+</ul>
+<p>Reference coding, same final wealth (p. 273):</p>
+<ul>
+<li>Problem 11. In addition to whatever you own, you have been given 1,000. A: (1,000, .50) or B: (500). N = 70. A 16, B 84*.</li>
+<li>Problem 12. Given 2,000. C: (−1,000, .50) or D: (−500). N = 68. C 69*, D 31.</li>
+</ul>
+<p>“A = (2,000, .50; 1,000, .50) = C, and B = (1,500) = D.”</p>
+<p>Curvature of v, weight cancels (p. 278):</p>
+<ul>
+<li>Problem 13. (6,000, .25) or (4,000, .25; 2,000, .25). N = 68. 18 and 82*.</li>
+<li>Problem 13'. (−6,000, .25) or (−4,000, .25; −2,000, .25). N = 64. 70* and 30.</li>
+</ul>
+<h2>Extraction</h2>
+<p>pypdf text is usable but mangles π (often as “ir,” “7T,” or “r”) and, on the extracted version of p. 275, swaps the names of the two scales. The formulas, the loss-aversion inequalities, Table I, Problems 3, 4, 11, 12, and 13, and the “compelled to assume” sentence were checked against page images. The image of p. 287 confirms the reference-shift line is π(p)v(x) = −π(1 − p)v(−y), not a coefficient λ. Problem 1’s bracket counts are from the text extract; the 82 percent and 83 percent figures are repeated on the imaged p. 266.</p>
+</main>
+<nav class="pager"><a href="subagent-04-status-quo.html">← Subagent: status quo lottery</a><a href="subagent-06-surprise-fixed-point.html">Next: Subagent: surprise and the fixed point →</a></nav>
+</div>
+</body>
+</html>

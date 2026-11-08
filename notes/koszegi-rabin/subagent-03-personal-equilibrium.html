@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Subagent: personal equilibrium</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Subagent: personal equilibrium</h1>
+<p class="kicker">Reading for question 3. The definition of personal equilibrium, and the shoe example.</p>
+<main>
+<p>The sentence runs two different parts of the model together. In Kőszegi and Rabin (2006), the reference point is defined to be recent beliefs about outcomes. Personal equilibrium is a further requirement: the plan that is optimal given those beliefs must be exactly the plan that generates them.</p>
+<h2>Correction</h2>
+<p><strong>Reference point := beliefs about outcomes.</strong> This is an assumption about what outcomes are compared to. It is imposed before any equilibrium condition.</p>
+<p><strong>Personal equilibrium := consistency of behavior with those beliefs.</strong> A plan is a personal equilibrium when, taking as given the reference lottery induced by expecting to follow the plan, the plan is still optimal in every contingency. Optimal behavior then induces exactly the beliefs that were used as the reference.</p>
+<p>Expectations do not have to “meet” a separately defined reference. By assumption, the reference is those expectations. What has to match is the action and the beliefs: the action that is best given the beliefs must reproduce the beliefs.</p>
+<h2>1. Personal equilibrium in the 2006 paper</h2>
+<h3>What the reference point is</h3>
+<p>On page 1134 they state the psychological assumption, separately from equilibrium:</p>
+<blockquote>
+<p>“In Section III we propose that a person’s reference point is the probabilistic beliefs she held in the recent past about outcomes.”</p>
+</blockquote>
+<p>On page 1137, introducing stochastic reference points, they repeat it:</p>
+<blockquote>
+<p>“where we assume that the reference point is beliefs about outcomes, we allow for the reference point itself to be stochastic.”</p>
+</blockquote>
+<p>Utility is defined before equilibrium. For a riskless outcome, consumption is \(c = (c_1,\ldots,c_K) \in \mathbb{R}^K\) and the reference bundle is \(r = (r_1,\ldots,r_K) \in \mathbb{R}^K\). Overall utility is \(u(c|r) = m(c) + n(c|r)\), where \(m(c)\) is consumption utility and \(n(c|r)\) is gain–loss utility. Gain–loss utility is separable, and on page 1139</p>
+\[
+n_k(c_k|r_k) = \mu\bigl(m_k(c_k) - m_k(r_k)\bigr),
+\]
+<p>where \(\mu(\cdot)\) is a “universal gain–loss function.” If consumption is drawn from the lottery \(F\) and the reference is a deterministic \(r\), page 1137 gives</p>
+\[
+U(F|r) = \int u(c|r)\, dF(c).
+\]
+<p>If the reference is itself a lottery \(G\), the same page gives</p>
+\[
+U(F|G) = \iint u(c|r)\, dG(r)\, dF(c).
+\]
+<p>Each realized outcome is compared with every outcome in the support of the reference lottery, and those comparisons are averaged.</p>
+<h3>What a plan is, and what the reference lottery is</h3>
+<p>On page 1143 the decision maker has beliefs \(Q\) over an index \(l \in \mathbb{R}\) of possible choice sets \(\{D_l\}_{l \in \mathbb{R}}\). Each choice set \(D_l\) is a set of lotteries over \(K\)-dimensional consumption, written \(D_l \in \Delta(\mathbb{R}^K)\).</p>
+<p>A <strong>plan</strong>, which they call a selection, is \(\{F_l \in D_l\}_{l \in \mathbb{R}}\): the lottery she intends to pick from each possible choice set.</p>
+<p>If she expects to choose \(F_l\) from \(D_l\), then, given \(Q\), she expects the outcome distribution</p>
+\[
+\int F_l \, dQ(l).
+\]
+<p>That mixture is the <strong>reference lottery</strong>. Page 1144 says so in words:</p>
+<blockquote>
+<p>“If the person expects to choose \(F_l\) from choice set \(D_l\), then given her expectations over possible choice sets she expects the distribution of outcomes \(\int F_l \, dQ(l)\). Definition 1 says that with those expectations as her reference point, she should indeed be willing to choose \(F_l\) from choice set \(D_l\).”</p>
+</blockquote>
+<h3>The consistency requirement</h3>
+<p>On page 1135, before the formal definition:</p>
+<blockquote>
+<p>“we define a ‘personal equilibrium’ as a situation where the stochastic outcome implied by optimal behavior conditional on expectations coincides with expectations.”</p>
+</blockquote>
+<p>On page 1143 they say that, in this first solution concept, “rational expectations is the only restriction we impose,” and then:</p>
+<blockquote>
+<p><strong>Definition 1.</strong> A selection \(\{F_l \in D_l\}_{l \in \mathbb{R}}\) is a <em>personal equilibrium</em> (PE) if for all \(l \in \mathbb{R}\) and \(F'_l \in D_l\),
+\[
+&gt; U\Bigl(F_l \Bigm| \int F_l \, dQ(l)\Bigr) \ge U\Bigl(F'_l \Bigm| \int F_l \, dQ(l)\Bigr).
+&gt; \]</p>
+</blockquote>
+<p>Every symbol: \(l\) indexes a contingency; \(D_l\) is the choice set in that contingency; \(F_l\) is the planned lottery in that contingency; \(F'_l\) is any other lottery in the same choice set; \(Q\) is the distribution of contingencies; \(\int F_l \, dQ(l)\) is the outcome distribution implied by the plan; \(U(\cdot|\cdot)\) is expected reference-dependent utility, outcome lottery first and reference lottery second.</p>
+<p>The same reference, \(\int F_l \, dQ(l)\), appears on both sides. A deviation \(F'_l\) is judged against the reference generated by the original plan. The reference does not switch to the deviation inside the test. The plan is a PE when no such deviation is better.</p>
+<h2>2. Assumption versus equilibrium</h2>
+<p>Yes. Setting the reference equal to beliefs is the assumption. Personal equilibrium is the additional fixed-point requirement.</p>
+<p>Page 1143 separates them. They first assume fully rational expectations. They then define PE as the restriction that, taking the reference generated by those expectations as given, the person maximizes expected utility in each contingency. A plan she would not carry out, once its own implied reference is taken as given, “she should not have expected … in the first place.”</p>
+<p>So the correct relationship is:</p>
+<ul>
+<li>reference := beliefs about outcomes;</li>
+<li>PE := the plan that is optimal given those beliefs induces exactly those beliefs.</li>
+</ul>
+<h2>3. Preferred personal equilibrium</h2>
+<p>On page 1144 there can be more than one PE. Their example is shoes at a known price: expecting to buy can make buying optimal, and expecting not to buy can make not buying optimal. Both are personal equilibria.</p>
+<p>Because there is one utility function, the PE plans can be ranked by ex ante expected utility. A person who can adopt any plan she will actually follow chooses the best one.</p>
+<blockquote>
+<p><strong>Definition 2.</strong> A selection \(\{F_l \in D_l\}_{l \in \mathbb{R}}\) is a <em>preferred personal equilibrium</em> (PPE) if it is a PE, and
+\[
+&gt; U\Bigl(\int F_l \, dQ(l) \Bigm| \int F_l \, dQ(l)\Bigr)
+&gt; \ge
+&gt; U\Bigl(\int F'_l \, dQ(l) \Bigm| \int F'_l \, dQ(l)\Bigr)
+&gt; \]
+for all PE selections \(\{F'_l \in D_l\}_{l \in \mathbb{R}}\).</p>
+</blockquote>
+<p>PPE selects, among plans that are credible given the reference they themselves create, the one with the highest ex ante utility. On the right-hand side the alternative plan is also evaluated with its own outcome distribution as its own reference. Page 1145: “PPE requires her to choose the PE plan with highest ex ante expected utility.”</p>
+<p>In a deterministic choice set, Proposition 3 on page 1145 says that, when \(\mu''(x) = 0\) for \(x \neq 0\) (assumption A3' on page 1140), a PPE puts probability 1 on a consumption bundle that maximizes \(m(c)\). A PE need not: page 1146 says that if she has come to expect an option that does not maximize consumption utility, she may still carry it out to avoid the loss from switching.</p>
+<h2>4. The 2007 concepts and the timing difference</h2>
+<p>The 2007 paper keeps the same psychological hypothesis and splits the 2006 equilibrium by <strong>when the person commits</strong>.</p>
+<p><strong>Unacclimating personal equilibrium (UPE)</strong> is the 2006 personal equilibrium, renamed. Page 1049:</p>
+<blockquote>
+<p>“When a decision is made shortly before the outcomes resulting from it occur, at that moment the reference point is fixed by past expectations, so that the decision maker maximizes expected utility taking the reference point as given. … we import from Kőszegi and Rabin (2006) the concept of an ‘unacclimating personal equilibrium’ (UPE), defined as behavior where the stochastic outcome generated by utility-maximizing choices conditional on expectations coincides with expectations.”</p>
+</blockquote>
+<p>She then chooses her favorite UPE, again called preferred personal equilibrium.</p>
+<p>Formally, page 1056, she faces choice set \(D_1\) with probability \(1-q\) and \(D_2\) with probability \(q\). A selection \(F_1 \in D_1\), \(F_2 \in D_2\) is a UPE if for each \(l \in \{1,2\}\) and any \(F'_l \in D_l\),</p>
+\[
+U\bigl(F_l \bigm| (1-q)F_1 + q F_2\bigr)
+\ge
+U\bigl(F'_l \bigm| (1-q)F_1 + q F_2\bigr).
+\]
+<p>The reference \((1-q)F_1 + q F_2\) stays put when she contemplates a deviation. Their results use \(q = 0\): she knows the choice set. PPE is the UPE with the highest utility when that same distribution is both the outcome and the reference.</p>
+<p><strong>Choice-acclimating personal equilibrium (CPE)</strong> is the early-commitment concept. Page 1049:</p>
+<blockquote>
+<p>“When a person makes a committed decision long before outcomes occur, she affects the reference point by her choice. … a ‘choice-acclimating personal equilibrium’ (CPE), defined as a decision that maximizes expected utility given that it determines both the reference lottery and the outcome lottery.”</p>
+</blockquote>
+<p>Page 1058, Definition 3: for a choice set \(D\), \(F \in D\) is a CPE if</p>
+\[
+U(F|F) \ge U(F'|F') \quad \text{for all } F' \in D.
+\]
+<p>The same page states the timing in ordinary language:</p>
+<blockquote>
+<p>“If the decision maker makes the choice \(F \in D\) today, this will determine her reference point by the time the relevant wealth outcome occurs. Thus, when evaluating her resulting expected utility, both the reference and outcome lotteries are equal to \(F\).”</p>
+</blockquote>
+<p>Just above that definition: the expectations used to evaluate the outcome “are formed after—and therefore incorporate the implications of—the decision.”</p>
+<p>So yes: under CPE she commits before the reference updates, and the update then incorporates the chosen lottery. Under UPE, which is the 2006 PE, she chooses when the reference is already fixed, so a last-minute deviation is judged against the old reference.</p>
+<p>Page 1059 makes the contrast explicit with insurance against a 50 percent chance of losing $100, available for $55. In UPE the reference does not adjust to a deviation, so paying $55 is “partly as a loss of $55 and partly as a gain of $45.” In CPE the reference does adjust, “so there is no sensation of gain or loss when paying the $55.”</p>
+<p><strong>Surprise</strong> is not another fixed point. Page 1048: “surprise” (low-probability) decisions are “situations where expectations are given exogenously to the actual choice set.” The reference is whatever she had expected, and she need not have expected the choice set she actually faces. Page 1056 treats a surprise choice set as a UPE/PPE in which that set had near-zero probability, so the reference is approximately the lottery she had expected from the other set.</p>
+<p><strong>Status quo</strong> is the reference-point theory they are contrasting, not an equilibrium refinement. The reference in their model is recent beliefs. If those beliefs happen to be “retain the status quo of $0,” page 1048 says the prediction matches prospect theory. If beliefs and the status quo differ, outcomes are scored against the beliefs.</p>
+<h2>5. The 2009 equilibrium, briefly</h2>
+<p>The 2009 paper applies preferred personal equilibrium to state-contingent consumption plans, with utility from changes in beliefs about consumption (“news”). Page 910:</p>
+<blockquote>
+<p>“an implemented plan must be a ‘preferred personal equilibrium’: in each period it maximizes expected reference-dependent utility given the expectations generated by the plan, with the constraint that continuation plans must be consistent with a similar maximization in the future.”</p>
+</blockquote>
+<p>Page 915: beliefs must be consistent with rationality, meaning she “correctly anticipates the implications of her plans, and cannot make plans she knows she will not carry through.” The solution concept used in the text is PPE: the plan that is consistent with future behavior in each period and that maximizes expected reference-dependent utility going forward.</p>
+<p>Page 916, Definition 1, makes that recursive. Let \(d_t\) be a state-contingent plan from period \(t\) on, and \(D_t\) the set of feasible such plans. The credible sets \(\{D_t^*\}_{t=0}^T\) are defined backward. A plan \(d_t \in D_t\) is in \(D_t^*\) if, given the expectations generated by \(d_t\), in any contingency (i) it prescribes a continuation in \(D_{t+1}^*\) that maximizes the expectation of \(U^t\), and (ii) it prescribes a period-\(t\) action that maximizes the expectation of \(U^t\), assuming future plans satisfy (i). A plan \(d_1 \in D_1\) is a PPE if \(d_1 \in D_1^*\) and it maximizes the expectation of \(U^1\) among plans in \(D_1^*\).</p>
+<p>The equilibrium content is rational expectations about the consumption path induced by the plan, plus credibility: each period’s action is optimal given the beliefs the plan generates, and given that future selves likewise carry out a credible continuation.</p>
+<h2>6. The shoe example</h2>
+<p>Section IV, pages 1146–1147. Two dimensions, \(m(c) = c_1 + c_2\). Here \(c_1 \in \{0,1\}\) is whether she gets the shoes, so their intrinsic value is $1, and \(c_2\) is dollar wealth. The endowment is \((0,0)\). Gain–loss utility satisfies</p>
+\[
+\mu(x) = \eta x \text{ for } x &gt; 0, \qquad \mu(x) = \eta\lambda x \text{ for } x \le 0,
+\]
+<p>with \(\eta &gt; 0\) the weight on gain–loss utility and \(\lambda &gt; 1\) the coefficient of loss aversion.</p>
+<p>The price most favorable to buying still is not worth paying once</p>
+\[
+p &gt; p_{\max} \equiv \frac{1+\eta\lambda}{1+\eta}.
+\]
+<p>The price least favorable to buying is still worth paying when</p>
+\[
+p &lt; p_{\min} \equiv \frac{1+\eta}{1+\eta\lambda}.
+\]
+<p>At a deterministic price:</p>
+<ul>
+<li>If \(p &gt; p_{\max}\), the unique PE is not to buy. Expecting to buy is not a personal equilibrium: even the expectations most conducive to buying do not make her buy.</li>
+<li>If \(p &lt; p_{\min}\), the unique PE is to buy. Expecting not to buy is not a personal equilibrium.</li>
+<li>If \(p_{\min} \le p \le p_{\max}\), both “buy for sure” and “not buy for sure” are pure-strategy personal equilibria. Expecting the shoes makes not buying feel like a loss of shoes, so she buys even at a high price. Expecting not to buy makes paying feel like a loss of money, so she does not buy.</li>
+<li>The PPE selects one of these. Page 1147: “the consumer’s PPE is typically unique: she buys if and only if \(p &lt; 1\).”</li>
+</ul>
+<p>The paper’s own illustration of a plan that is not a PE is on page 1143: if, given the reference implied by her planned purchases at each price, there is some price at which she would rather not carry the plan out, “she should not have expected these plans in the first place.”</p>
+</main>
+<nav class="pager"><a href="subagent-02-expectations-shocks.html">← Subagent: expectations and shocks</a><a href="subagent-04-status-quo.html">Next: Subagent: status quo lottery →</a></nav>
+</div>
+</body>
+</html>

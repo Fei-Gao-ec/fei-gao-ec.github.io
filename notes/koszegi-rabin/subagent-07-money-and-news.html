@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Subagent: 2007 risk and 2009 news</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Subagent: 2007 risk and 2009 news</h1>
+<p class="kicker">Reading for the follow-up on preferences over money and news about consumption.</p>
+<main>
+<p>The same preferences produce different risk attitudes once the reference point is recent beliefs rather than a fixed status quo. Pages below are the journal pages.</p>
+<h1>Part A. Kőszegi and Rabin (2007), preferences over money</h1>
+<p><em>American Economic Review</em> 97(4), September 2007. Formal results for modest stakes set consumption utility linear, \(m(w)=w\) (p. 1052). The reference point is recent probabilistic beliefs, not an arbitrary status quo.</p>
+<h2>The question</h2>
+<p>People dislike modest risks far more than diminishing marginal utility of lifetime wealth can justify, and the same person sometimes refuses insurance and sometimes buys very expensive insurance. Existing reference-point stories (status quo, lagged status quo, the chosen lottery’s certainty equivalent) each fit some of these facts and contradict others (pp. 1047–1048). The paper asks how one preference, with the reference point equal to recent beliefs, produces those different attitudes as the environment changes, for modest stakes, while large stakes collapse back toward ordinary consumption utility.</p>
+<p>The abstract states the answer (p. 1047):</p>
+<blockquote>
+<p>It replicates “classical” prospect theory—including the prediction of distaste for insuring losses—when exposure to risk is a surprise, but implies first-order risk aversion when a risk, and the possibility of insuring it, are anticipated. A prior expectation to take on risk decreases aversion to both the anticipated and additional risk. For large-scale risk, the model allows for standard “consumption utility” to dominate reference-dependent “gain-loss utility,” generating nearly identical risk aversion across situations.</p>
+</blockquote>
+<h2>Utility, with probabilities entering linearly</h2>
+<p>For a sure wealth level \(w\) and a sure reference \(r\) (p. 1050),</p>
+\[
+u(w\mid r)=m(w)+\mu\bigl(m(w)-m(r)\bigr).
+\]
+<p>\(m\) is ordinary consumption utility. \(\mu\) is gain-loss utility, applied to the change in consumption utility. Loss aversion is the assumption that losses count more than gains: for small stakes, the left derivative of \(\mu\) at 0 exceeds the right derivative (assumption A4, pp. 1050–1051). Diminishing sensitivity is that \(\mu\) bends toward the horizontal as one moves away from 0 (A3).</p>
+<p>Beliefs can be a lottery \(G\). A realized \(w\) is then scored as the average of \(u(w\mid r)\) over reference outcomes \(r\) drawn from \(G\). If the outcome itself is a lottery \(F\), utility is the double integral (equations (1) and (2), p. 1050):</p>
+\[
+U(F\mid G)=\iint u(w\mid r)\,dG(r)\,dF(w).
+\]
+<p>Every outcome is compared with every outcome in the reference lottery, and the comparisons are averaged with the actual probabilities. There is no Kahneman–Tversky probability-weighting function. They say so, and they say what that misses (p. 1050):</p>
+<blockquote>
+<p>For simplicity and contrary to Kahneman and Tversky (1979) and its extensions, we assume that preferences are linear in probabilities. This means that our model will get some predictions—e.g. regarding insurance of low-probability losses—wrong.</p>
+</blockquote>
+<p>The fact they have in mind is spelled out later (p. 1057). In status-quo prospect theory, diminishing sensitivity pushes people away from insuring losses, but overweighting a small probability can push the other way:</p>
+<blockquote>
+<p>For low-probability losses—such as those covered by extended warranties and low deductibles on homeowners’ insurance—the overweighting of low probabilities in conventional status quo prospect theory can counteract diminishing sensitivity and create aversion to risk.</p>
+</blockquote>
+<p>Their model has the diminishing-sensitivity piece and not the overweighting piece, so it will not, by itself, make people insure rare losses. (The 2006 parent model makes the same simplification: “Despite the clear evidence that people’s evaluation of prospects is not linear in probabilities, our model simplifies things by assuming preferences are linear,” <em>QJE</em> 2006, p. 1137, note 2.)</p>
+<h2>One preference, three environments: the $55 example</h2>
+<p>The running example is whether to pay $55 to insure a 50 percent chance of having to pay $100 (pp. 1048–1049, 1056, 1059). Consumption utility is approximately linear at this scale, so attitudes come from \(\mu\).</p>
+<h3>(i) Surprise. Reference = status quo $0. She refuses the insurance.</h3>
+<p>She had expected to keep $0, and the choice arrives as a surprise. Both options are losses relative to $0: a sure loss of $55, or a 50 percent chance of losing $100. The paper’s prediction is prospect theory’s (p. 1048):</p>
+<blockquote>
+<p>If she had expected to retain the status quo of $0, our model makes the same prediction as prospect theory: because of diminishing sensitivity, she does not wish to insure the risk.</p>
+</blockquote>
+<p>Diminishing sensitivity makes the value function convex over losses, so she is risk-loving among losses. The sure $55 hurts more, per dollar, than the risky $100, and she keeps the gamble. Loss aversion is not what decides this case. Relative to $0 she is choosing between two losses, not between a gain and a loss. On p. 1053 they note that expecting the status quo makes behavior identical to prospect theory with decision weights set equal to probabilities.</p>
+<h3>(ii) Anticipated risk, choice made at the last minute. UPE and PPE. She may buy.</h3>
+<p>The decision is expected, but she cannot commit until shortly before the outcome (short-term rental insurance is their example, p. 1055). By then the reference is already fixed by the plan she had been expecting to carry out. She maximizes utility taking that reference as given. A plan is an unacclimating personal equilibrium (UPE) only if, given the reference the plan itself creates, she still wants to follow it. The preferred personal equilibrium (PPE) is the UPE with the highest expected utility (Definitions 1 and 2, p. 1056). These concepts are imported from the 2006 paper.</p>
+<p>If the plan was to pay $55, that payment matches the reference and generates no gain or loss. Taking the gamble instead is a 50–50 of losing $45 (paying $100 rather than the expected $55) or gaining $55 (paying nothing rather than $55). The introduction (pp. 1048–1049):</p>
+<blockquote>
+<p>If she had expected to pay $55 for insurance, however, paying that amount generates no gain or loss, while taking the gamble exposes her to a fifty-fifty chance of losing $45 or gaining $55. With a conventional estimate of two-to-one loss aversion, she strongly dislikes this gamble and buys the insurance.</p>
+</blockquote>
+<p>So “buy the insurance” is a credible plan: the budgeted premium is not felt as a loss, and the uninsured gamble is. They treat this as the formal version of Kahneman and Tversky’s distinction between costs and losses (p. 1057): “beliefs about wealth take into account a planned premium payment, so that such a payment is not evaluated as a loss. By contrast, whether or not a person had expected to buy insurance, a bad realization of a stochastic lottery is evaluated as a loss.”</p>
+<p>The uninsured lottery can also be a credible plan, which is why she only <em>may</em> buy. Equation (3) on p. 1056 asks when the lottery is a UPE: the reference stays the lottery, and the lottery is preferred to paying $55 if</p>
+\[
+\begin{align*}
+&amp;\Bigl[\tfrac12(w-100)+\tfrac12 w\Bigr]
++\Bigl[\tfrac14\mu(100)+\tfrac14\mu(-100)\Bigr]\\
+&amp;\geq [w-55]
++\Bigl[\tfrac12\mu(45)+\tfrac12\mu(-55)\Bigr].
+\end{align*}
+\]
+<p>Read left to right. The left side is the lottery evaluated against itself: expected consumption utility, plus gain-loss from comparing the two outcomes with each other (a gain of 100 and a loss of 100, each with probability 1/4; the other half of the comparisons match and contribute nothing). The right side is the sure payment of $55 while the reference is still the lottery. That payment is partly a gain of $45, relative to the state in which she would have lost $100, and partly a loss of $55, relative to the state in which she would have lost nothing. Their gloss (p. 1059): “In UPE, the reference point does not adjust to the deviation, so paying $55 is assessed partly as a loss of $55 and partly as a gain of $45.” If that loss looms large, she will not switch into insurance at the last minute. Several UPE can exist. PPE keeps the best one she will actually follow. Because the reference is already fixed, she does not internalize how a different plan would have felt (p. 1056).</p>
+<p>The paper’s own summary of when this bites (p. 1049): she can be better off expecting to buy expensive insurance than expecting to bear the risk, and still refuse to pay if she is uncommitted and the moment of choice arrives with the risky expectation already in place. The distaste for the risk then “manifests itself in behavior when the insurance decision is made up front, as in CPE, but not when the decision is made later, as in PPE.”</p>
+<h3>(iii) Early commitment. CPE. She buys more readily.</h3>
+<p>If she commits long before the outcome, the choice itself determines the beliefs she will later use as the reference. A choice-acclimating personal equilibrium (CPE) is a lottery that maximizes expected utility when both the outcome and the reference equal that lottery (Definition 3, p. 1058). Equation (4) on p. 1059 is the same comparison with one change. Selecting the lottery is a CPE if</p>
+\[
+\begin{align*}
+&amp;\Bigl[\tfrac12(w-100)+\tfrac12 w\Bigr]
++\Bigl[\tfrac14\mu(100)+\tfrac14\mu(-100)\Bigr]\\
+&amp;\geq [w-55]+[0].
+\end{align*}
+\]
+<p>The left side is unchanged: the lottery still hurts through its own gain-loss, because a loss of 100 counts more than a gain of 100. The right side is the premium alone. “In CPE, the reference point does adjust to the deviation, so there is no sensation of gain or loss when paying the $55” (p. 1059). A fully expected premium has zero gain-loss utility. She can commit to her favorite lottery, including one she would abandon at the last minute, so behavior and ex ante utility do not come apart (p. 1059). Proposition 8 (p. 1060): under the no-diminishing-sensitivity case A3′, if she chooses the less risky of two lotteries in PPE, she does not choose the riskier one in CPE. In Table 1, for the small gamble with no background risk, the insurance premium she will pay is $48 in PPE and $71 in CPE (p. 1055).</p>
+<p>UPE, PPE, and CPE are not three utility functions. The utility of holding the lottery is the same left-hand side in (3) and (4). What changes is whether the reference moves with the choice (p. 1059).</p>
+<h2>First-order risk aversion</h2>
+<p>Here it means: when the reference is a sure amount, she turns down a small bet that is better than fair, as long as it is not better by enough.</p>
+<p>Proposition 3 (p. 1056): if \(m\) is linear, then for any sure \(w\) and any nondegenerate mean-zero lottery \(F\) with bounded support, there is a range of small scales \(t&gt;0\) and small bonuses \(k&gt;0\) such that the unique PPE in the choice set \(\{w,\, w+t(F+k)\}\) is the sure \(w\). The added \(k\) makes the bet better than fair. If both the scale and the bonus are small enough, she still refuses.</p>
+<p>The intuition they give (pp. 1056–1057): the sure amount is a UPE because, once she expects it, loss aversion makes her turn the gamble down. It is the PPE because “the gamble exposes the decision maker to a sense of loss from bad outcomes that outweighs the sense of gain from good outcomes, and hence yields lower expected utility than \(w\).” With the reference at a sure amount, a gain is felt as a gain and the matching loss is felt as a loss, and the loss counts more (A4). For a symmetric bet the two sides are equally likely, so expected gain-loss utility is negative. That penalty is proportional to the scale of the bet. The advantage of being slightly better than fair shrinks with the scale as well, and for a small bet the penalty wins unless the edge \(k\) is large. Classical smooth expected utility rejects small bets only at second order, through curvature. The kink of \(\mu\) at zero makes the rejection first order.</p>
+<p>The same force is why a fully expected premium is attractive: the premium, once expected, sits on the reference and contributes no gain-loss, while the uninsured lottery does (p. 1057).</p>
+<h2>Background risk lowers aversion to a further small risk</h2>
+<p>Expecting risk, or already facing risk, makes an additional small risk less painful. If the new gamble is added on top of a risky reference, its good outcomes partly cancel losses already expected, and its bad outcomes partly cancel gains already expected. Good outcomes are therefore more welcome than pure gains, and bad outcomes are less painful than pure losses (Proposition 1 and the surrounding prose, p. 1053). If the added risk is small relative to a widely spread reference lottery, neither loss aversion nor diminishing sensitivity has much to bite on, and she is approximately risk neutral toward it (Proposition 2, p. 1054). The same comparative statics hold inside PPE and CPE (Propositions 5 and 6, p. 1058; the CPE analogues on p. 1059). Expecting the risk does not mean she likes it. She is already bearing stochastic losses, which lowers expected utility even while it lowers aversion to a further risk (p. 1054).</p>
+<p>Table 1 (p. 1055) uses \(m(w)=10{,}000\ln(w)\), \(\mu(x)=\sqrt{x}\) for \(x\geq 0\), and \(\mu(x)=-3\sqrt{-x}\) for \(x&lt;0\). WTP is the gamble’s mean minus its certainty equivalent: the premium she will pay to insure it. All three gambles have mean $1,000,000. Gamble I is the modest one, a 50–50 of $999,900 and $1,000,100.</p>
+<p>In the PPE panel, with no background risk, that premium is $48.0. An unavoidable 50–50-style background risk on the order of $100, written \(U[-\$100,\$100]\), cuts it to 8.54. Background risk of order $1,000 cuts it to 0.56, and of order $10,000 to 0.03. The text rounds the first step (p. 1058):</p>
+<blockquote>
+<p>An unavoidable risk on the order of a mere $100 decreases the premium she is willing to pay for insurance from $48 to $9, and unavoidable risk on the order of $1,000 makes her virtually risk neutral.</p>
+</blockquote>
+<p>The CPE column falls the same way, from $71.0 with no background risk to 28.5, 1.84, and 0.07. The surprise panel tells the same qualitative story for a fixed reference lottery: expected risk “on the order of $1,000 or $10,000” already drives willingness to pay for insurance on Gamble I “to essentially zero” (pp. 1054–1055). The corresponding rows are 0.27 and 0.02.</p>
+<h2>Large stakes, in one sentence</h2>
+<p>For a very risky gamble, most outcomes lie far from any reasonable reference point, diminishing sensitivity drives the marginal gain-loss comparison toward zero, and “risk attitudes are close to what they would be without gain-loss utility, being largely determined by \(m(\cdot)\) independently of the environment” (Section V, p. 1061; the abstract on p. 1047 says the same thing). In Table 1 the $500,000-scale Gamble III has an insurance premium between about $128,000 and $138,500 in every row, and the inferred coefficient of relative risk aversion stays near 1. The environment has stopped mattering.</p>
+<h1>Part B. Kőszegi and Rabin (2009), news utility</h1>
+<p><em>American Economic Review</em> 99(3), June 2009, pp. 909–936. This is the dynamic consumption model. The 2006 paper is used only to check what 2009 says it keeps.</p>
+<h2>The question</h2>
+<p>How do people consume and save if they are loss averse over changes in beliefs about current and future consumption? Wealth matters because a change in wealth is news about consumption. The abstract (p. 909):</p>
+<blockquote>
+<p>We develop a rational dynamic model in which people are loss averse over changes in beliefs about present and future consumption. Because changes in wealth are news about future consumption, preferences over money are reference-dependent.</p>
+</blockquote>
+<p>“Bad news is more painful than good news is pleasant” (p. 909). Plans have to be credible: beliefs are rational expectations of a plan she will actually follow.</p>
+<h2>Contemporaneous gain-loss versus prospective gain-loss</h2>
+<p>Period-\(t\) utility is consumption utility plus a weighted sum of gain-loss utilities from belief changes (equation (1), pp. 912–913):</p>
+\[
+u_t=m(c_t)+\sum_{\tau\geq t}\gamma_{t,\tau}\,N(F_{t,\tau}\mid F_{t-1,\tau}),
+\]
+<p>with \(\gamma_{t,t}=1\) and \(\gamma_{t,\tau}\leq 1\) for \(\tau&gt;t\).</p>
+<p>Contemporaneous gain-loss is \(N(F_{t,t}\mid F_{t-1,t})\): how today’s realized consumption compares with the beliefs about today’s consumption that she entered the period with (pp. 912–913). Prospective gain-loss is \(N(F_{t,\tau}\mid F_{t-1,\tau})\) for \(\tau&gt;t\): the change, between last period and this period, in beliefs about a future period’s consumption (p. 912). Both use the same loss-averse \(\mu\). The weights say that news about a nearer period can hurt or please more than news about a distant one. The case the consumption results use is \(0&lt;\gamma_{t,\tau}&lt;1\) for future dates, with the weight larger when the date is closer (p. 913).</p>
+<p>They are explicit that 2006 and 2007 shut this second channel down (p. 913):</p>
+<blockquote>
+<p>By assuming that it is only the contrast between contemporaneous consumption and prior expectations that generates sensations of gain and loss, previous beliefs-based theories of reference-dependent utility in Stone (2005) and Kőszegi and Rabin (2006, 2007) have implicitly made exactly this parameter restriction [\(\gamma_{t,\tau}=0\) for all \(\tau&gt;t\)], and as such have ignored considerations that are central in this paper.</p>
+</blockquote>
+<p>What 2009 does keep from 2006, in its own words: rational expectations built on credible plans (p. 910, note 2); preferred personal equilibrium, “defined originally in Kőszegi and Rabin (2006)” (p. 921); and the same universal gain-loss function \(\mu\), with properties (A0)–(A4) (p. 914). In some monetary reductions, “the decision maker evaluates each outcome relative to all possibilities in the reference lottery, as proposed by Kőszegi and Rabin (2006, 2007)” (p. 921). Separately, 2009 drops 2006’s assumption of equal loss aversion on money and on goods. If future news is downweighted, “a person will be less loss averse over money that will be used for future consumption than over immediately consumed goods” (p. 921).</p>
+<h2>How a belief change is scored</h2>
+<p>She lines the old distribution and the new distribution up by percentile and applies \(\mu\) to the gap in consumption utility at each percentile. Worst percentile with worst percentile, second-worst with second-worst, and so on (pp. 913–914). Formally, \(c_F(p)\) is the consumption at percentile \(p\), and in dimension \(k\) (p. 914)</p>
+\[
+N^k(F^k_{t,\tau}\mid F^k_{t-1,\tau})
+=\int_0^1 \mu\Bigl(m^k\bigl(c_{F^k_{t,\tau}}(p)\bigr)-m^k\bigl(c_{F^k_{t-1,\tau}}(p)\bigr)\Bigr)\,dp.
+\]
+<p>If the two distributions are the same, every gap is zero and \(N=0\).</p>
+<p>They consider, and reject, the alternative in which each outcome under the new beliefs is compared with each outcome under the old beliefs. That alternative is the 2006 formula. Equation (2) of Kőszegi and Rabin (2006, p. 1137) is \(U(F\mid G)=\iint u(c\mid r)\,dG(r)\,dF(c)\), and the 2006 text says the sensation “derives from comparing it with all outcomes possible under the reference lottery” (p. 1137; the same double integral is equation (2) of the 2007 paper). The 2009 sentence does not name 2006, but it is aimed at that comparison (p. 914):</p>
+<blockquote>
+<p>Under the other alternative formulation, a decision maker compares each possible outcome under her new beliefs to each possible outcome under her old beliefs, rather than just the outcome at the same percentile. This would imply that she experiences gain-loss utility even if she does not change her beliefs, which seems unrealistic.</p>
+</blockquote>
+<p>(The other alternative they mention, comparing only the means, “would make little difference for findings in the current paper,” except for a caveat in Section III. Note 9, p. 914.)</p>
+<h2>The Johnny Depp example, including resolution of a known lottery</h2>
+<p>Page 914. She had believed she had a 50–50 chance of 0 or 100 minutes with Johnny Depp.</p>
+<ul>
+<li>New belief 50–50 of 20 or 120 minutes: a gain of 20 minutes. Every percentile moved up by 20.</li>
+<li>New belief 50–50 of 20 or 80: “mixed feelings,” a gain from comparing 20 with 0 and a loss from comparing 80 with 100.</li>
+<li>New belief 60–40 of 0 or 100: a loss equal to a 10 percent chance of losing 100 minutes.</li>
+<li>The lottery was correct, and it is now resolved. With probability 1/2 she gets 0, and comparing that sure 0 with the 0/100 lottery “feels like a one-half chance of losing 100 minutes with Johnny.” With probability 1/2 she gets 100, which “feels like a one-half chance of gaining 100 minutes with Johnny.”</li>
+</ul>
+<p>Resolution is news. The prior distribution and the realized sure outcome are not the same distribution, so the percentile gaps are not all zero. An expected lottery, at the moment it resolves, does generate gain-loss utility.</p>
+<h2>What “a fully expected sure thing carries no gain-loss utility” means</h2>
+<p>It means beliefs have already settled on a sure outcome, and they do not change. Percentile by percentile the gap is zero, so \(N=0\). That is the property the cross-product lacks, which is why they reject it.</p>
+<p>Two places make the same point for plans. Note 7 (p. 912): “when consumption in a given period implements plans that were always held, our specification below implies that prospective gain-loss utility regarding that period is zero in all prior periods.” And once a deterministic plan is chosen, “ex ante expected gain-loss utility (which is zero for deterministic plans and negative for nondeterministic plans)” (p. 924). After she consumes in period 1 she forms the expectations that will be the period-2 reference, “so there is no gain-loss utility in that period” if she then consumes what she now expects (p. 924).</p>
+<p>The Depp resolution is the complementary case. A sure thing that was already believed carries nothing. A sure thing that arrives by resolving a lottery is a change in beliefs, and it does carry gain-loss utility.</p>
+<h2>Preferred personal equilibrium, smoothing, and the predictions to remember</h2>
+<p>A plan is credible if, in every contingency, the expectations it generates are exactly the ones under which that period’s self wants to carry it out, and the same is true of every continuation (Definition 1, pp. 916–917). She “can form any credible expectations at will—and change future preferences as a result” (p. 917). The PPE is the credible plan with the highest expected reference-dependent utility from period 1 on. Preferences themselves are time consistent. A plan can still fail to be credible, because period 1 takes the reference as given and period 0 anticipates the deviation.</p>
+<p><strong>Smoothing.</strong> With deterministic wealth, interest rate zero, and strictly concave \(m\), the ex ante optimum is \(c_1=c_2=W/2\). That path also maximizes expected gain-loss utility, which is zero on any deterministic plan and negative on a random one (p. 924). It is the PPE when prospective news is weighted heavily enough: if \(\gamma\geq 1/\lambda\), the PPE is \((W/2,W/2)\) (Proposition 5, p. 925). The prospective loss from cutting the future, in order to raise today, is painful enough to stop the deviation. If \(\gamma&lt;1/\lambda\), that smooth plan is not credible, and every credible plan has \(c_1&gt;c_2\).</p>
+<p><strong>Overconsumption, to engineer a pleasant surprise.</strong> Suppose she had planned the smooth path and \(\gamma\) is small. Then “pleasantly surprising herself with extra consumption in period 1 at the cost of lowering consumption plans for period 2 increases utility ex post, so that without commitment the optimal plan is not consistent” (p. 911; the derivative is equation (6) on p. 925). This is not present bias. Period 0 knows she would deviate, that knowledge raises the period-1 reference, and expected utility falls. “This beliefs-based time inconsistency arises even though preferences in our model are time consistent” (p. 925). If \(\gamma\geq 1/\lambda\), the prospective loss is an internal commitment device and the overconsumption disappears.</p>
+<p><strong>A deterministic plan is a bright line.</strong> For \(1/\lambda\leq\gamma&lt;1\), stochastic wealth that resolves in period 1 makes her overconsume at every wealth realization, whereas knowing any one of those wealth levels in advance would have produced no overconsumption (pp. 911, 926). The sentence to remember (p. 926):</p>
+<blockquote>
+<p>A prescribed consumption path that has high probability (or is deterministic) acts as a bright line that discourages overconsumption: the sense of gain from increasing consumption in period 1 is smaller than the sense of loss from the corresponding decrease in consumption in period 2.</p>
+</blockquote>
+<p>Once the future level is already random, a revision is scored more symmetrically, and the plan loses that disciplining force. If instead she learns her wealth only in period 2, period-1 consumption is deterministic and uncertainty does not undermine self-control in the same way (p. 926).</p>
+<p><strong>Small surprise gains are consumed sooner than small surprise losses.</strong> Proposition 7 (pp. 926–927), for \(\gamma&lt;1\), after an unexpected shift from a deterministic wealth \(W\) to \(W+y\):</p>
+<blockquote>
+<p>(i) the person consumes sufficiently small windfalls entirely in period 1, leaving period-2 consumption unchanged; and (ii) she does not cut immediate consumption in response to small bad surprises, absorbing the entire shock in period 2.</p>
+</blockquote>
+<p>The reason (p. 927): “consuming a windfall gain immediately is more pleasant than planning for higher future consumption, and unexpectedly lowering consumption immediately is more painful than planning for lower future consumption.” Larger shocks are split across the two periods. The abstract’s version (p. 909) is the same prediction: she will “increase immediate consumption following surprise wealth increases, and delay decreasing consumption following surprise losses.”</p>
+<p>One further headline, because the abstract leads with it. If a mean-zero risk is resolved only in period 2, future consumption is sometimes low relative to the other outcome she also expected, and loss aversion makes that painful. Saving more lowers the marginal utility of period-2 consumption and so shrinks the pain. That is their first-order precautionary-savings motive (pp. 911, 928). In that calculation, period 1 brings no news, so prospective gain-loss utility in period 1 is zero (p. 928).</p>
+</main>
+<nav class="pager"><a href="subagent-06-surprise-fixed-point.html">← Subagent: surprise and the fixed point</a><a href="subagent-08-restatements.html">Next: Subagent: the two restatements →</a></nav>
+</div>
+</body>
+</html>

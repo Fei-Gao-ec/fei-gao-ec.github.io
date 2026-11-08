@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Subagent: surprise and the fixed point</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Subagent: surprise and the fixed point</h1>
+<p class="kicker">Reading for the follow-up on surprise, exogenous expectations, and what the fixed point adds.</p>
+<main>
+<p>Kőszegi and Rabin (2006), <em>Quarterly Journal of Economics</em> 121(4), journal pages 1133–1165, and Kőszegi and Rabin (2007), <em>American Economic Review</em> 97(4), journal pages 1047–1073. Page numbers below are the printed journal pages. There is no numbered definition titled “surprise decision.” The 2007 account is prose in Section II and a limit of unacclimating personal equilibrium. The 2006 paper uses the same lagged-expectations idea and the same small-probability construction, without that name.</p>
+<h2>1. Surprise / exogenous expectations</h2>
+<p><strong>What is held fixed, and what is chosen.</strong> A surprise decision is a low-probability choice set. Beliefs about outcomes were formed for a different, nearly certain environment, so the reference point is handed in from outside the choice now faced. The person then picks the best available lottery given that fixed reference point. She does not re-solve for beliefs that match the choice.</p>
+<p>2007, p. 1048: they begin with “‘surprise’ (low-probability) decisions, modelled in extreme form as situations where expectations are given exogenously to the actual choice set.”</p>
+<p>2007, p. 1052, opening of Section II: the section studies “risk-taking behavior when the reference point is fixed, considering both deterministic and stochastic reference points. The analysis is the limiting case of UPE/PPE behavior when the decision maker finds herself in an ex ante low-probability situation, so that she has fixed expectations formed essentially independently of the relevant choice set.”</p>
+<p>2007, p. 1056, embeds that limit in the equilibrium definition. If she had expected choice set \(D_2\) with near certainty and the actual set \(D_1\) with very small probability, and had expected to choose \(F \in D_2\) — “perhaps because \(D_2 = \{F\}\), so that she thought she would have no choice” — then “her reference point would be approximately \(F\) independently of \(D_1\) or what she had been expecting to choose from \(D_1\).”</p>
+<p>Held fixed: the reference distribution \(G\), equal to those past beliefs. Chosen: the lottery in the surprise set, by maximizing \(U(\cdot \mid G)\).</p>
+<p>The same split is already in the utility function, before any fixed point. For riskless wealth, 2007, p. 1050,</p>
+\[
+u(w \mid r) = m(w) + \mu\bigl(m(w) - m(r)\bigr).
+\]
+<p>If the reference is a distribution \(G\) and wealth is drawn from \(F\),</p>
+\[
+U(F \mid G) = \iint u(w \mid r)\, dG(r)\, dF(w).
+\]
+<p>\(G\) can be any belief. Nothing in this formula requires \(G = F\).</p>
+<p>2006 has the same utility and the same timing, without the word “surprise.” 2006, p. 1141, footnote 9, and 2007, p. 1051, footnote 6, are the lagged-beliefs statement (quoted below). 2006, p. 1147, studies willingness to pay “without worrying about how her behavior feeds back into her expectations,” and says the calculations “are limiting cases of environments where \(p_M\) occurs with a small probability.” That is the shoe-market version of a surprise price: beliefs are fixed by the prices she thought were likely, and \(p_M\) is a low-probability draw.</p>
+<p><strong>The insurance example, status quo of $0.</strong> 2007, pp. 1048–1049, uses one pair of numbers for two different reference points. The decision is whether to pay $55 to insure a 50 percent chance of having to pay $100. Consumption utility is approximately linear at this scale, so formal results in Section II set \(m(w) = w\).</p>
+<p>Status-quo reference, the surprise case the question asks about. 2007, p. 1048: “If she had expected to retain the status quo of $0, our model makes the same prediction as prospect theory: because of diminishing sensitivity, she does not wish to insure the risk.” The paper states that conclusion in prose. It does not display the algebra for the $0 reference.</p>
+<p>The same paragraph then switches the reference. 2007, pp. 1048–1049: “If she had expected to pay $55 for insurance, however, paying that amount generates no gain or loss, while taking the gamble exposes her to a fifty-fifty chance of losing $45 or gaining $55. With a conventional estimate of two-to-one loss aversion, she strongly dislikes this gamble and buys the insurance.” Losing $45 and gaining $55 are relative to the expected premium: \(100 - 55 = 45\) and \(55 - 0 = 55\). That second case is an expected purchase, not the status-quo surprise. The displayed inequality for it is (3) on 2007, p. 1056, and it is a personal-equilibrium question (the lottery itself is the reference point), so it belongs in Section 2 below.</p>
+<p><strong>What “matches prospect theory” includes.</strong> When she expected to keep the status quo, 2007, p. 1053: “Proposition 2 of Kőszegi and Rabin (2006) shows that when the decision maker expects to keep the status quo, her behavior is identical to that predicted by prospect theory modified to equate decision weights with probabilities.” The ingredients that carry over are loss aversion and diminishing sensitivity. 2006, pp. 1139–1140, Assumptions A0–A4: \(\mu(0) = 0\), \(\mu\) strictly increasing, losses loom larger than equal-sized gains (A2 for large stakes, A4 for small stakes, with \(\mu'_-(0)/\mu'_+(0) = \lambda &gt; 1\)), and diminishing sensitivity (A3: \(\mu'' \le 0\) for gains and \(\mu'' \ge 0\) for losses). 2006, Proposition 2, pp. 1140–1141: if consumption utility \(m\) is linear and \(\mu\) satisfies A0–A4, then \(u(c \mid r) - u(r \mid r)\) can be written as a sum of functions of \(c_k - r_k\), each of which itself satisfies A0–A4. 2006, p. 1141: for small changes the utility function “shares the qualitative properties of standard formulations of prospect theory.” Footnote 7 on the same page: the proof shows that “the degree of loss aversion observed in \(u(c \mid r)\) is less than the degree assumed in \(\mu(\cdot)\).”</p>
+<p>For insurance specifically, the match is the attitude toward moderate and high-probability losses when the reference is the status quo. 2007, p. 1057: “status quo prospect theory says both that loss aversion does not play a role, and that diminishing sensitivity pushes people toward not insuring.” The $55 policy against a 50 percent chance of a $100 loss is their illustration of that push. The abstract, 2007, p. 1047, says the model “replicates ‘classical’ prospect theory—including the prediction of distaste for insuring losses—when exposure to risk is a surprise.”</p>
+<p><strong>What the match does not include: linear probabilities.</strong> Both papers evaluate a lottery by its expected reference-dependent utility. 2006, p. 1137, footnote 2: “Despite the clear evidence that people’s evaluation of prospects is not linear in probabilities, our model simplifies things by assuming preferences are linear.” 2007, p. 1050: “For simplicity and contrary to Kahneman and Tversky (1979) and its extensions, we assume that preferences are linear in probabilities. This means that our model will get some predictions—e.g. regarding insurance of low-probability losses—wrong.” So the match is prospect theory with decision weights set equal to probabilities. Probability weighting is omitted. The $55 example is a one-half probability; the paper’s own example of a prediction this omission gets wrong is insurance against low-probability losses, where ordinary prospect theory’s overweighting of small probabilities can push toward buying coverage.</p>
+<p><strong>Other surprise examples, and lagged beliefs.</strong></p>
+<p>Unexpected lab windfall versus an expected salary. 2006, p. 1135: “while an unexpected monetary windfall in the lab may be assessed as a gain, a salary of $50,000 to an employee who expected $60,000 will not be assessed as a large gain relative to status-quo wealth, but rather as a loss relative to expectations of wealth.” 2007, p. 1048, gives the same coding with different numbers: an employee who expected $50,000 “will assess a salary of $40,000 as a loss,” and a taxpayer who expected to pay $30,000 “will treat a $20,000 tax bill as a gain.” 2007, p. 1051: someone who expected $100,000 “would assess a salary of $90,000, not as a large gain relative to her status quo wealth, but as a loss relative to her expectations of wealth.”</p>
+<p>Unexpected gambles. 2006, p. 1142, lists “aversion to losses in current wealth (when we reject unexpected gambles)” as the laboratory notion of loss aversion, and distinguishes it from aversion to a wage cut and from disappointment at a missed raise. 2007, p. 1047, footnote 1, is the empirical pattern this is meant to match, not a calculation inside their \(\mu\): someone who rejects a fifty-fifty lose $500 or gain $550, if that rejection came from concave consumption utility over lifetime wealth, would also reject absurdly large favorable bets; “most people would turn down the smaller gamble.” Under a status-quo reference, their model reproduces that dislike because it reproduces prospect theory with linear probabilities. They do not report a \(\mu\)-calculation of the $500/$550 bet.</p>
+<p>A small bet on top of risk she already expected is a different result, and it goes the other way. 2007, Proposition 2, p. 1054, assumes linear \(m\) and a lottery \(F\) with positive expected value. If the reference lottery \(G\) is sufficiently spread out, she accepts \(F\) and rejects \(-F\). If \(G\) is any continuous distribution, she accepts a sufficiently small multiple of \(F\) and rejects the same multiple of \(-F\). Their prose, same page: if the extra lottery is small relative to \(G\), “it is unlikely to turn a gain or loss relative to \(G\) into the opposite, and there is little diminishing sensitivity over its range. Hence, neither loss aversion nor diminishing sensitivity plays a major role.”</p>
+<p>Five-minutes-ahead news. The reference point is the belief held in the recent past, not the belief at the moment the outcome arrives. 2006, p. 1141, footnote 9: “Our theory posits that preferences depend on lagged expectations, rather than expectations contemporaneous with the time of consumption. This does not assume that beliefs are slow to adjust to new information or that people are unaware of the choices that they have just made—but that preferences do not instantaneously change when beliefs do. When somebody finds out five minutes ahead of time that she will for sure not receive a long-expected $100, she would presumably immediately adjust her expectations to the new situation, but she will still five minutes later assess not getting the money as a loss.” 2007, p. 1051, footnote 6, is the same vignette, with “she presumably immediately adjusts” and “five minutes later she will still assess not getting the money as a loss.” She updates the forecast at once. The outcome is still coded against the old expectation.</p>
+<h2>2. What the fixed point adds</h2>
+<p><strong>Personal equilibrium, in the shoe market.</strong> The person can rank plans by ex ante utility, but she will carry out a plan only if, once the plan has set her reference point, she still wants to follow it. 2006, pp. 1143–1144: she had long known she might buy shoes and, facing price uncertainty, had formed a plan of whether to buy at each price. “If given the reference point based on her expectation to carry through with these plans, there is some price where she would in fact prefer not to carry through with her plans, our theory says that she should not have expected these plans in the first place.” A personal equilibrium is a plan with no such price: the distribution of shoe-and-money outcomes generated by the plan, together with her beliefs about prices, is exactly the reference point against which that same plan is optimal. If both “buy for sure” and “not buy for sure” survive that test, preferred personal equilibrium picks the one with higher ex ante expected utility. 2006, p. 1144: “Insofar as a person is free to make any plan so long as she will follow it through, therefore, she will choose her favorite plan.”</p>
+<p>Formally, 2006, pp. 1143–1144. Let \(Q\) be her distribution over possible choice sets \(\{D_l\}\), indexed by \(l \in \mathbb{R}\). A selection \(\{F_l \in D_l\}\) is a personal equilibrium if, for every \(l\) and every alternative \(F'_l \in D_l\),</p>
+\[
+U\Bigl(F_l \Bigm| \int F_l\, dQ(l)\Bigr) \ge U\Bigl(F'_l \Bigm| \int F_l\, dQ(l)\Bigr).
+\]
+<p>It is a preferred personal equilibrium if it is a personal equilibrium and its induced distribution yields at least as high ex ante utility, evaluated with itself as the reference point, as any other personal equilibrium. 2007, pp. 1055–1056, calls the same fixed point an unacclimating personal equilibrium (UPE), because the choice is made shortly before the outcome and therefore does not reset the lagged reference point, and reserves PPE for the favorite UPE. 2007, p. 1055: that model “is equivalent to the one-dimensional version of the model in Kőszegi and Rabin (2006).”</p>
+<p><strong>The shoe setup.</strong> 2006, pp. 1146–1147, Section IV. Two dimensions, \(m(c) = c_1 + c_2\). Here \(c_1 \in \{0,1\}\) is whether she has the pair of shoes, and \(c_2 \in \mathbb{R}\) is dollar wealth. “We can think of her ‘intrinsic value’ for shoes as $1.” Initial endowment normalized to \((0,0)\). To isolate loss aversion they impose A3′, piecewise-linear gain–loss utility: \(\mu(x) = \eta x\) for \(x &gt; 0\) and \(\mu(x) = \eta\lambda x\) for \(x \le 0\), with \(\eta &gt; 0\) the weight on gain–loss utility and \(\lambda &gt; 1\) the coefficient of loss aversion.</p>
+<p>Whatever she expected, the disutility of paying \(p\) lies between \((1+\eta)p\), “her disutility if she had expected to pay \(p\) or more,” and \((1+\eta\lambda)p\), “her disutility if she had expected to pay nothing.” By the same argument, utility from getting the shoes lies between \(1+\eta\) and \(1+\eta\lambda\). Therefore the expectations most conducive to buying — disutility \((1+\eta)p\) from money, utility \(1+\eta\lambda\) from the shoes — still refuse every price above</p>
+\[
+p_{\max} \equiv \frac{1+\eta\lambda}{1+\eta}.
+\]
+<p>The expectations least conducive to buying — the lower utility \(1+\eta\) from the shoes and the higher disutility \((1+\eta\lambda)p\) from money — still accept every price below</p>
+\[
+p_{\min} \equiv \frac{1+\eta}{1+\eta\lambda}.
+\]
+<p>Both thresholds are printed on 2006, p. 1146. Verbal regions, 2006, pp. 1146–1147:</p>
+<ul>
+<li>If \(p &gt; p_{\max}\), the unique personal equilibrium is not to buy.</li>
+<li>If \(p &lt; p_{\min}\), the unique personal equilibrium is to buy.</li>
+<li>If \(p \in [p_{\min}, p_{\max}]\), buying for sure and not buying for sure are both pure-strategy personal equilibria. Expecting to buy creates the preferences most favorable to buying; expecting not to buy creates the preferences least favorable to buying.</li>
+<li>Preferred personal equilibrium “is typically unique: she buys if and only if \(p &lt; 1\).” Footnote 15, p. 1147, fixes the language: a statement of the form “if and only if \(x &lt; y\)” means “if \(x &lt; y\) and only if \(x \le y\).”</li>
+</ul>
+<p>Footnote 14, p. 1147, adds one mixed equilibrium in the interior of \([p_{\min}, p_{\max}]\), where she buys with probability</p>
+\[
+q = \frac{(1+\eta\lambda)p - (1+\eta)}{\eta(\lambda-1)(p+1)} \in [0,1]
+\]
+<p>and is indifferent. They say this equilibrium “is unstable by analogy to conventional notions of instability.”</p>
+<p>The paper does not evaluate \(p_{\min}\) or \(p_{\max}\) at numerical \(\eta\) and \(\lambda\). The following is arithmetic from the printed formulas, not a number in either paper. The phrase “two-to-one loss aversion” appears only in the 2007 insurance vignette (pp. 1048–1049), and neither paper sets \(\eta = 1\) in the shoe section. Substituting \(\eta = 1\) and \(\lambda = 2\) into the 2006 formulas gives \(p_{\max} = (1+2)/(1+1) = 3/2\) and \(p_{\min} = (1+1)/(1+2) = 2/3\). Under the paper’s own restrictions \(\eta &gt; 0\) and \(\lambda &gt; 1\), the same formulas imply \(p_{\min} &lt; 1 &lt; p_{\max}\), so the preferred-personal-equilibrium cutoff of 1 always sits inside the interval where both pure plans are personal equilibria. At \(\eta = 1\), \(\lambda = 2\), that interval is \([2/3,\, 3/2]\): unique buy below \(2/3\), both plans are personal equilibria on \([2/3,\, 3/2]\), unique not-buy above \(3/2\), and preferred personal equilibrium buys if \(p &lt; 1\), in the sense of footnote 15.</p>
+<p><strong>Attachment effect.</strong> Expecting to buy raises willingness to pay. 2006, pp. 1147–1148, shuts down the feedback from behavior into beliefs by an out-of-equilibrium price. She expects a low price \(p_L &lt; p_{\min}\) with probability \(q_L\), so she plans to buy, and a high price \(p_H &gt; p_{\max}\) with probability \(q_H = 1 - q_L\), so she plans not to buy. The question is whether she buys at an intermediate price \(p_M\), treated as a vanishingly unlikely draw. Utility of buying at \(p_M\), equation (4), p. 1148:</p>
+\[
+1 - p_M + q_H(\eta - \eta\lambda p_M) - q_L \eta\lambda(p_M - p_L).
+\]
+<p>Line 1 is consumption utility. Line 2 compares buying with not buying, weighted by the probability \(q_H\) she expected not to buy: a gain of one pair of shoes and a loss of \(p_M\) dollars. Line 3 compares buying at \(p_M\) with buying at the expected purchase price \(p_L\): no shoe gain or loss, and a loss of \(p_M - p_L\) dollars. Utility of not buying, equation (5):</p>
+\[
+q_L(\eta p_L - \eta\lambda).
+\]
+<p>“Relative to the expectation to buy, not buying is a gain of \(p_L\) dollars and a loss of one pair of shoes.”</p>
+<p>Set \(p_L = 0\). She buys at \(p_M\) if and only if, equation (6),</p>
+\[
+p_M &lt; 1 - (1-q_L)\frac{\eta(\lambda-1)}{1+\eta\lambda}.
+\]
+<p>The right-hand side increases in \(q_L\). 2006, p. 1148: “Since the consumer expects to spend nothing no matter what, an increase in \(q_L\) only increases her expectation to get the shoes and hence the loss she will feel if she does not buy. This ‘attachment effect’ increases her willingness to pay.” The deterministic version of the same mechanism is on p. 1147: “if the consumer had expected to get the shoes, she would feel a loss of shoes if she did not buy, and her aversion to this loss leads her to buy even at relatively high prices. In contrast, if she had expected not to buy, buying would result in a loss of money, and her aversion to this loss leads her not to buy.”</p>
+<p><strong>Comparison effect.</strong> A lower expected price, conditional on buying, lowers willingness to pay a high realized price. Set \(p_L \ge 0\) and \(q_L = 1\), so she was sure to buy and the only uncertainty is the price. Equation (7), p. 1148:</p>
+\[
+p_M &lt; 1 + p_L \cdot \frac{\eta(\lambda-1)}{1+\eta\lambda}.
+\]
+<p>The right-hand side increases in \(p_L\), so a lower \(p_L\) lowers the highest \(p_M\) she will pay. 2006, pp. 1148–1149: “in violation of the law of demand, a decrease in the price distribution decreases the consumer’s willingness to pay for the shoes. If there is a possibility of acquiring the shoes at a low price, by comparison the consumer considers paying the higher price \(p_M\) to be a loss. The greater the difference between \(p_M\) and \(p_L\), the greater is the sense of loss, and the more this ‘comparison effect’ decreases her willingness to pay.” The term that carries the comparison is the third line of (4), \(-q_L\eta\lambda(p_M - p_L)\): the high price is a money loss relative to the price she expected to pay, with no offsetting shoe sensation, because both the realized purchase and the expected purchase include the shoes. 2006, p. 1149: the violation of the law of demand “occurs in our model solely because of the feedback of the environment into expectations: for any fixed expectations, the consumer’s demand is downward-sloping.”</p>
+<p><strong>The lowball.</strong> Footnote 18, 2006, p. 1149, applies attachment and comparison off the equilibrium path. “The logic behind the attachment and comparison effects can shed light on nonequilibrium situations in which buyers believe that the price is lower than it actually is. For example, car dealers sometimes use the strategy of ‘throwing a lowball,’ promising a very low price and attempting to raise it once the consumer gets used to the expectation of buying—using the attachment effect to sell at a price that would otherwise be too high. Our model says this strategy may backfire if the high price looks too awful compared with the expected price, but car dealers presumably make it their business to be well calibrated about which combinations of expected and actual prices are most successful in the situations they face.” The promised price is not a personal equilibrium: it is not the price she will face, and the plan “buy at the promised price” is not what the market will offer. The externally planted expectation still moves behavior, through attachment to the shoes and through comparison of the raised price with the promised price.</p>
+<p>The $55 policy, once the reference is the plan itself, is the 2007 fixed-point version of the same insurance choice. 2007, p. 1056, equation (3): if the fifty-fifty chance of paying $100 is the reference point, that lottery is preferred to paying $55 when</p>
+\[
+\begin{aligned}
+&amp;\tfrac12(w-100)+\tfrac12 w+\tfrac14\mu(100)+\tfrac14\mu(-100)\\
+&amp;\ge (w-55)+\tfrac12\mu(45)+\tfrac12\mu(-55).
+\end{aligned}
+\]
+<p>The factors of \(1/4\) are the paper’s average over the two outcomes of the lottery and the two outcomes of the reference lottery. The zero terms, an outcome compared with itself, are omitted from the display.</p>
+<h2>3. Exogenous expectations versus the fixed point</h2>
+<p>Gain–loss utility is felt whenever an outcome is compared with a reference belief, including a belief that nobody chose. That is \(u(c \mid r)\) and \(U(F \mid G)\) in Section 1. Both papers say the utility theory can sit on top of any theory of where beliefs come from. 2006, p. 1143: “Our model of how utility depends on expectations could be combined with any theory of how these expectations are formed. But as a disciplined and largely realistic first pass, we assume that expectations are fully rational.” 2007, p. 1048, says the same about beliefs.</p>
+<p>Endogeneity is the further requirement that the belief equal the behavior it causes. 2007, pp. 1055–1056: because the decision is made shortly before the outcome, “the beliefs determining the reference point are past and hence unchangeable,” so she maximizes utility taking the reference point as given, and “she can rationally expect to follow a plan of behavior only if she is willing to follow it given a reference point generated by the expectation to do so.” 2006, p. 1135, defines personal equilibrium as the situation in which “the stochastic outcome implied by optimal behavior conditional on expectations coincides with expectations.” Preferred personal equilibrium then selects among those fixed points. The function \(\mu\) is not what the fixed point adds. Classical prospect theory already has a gain–loss value function. The fixed point adds the consistency restriction, and with it the comparative statics: willingness to pay rises with the expected probability of purchase (attachment, 2006, pp. 1147–1148) and with the expected price conditional on purchase (comparison, 2006, pp. 1148–1149); surprise modest-scale losses are treated as in status-quo prospect theory, while an anticipated risk, together with the chance to insure it, produces first-order risk aversion (2007, pp. 1047–1048 and 1053–1057). 2007, p. 1048: the theory “matches both status quo prospect theory and disappointment aversion in domains where these models have been applied, and more generally provides comparative-statics predictions on the extent of risk taking as a function of the environment.”</p>
+</main>
+<nav class="pager"><a href="subagent-05-kahneman-tversky.html">← Subagent: Kahneman–Tversky 1979</a><a href="subagent-07-money-and-news.html">Next: Subagent: 2007 risk and 2009 news →</a></nav>
+</div>
+</body>
+</html>

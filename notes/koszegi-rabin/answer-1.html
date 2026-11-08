@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Answer: questions 1–4</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Answer: questions 1–4</h1>
+<p class="kicker">The first written answer. Endogenous gain-loss, shocks, personal equilibrium, and the 2007 status quo.</p>
+<main>
+<p>The reference point is endogenous. The feeling of gain and loss is not. Loss aversion is a preference. Recent beliefs only decide which outcomes count as gains and which count as losses.</p>
+<h2>1. What is endogenous, and what produces gain-loss</h2>
+<p>In Kőszegi and Rabin (2006), a person evaluates a consumption outcome \(c\) against a reference \(r\) as</p>
+\[
+u(c \mid r) = m(c) + \mu\bigl(m(c) - m(r)\bigr).
+\]
+<p>\(m\) is ordinary consumption utility. \(\mu\) is a gain-loss function in the Kahneman–Tversky sense: \(\mu(0)=0\), losses weigh more than equal gains (\(\lambda&gt;1\)), and sensitivity diminishes away from the reference. If the reference is itself a lottery \(G\) and the outcome is drawn from \(F\), each realized outcome is compared with every outcome in \(G\):</p>
+\[
+U(F \mid G) = \iint u(c \mid r)\, dG(r)\, dF(c).
+\]
+<p>Their example: if the reference is a gamble between $0 and $100, receiving $50 feels partly like a gain relative to $0 and partly like a loss relative to $100, and the loss counts more.</p>
+<p>Two separate pieces are doing different work.</p>
+<p>The preference assumption is \(\mu\). People feel gains and losses on top of consumption utility, and losses loom larger. That is what produces gain-loss behavior. Rational expectations alone do not. If she gets exactly the sure thing she expected, gain-loss utility is zero.</p>
+<p>The endogenous object is the benchmark. The reference is her probabilistic beliefs, held in the recent past, about the outcome. In equilibrium those beliefs have to match what she will actually do. So whether a given paycheck, price, or bet is coded as a gain or a loss depends on what she had expected. A salary of $50,000 is a loss if she had expected $60,000. It is not a gain relative to some older status-quo wealth.</p>
+<p>If you handed her an expectation from outside, she would still feel gains and losses against it. The 2007 paper uses that case explicitly and calls it a surprise: expectations are fixed outside the choice set she actually faces. What endogeneity adds is the fixed point, and the comparative statics that come with it. Expecting to buy raises willingness to pay. Expecting a low price makes a high price feel like a loss.</p>
+<p>The 2007 paper treats this as preferences over money, with probabilities kept linear. The 2009 paper keeps the same \(\mu\), but locates the sensation in news: the change between yesterday’s beliefs and today’s beliefs about current and future consumption. A fully expected sure payment, once beliefs have settled on it, carries no gain-loss utility.</p>
+<h2>2. Expectations, shocks, and whether this is a bias</h2>
+<p>The restatement is off in the mechanism. A corrected version is this.</p>
+<p>Her reference point is her recent beliefs about outcomes. She then chooses the option that maximizes consumption utility plus gain-loss utility given that reference. In equilibrium she expects only a plan she will still want to carry out. Those choices are optimal for this reference-dependent utility. They are optimal for classical expected utility only in a special case.</p>
+<p>That special case is a deterministic preferred plan. If she expected \(c\) and she receives \(c\), then \(u(c \mid c)=m(c)\), so gain-loss drops out and the preferred plan maximizes consumption utility. Certainty is a result, not the setup. Even at a sure price, a plan she has come to expect can survive as an equilibrium because abandoning it would feel like a loss. In the 2006 shoe example, if the price sits between two thresholds, both “buy” and “don’t buy” can be personal equilibria. Expecting the shoes makes not buying a loss of shoes. Expecting not to buy makes paying a loss of money. The preferred equilibrium buys only if the price is below the shoes’ intrinsic value.</p>
+<p>Uncertainty does not switch gain-loss on. The term is in the utility function whenever an outcome is scored against the reference lottery. A shock is one way the outcome and the reference come apart. An unexpected wage, a missed concert she had expected to attend, and a price above the one she was led to expect do the same thing in a deterministic environment.</p>
+<p>If she correctly expected a risky distribution, the realized draw still generates gain-loss. The comparison is to the whole lottery, not to its mean. Getting $50 when the reference was \(\{\$0,\$100\}\) is a mixture of gain and loss, and the mixture is negative because losses weigh more. She anticipates that expected pain when she chooses, and she feels the realized mixture when the outcome arrives. The 2009 paper makes the same point in news language: resolving a fifty-fifty chance of 0 or 100 minutes with someone, and then getting 0, feels like a one-half chance of losing 100 minutes. Beliefs were correct. The update from the lottery to the realized point is still news.</p>
+<p>So gain-loss is not “optimal solution versus human bias.” Loss aversion around expectations is the preference. Rational expectations are the belief restriction inside personal equilibrium. The papers separately say that some real behavior looks like a mistake their rational model does not include, mainly narrow bracketing and underestimating how fast the reference will adjust. Those are caveats. They are not the definition of the gain-loss term.</p>
+<p>What uncertainty does in the 2007 paper is change the risk attitude that this same preference produces.</p>
+<ul>
+<li>If the risk is a surprise and she had expected to stay at $0, the model reproduces prospect theory with linear probabilities. Diminishing sensitivity makes her unwilling to pay $55 to insure a 50 percent chance of losing $100.</li>
+<li>If she had expected both the risk and the chance to insure it, a planned premium is already in her beliefs, so paying it is not coded as a loss. A bad draw is. She becomes first-order risk averse and buys the insurance.</li>
+<li>If she had already expected to bear the risk, the same gamble is less painful. Expecting a widely spread risk makes a further small bet close to risk neutral. She is already exposed to the original risk. She is less averse to a small change around it.</li>
+</ul>
+<h2>3. Personal equilibrium</h2>
+<p>The sentence joins two layers that the 2006 paper keeps apart.</p>
+<p>The reference is defined to be her beliefs about outcomes. That is an assumption about the benchmark, made before any equilibrium condition. Expectations do not have to “meet” a separately defined reference. By assumption, the reference is those expectations.</p>
+<p>Personal equilibrium is the further fixed point. A plan is a personal equilibrium when, taking as given the distribution of outcomes implied by expecting to follow the plan, the plan is still optimal in every contingency. The outcome implied by optimal behavior then coincides with the beliefs that were used as the reference. A plan she would abandon once its own implied reference is taken as given is not a personal equilibrium. She should not have expected it.</p>
+<p>Formally, if \(Q\) is her distribution over contingencies, \(D_l\) is the choice set in contingency \(l\), and \(F_l\) is the lottery she plans to pick there, \(\{F_l\}\) is a personal equilibrium when, for every contingency and every alternative \(F'_l\) in that choice set,</p>
+\[
+U\Bigl(F_l \Bigm| \int F_l\, dQ(l)\Bigr)
+\ge
+U\Bigl(F'_l \Bigm| \int F_l\, dQ(l)\Bigr).
+\]
+<p>The reference stays the one generated by the original plan. A deviation is judged against that old reference.</p>
+<p>When several plans are personal equilibria, preferred personal equilibrium selects the one with the highest ex ante expected utility. In the shoe example, both buying and not buying can be personal equilibria at a given sure price. The preferred one buys if and only if the price is below intrinsic value.</p>
+<p>The 2007 paper splits this by timing.</p>
+<ul>
+<li>Unacclimating personal equilibrium is the 2006 concept. She decides shortly before the outcome, so past expectations have already fixed the reference. A last-minute deviation is scored against that old reference.</li>
+<li>Choice-acclimating personal equilibrium is early commitment. She chooses long before outcomes, and the choice itself becomes the reference: she picks \(F\) only if \(U(F \mid F) \ge U(F' \mid F')\) for every alternative. A fully expected insurance premium then produces no gain-loss sensation.</li>
+</ul>
+<p>The 2009 paper applies preferred personal equilibrium to consumption plans over time. A credible plan maximizes expected reference-dependent utility given the beliefs the plan generates, and future selves must be willing to carry out the continuation.</p>
+<h2>4. The 2007 “status quo” and a lottery she already expected</h2>
+<p>The 2007 paper never defines a status quo lottery. “Status quo” there means the older prospect-theory benchmark: a sure current position, in their running example the status quo of $0. The object that can be a lottery is the reference lottery, meaning the distribution she recently expected.</p>
+<p>Proposition 1 says that if she is willing to accept a bet when it is added to a sure reference, she is also willing to accept it when it is added to a lottery or judged against a risky reference. The applied statement is an endowment effect for risk: she is less risk averse about a risk she already expected to face than about taking the same risk on from a sure position.</p>
+<p>Their example is insurance, not a horse race. She can pay $55 to avoid a 50 percent chance of paying $100.</p>
+<ul>
+<li>Expected to keep $0. Both the gamble and the premium are losses relative to zero. Diminishing sensitivity in the loss domain makes her prefer the gamble, so she does not insure. This is their status-quo case, and it matches prospect theory with linear probabilities.</li>
+<li>Expected to pay the $55. Paying it generates no gain or loss. Refusing it is a fifty-fifty chance of losing $45 or gaining $55 relative to that expectation. With two-to-one loss aversion she dislikes that gamble and buys the insurance.</li>
+<li>Expected to bear the 50–50 risk itself. The reference is that lottery. Sticking with it means living with its internal gains and losses. Switching to the premium is a gain of $45 relative to the “pay $100” state and a loss of $55 relative to the “pay $0” state. She is less averse to keeping the risk she already expected than she was to taking it on from $0.</li>
+</ul>
+<p>A smaller version of the same logic is a coin flip of \(+\$100\) or \(-\$100\).</p>
+<ul>
+<li>If she expected to keep her money for sure, the flip is a pure gain and a pure loss. Loss aversion makes her reject it.</li>
+<li>If she already expected to take the flip, that distribution is the reference. Keeping it is less painful than accepting it was when the reference was a sure zero. The benchmark is the distribution of the bet.</li>
+</ul>
+<p>That is not break-even in horse-race gambling. The paper does not discuss horse racing, session profit, or chasing losses back to the morning’s wealth. It mentions “break even” once, and only to separate its model from that idea. The disposition effect and Thaler and Johnson’s break-even effect come from a lagged status quo: after a loss, a gamble that might restore the old reference becomes attractive. Kőszegi and Rabin’s reference is recent expectations. Their conclusion is the reverse of break-even chasing: if she foresaw a good chance of losing, she is less willing to take further chances to get back to even, because the possible loss was already in her beliefs.</p>
+<p>So a planned day at the track, in this model, sets the reference equal to the distribution of outcomes she expected from the bets she planned to make. It does not set the reference equal to zero net profit for the day. A target of “get back to this morning” is the lagged-status-quo construction they contrast with their own.</p>
+</main>
+<nav class="pager"><span></span><a href="answer-2.html">Next: Answer: follow-up →</a></nav>
+</div>
+</body>
+</html>

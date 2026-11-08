@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Subagent: status quo lottery</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+@media (max-width: 720px) {
+  .scroll { overflow: visible; }
+  table, tbody, tr, td { display: block; width: auto; min-width: 0; }
+  thead { display: none; }
+  tr { border-top: 1px solid var(--line); padding: 0.75rem 0 0.2rem; }
+  td { border: 0; padding: 0.15rem 0 0.55rem; }
+  td::before {
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    margin-bottom: 0.12rem;
+  }
+  td:nth-child(1)::before { content: "What she expected"; }
+  td:nth-child(2)::before { content: "Utility of the 50–50 pay-$100-or-$0 lottery"; }
+  td:nth-child(3)::before { content: "Utility of paying $55"; }
+  td:nth-child(4)::before { content: "Choice"; }
+}
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Subagent: status quo lottery</h1>
+<p class="kicker">Reading for question 4. What the 2007 paper means by status quo, with the insurance lottery.</p>
+<main>
+<p>The 2007 paper never defines a “status quo lottery.” That phrase does not appear in the 2007, 2006, or 2009 papers. What the 2007 paper does define is a <strong>reference lottery</strong>: the decision maker’s recent beliefs about outcomes, which may be a probability distribution. If she expected to face one particular lottery, that lottery is the reference distribution against which other outcomes are felt as gains and losses.</p>
+<p><strong>No.</strong> A status-quo or reference lottery is not the horse-race “break-even” target. The 2007 paper does not discuss horse racing, session profit, or chasing losses back to the morning’s wealth.</p>
+<h2>1. Definition and the proposition that uses it</h2>
+<p>The reference point is recent beliefs, not zero profit and not the expected value of the lottery being judged. From pages 1048–1050:</p>
+<blockquote>
+<p>“We assume that the reference point relative to which a person evaluates an outcome is her recent beliefs about that outcome.” (p. 1048)</p>
+</blockquote>
+<p>If those beliefs are uncertain, the reference is a distribution \(G\):</p>
+<blockquote>
+<p>“This formulation captures the notion that the evaluation of a wealth outcome is based on comparing it to all possibilities in the support of the reference lottery. For example, if the reference lottery is a gamble between $0 and $100, an outcome of $50 evokes a mixture of two feelings, a gain relative to $0 and a loss relative to $100.” (p. 1050)</p>
+</blockquote>
+<p>Utility is \(u(w|r)=m(w)+\mu(m(w)-m(r))\), and</p>
+\[
+U(w|G)=\int u(w|r)\,dG(r), \qquad U(F|G)=\iint u(w|r)\,dG(r)\,dF(w).
+\]
+<p>(pp. 1050, equations (1)–(2)). Each realized wealth draw from the outcome lottery \(F\) is scored against every possible draw from the reference lottery \(G\), and those scores are averaged. The paper explicitly distinguishes this from Sugden (2003), who matches the outcome lottery to the reference lottery state by state (p. 1050).</p>
+<p>“Status quo” in this paper is the older prospect-theory specification: a riskless current position. On page 1053 the authors cite their 2006 Proposition 2 for the special case in which beliefs and that position coincide:</p>
+<blockquote>
+<p>“Proposition 2 of Kőszegi and Rabin (2006) shows that when the decision maker expects to keep the status quo, her behavior is identical to that predicted by prospect theory modified to equate decision weights with probabilities.” (p. 1053)</p>
+</blockquote>
+<p>The result that treats an already expected lottery as the reference is <strong>Proposition 1</strong> (p. 1053). With linear consumption utility and no diminishing sensitivity (assumption A3′):</p>
+<blockquote>
+<p>“For any lotteries \(F\), \(G\), and \(H\) and constant \(w\), if \(U(w+F|w)\ge U(w|w)\), then \(U(H+F|G)\ge U(H|G)\).”</p>
+</blockquote>
+<p>In words (same page): she is no more willing to accept a lottery when it is added to a riskless reference point than when it is added to a lottery and/or judged against a risky reference point. The special case \(H=w\) and \(G=F\) is what they call an endowment effect for risk:</p>
+<blockquote>
+<p>“a person is less risk averse in eliminating a risk she expected to face than in taking on the same risk if she did not expect it.” (p. 1053)</p>
+</blockquote>
+<p>They point to Knetsch and Sinden (1984) and Birnbaum et al. (1992): people are less risk averse when selling a lottery they are endowed with than when buying it (p. 1054).</p>
+<p>The same idea is built into the equilibrium definitions. In an unacclimating personal equilibrium, the reference is the distribution she expects to choose (Definition 1, p. 1056). In a choice-acclimating personal equilibrium, the chosen lottery is both the outcome and the reference: \(F\) is chosen only if \(U(F|F)\ge U(F'|F')\) for every alternative \(F'\) (Definition 3, p. 1058).</p>
+<h2>2. Economic meaning</h2>
+<p>Comparing a lottery \(L\) to a reference lottery \(Q\) means the expected sensation of drawing an outcome from \(L\) and a reference point from \(Q\) and applying \(\mu\) to the difference in consumption utility. It is not a comparison of \(L\) to \(L\)’s own expected value, and it is not a comparison to zero profit, unless her beliefs happen to be a sure zero. Proposition 10 (p. 1063) is the sure-zero case: with linear \(m\) and reference point \(\$0\), she rejects all fair gambles if and only if her sensitivity to losses is everywhere at least her sensitivity to small gains.</p>
+<p>If she had expected a sure amount, gains and losses in a new bet are pure gains and pure losses, so loss aversion bites fully. If she had already expected a spread-out lottery, a further small change mostly reduces an expected loss or reduces an expected gain, so it is felt less sharply (pp. 1053–1054, Propositions 1 and 2). Proposition 2 adds that a bet that is small relative to a widely dispersed reference lottery is accepted when it has positive expected value.</p>
+<h2>3. The paper’s lottery example, with a labeled calculation</h2>
+<p>The paper’s running example is insurance, not a \(+11/-10\) bet. On pages 1048–1049:</p>
+<blockquote>
+<p>“consider a person’s decision on whether to pay $55 to insure a 50 percent chance of having to pay $100. If she had expected to retain the status quo of $0, our model makes the same prediction as prospect theory: because of diminishing sensitivity, she does not wish to insure the risk. If she had expected to pay $55 for insurance, however, paying that amount generates no gain or loss, while taking the gamble exposes her to a fifty-fifty chance of losing $45 or gaining $55. With a conventional estimate of two-to-one loss aversion, she strongly dislikes this gamble and buys the insurance. Yet if a person had been expecting risk to start with… the gamble is less aversive. When the ex ante expected risk is the gamble itself, this decreased risk aversion can be interpreted as an endowment effect for risk.” (pp. 1048–1049)</p>
+</blockquote>
+<p>The printed inequalities (pp. 1056 and 1059) are:</p>
+<ul>
+<li>If the 50–50 lottery is the reference, keeping it beats paying $55 when</li>
+</ul>
+\[
+\left[\tfrac12(w-100)+\tfrac12 w\right]+\left[\tfrac14\mu(100)+\tfrac14\mu(-100)\right]
+\ge
+[w-55]+\left[\tfrac12\mu(45)+\tfrac12\mu(-55)\right].
+\]
+<p>(equation (3), p. 1056). The right-hand side is the deviation: paying $55 is a gain of $45 relative to the reference state “pay $100” and a loss of $55 relative to the reference state “pay $0.”</p>
+<ul>
+<li>The same lottery is a choice-acclimating equilibrium only if that left-hand side beats \([w-55]+[0]\) (equation (4), p. 1059). Once she has committed to insurance, the premium is fully expected, so it produces no gain-loss sensation. The paper’s gloss: “In UPE, the reference point does not adjust to the deviation, so paying $55 is assessed partly as a loss of $55 and partly as a gain of $45. In CPE, the reference point does adjust to the deviation, so there is no sensation of gain or loss when paying the $55.” (p. 1059)</li>
+</ul>
+<p><strong>Illustration, not a printed calculation.</strong> The paper does not plug a specific \(\mu\) into equations (3)–(4). The arithmetic below uses only the comparisons in those equations, linear \(m(w)=w\), and piecewise-linear two-to-one loss aversion with equal weight on gain-loss utility: \(\mu(x)=x\) for \(x\ge 0\) and \(\mu(x)=2x\) for \(x&lt;0\). Utilities are reported as the part that does not depend on baseline wealth \(w\).</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>What she expected</th>
+<th>Utility of the 50–50 “pay $100 or $0”</th>
+<th>Utility of paying $55</th>
+<th>Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sure status quo $0</td>
+<td>\(-50+0.5\mu(-100)=-150\)</td>
+<td>\(-55+\mu(-55)=-165\)</td>
+<td>Keeps the gamble (does not insure)</td>
+</tr>
+<tr>
+<td>Sure payment of $55</td>
+<td>\(-50+0.5\mu(55)+0.5\mu(-45)=-67.5\)</td>
+<td>\(-55+0=-55\)</td>
+<td>Buys insurance</td>
+</tr>
+<tr>
+<td>The 50–50 lottery itself (equation (3))</td>
+<td>\(-50+0.25\mu(100)+0.25\mu(-100)=-75\)</td>
+<td>\(-55+0.5\mu(45)+0.5\mu(-55)=-87.5\)</td>
+<td>Keeps the lottery</td>
+</tr>
+<tr>
+<td>Commitment, so each option is its own reference (equation (4))</td>
+<td>\(-75\)</td>
+<td>\(-55\)</td>
+<td>Commits to insurance</td>
+</tr>
+</tbody>
+</table></div>
+<p>Reading the rows in the paper’s terms: if the reference is the sure status quo of $0, both options are pure losses and the actuarially cheaper gamble wins, which is the direction of their “does not wish to insure” claim (they attribute that claim to diminishing sensitivity; the linear calculation above is only the same qualitative ranking). If she expected to pay $55, the uninsured gamble is a mixed \(+55/-45\) bet and two-to-one loss aversion makes her buy the insurance, as the text says. If the status quo is the lottery itself, deviating to the premium is half a loss of $55 and half a gain of $45, and under this parameterization she sticks with the lottery she already expected. If she can commit early, she prefers the sure premium, because living with the lottery as her reference exposes her to internal gains and losses while a fully expected premium does not.</p>
+<p>Table 1 (p. 1055) is the paper’s own numbers for the same logic at a larger scale. Consumption utility is \(m(w)=10{,}000\ln(w)\), and \(\mu(x)=\sqrt{x}\) for gains and \(\mu(x)=-3\sqrt{-x}\) for losses. Gamble I is a 50–50 bet on $999,900 or $1,000,100. Willingness to pay for insurance is $9.17 when the fixed expectation is a sure $1,000,000, and $3.66 when the reference is already the discrete uniform distribution on \(\{$999{,}900,$1{,}000{,}100\}\). In the preferred personal equilibrium with no background risk, that premium is $48; unavoidable background risk uniform on \([-\$100,\$100]\) cuts it to $8.54. The text summarizes the last comparison as a fall “from $48 to $9” (p. 1058).</p>
+<p>Proposition 3 (p. 1056) is the anticipated-choice version of rejecting a small bet when the plan is a sure amount: for any mean-zero lottery, a sufficiently small and insufficiently favorable multiple is rejected in the preferred personal equilibrium in favor of the riskless amount. Propositions 5 and 6 (p. 1058) say that if she is already facing a lottery she will not avoid, she is more willing to take an additional bet.</p>
+<h2>4. Horse racing and break-even</h2>
+<p>The 2007 paper does not mention horse racing, a daily zero-profit target, or chasing losses within a gambling session.</p>
+<p>It does use “break even” once, for the disposition effect, and it treats that idea as different from its own reference. Page 1053:</p>
+<blockquote>
+<p>“Because home and stock owners usually expect to make money, they will be risk loving when these investments unexpectedly lose money. But when a person foresees a good chance of losing some money—for example, when investing in a highly risky stock—she will be less willing to take chances to break even.”</p>
+</blockquote>
+<p>Footnote 10 (p. 1053) defines the phrase they are qualifying:</p>
+<blockquote>
+<p>“The disposition effect is closely related to the ‘break-even effect’ coined by Thaler and Johnson (1990) for monetary gambles. They predicted that following losses, gambles that offer a chance to break even become especially attractive.”</p>
+</blockquote>
+<p>The reference list (p. 1073) is Thaler and Johnson, “Gambling with the House Money and Trying to Break Even.” In the introduction (pp. 1047–1048), lagged-status-quo models are the ones that predict a willingness to take unfavorable risks to regain the previous status quo. Kőszegi and Rabin’s reference is instead the expected resale price, so an expected chance of loss makes break-even chasing less attractive, not more.</p>
+<p>A horse-race break-even point—zero net profit for the day, or getting back to wealth as of the morning after losses—is a goal or a lagged wealth target. That is the lagged-status-quo construction the 2007 paper distinguishes from its own model. In Kőszegi and Rabin, the reference is the distribution of outcomes the person recently expected. A lottery she already expected can be that reference. A target of “get back to zero for the day” is not what they call the status quo, and they never call it a status-quo lottery.</p>
+<p>The 2006 paper has the same reference-lottery construction, including the $0-versus-$100 example (2006, pp. 1137–1138), and it says laboratory subjects “plausibly expect to keep the status quo” (2006, p. 1142). It does not define a status-quo lottery. Its Proposition 2 is the result the 2007 paper cites: with linear consumption utility, the gain-loss function has the shape of prospect theory’s value function. The 2009 paper never uses the words “status quo.” It does say that, for some background risks, the person “evaluates each outcome relative to all possibilities in the reference lottery, as proposed by Kőszegi and Rabin (2006, 2007)” (2009, p. 923).</p>
+</main>
+<nav class="pager"><a href="subagent-03-personal-equilibrium.html">← Subagent: personal equilibrium</a><a href="subagent-05-kahneman-tversky.html">Next: Subagent: Kahneman–Tversky 1979 →</a></nav>
+</div>
+</body>
+</html>
