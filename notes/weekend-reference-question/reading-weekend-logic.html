@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Reading: weekend settlements</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+@media (max-width: 720px) {
+  .scroll { overflow: visible; }
+  table, tbody, tr, td { display: block; width: auto; min-width: 0; }
+  thead { display: none; }
+  tr { border-top: 1px solid var(--line); padding: 0.75rem 0 0.2rem; }
+  td { border: 0; padding: 0.15rem 0 0.55rem; }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    margin-bottom: 0.12rem;
+  }
+}
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Reading: weekend settlements</h1>
+<p class="kicker">The subagent note that separates the draw, the forecast error, learning, and a new reference level.</p>
+<main>
+<h2>Logic note: what weekend settlements can identify about the reference</h2>
+<p><strong>Maintained unit.</strong> A weekend is one bracketed lottery. The gambler chooses an outlay, holds a belief about that weekend’s return, and then the settlement realizes the outcome. Within-weekend re-trading is inside the bracket, not a second plan.</p>
+<p><strong>Observables.</strong> For person-weekend \(t\): outlay \(S_t\), prize \(P_t\), net cash \(N_t = P_t - S_t\), return ratio \(R_t = P_t/S_t\). These satisfy
+\[
+N_t = (R_t - 1)\,S_t.
+\]
+One weekend contributes two numbers, not three. Race-level stakes are not required. Both sides of the weekend settlement are required. A file that contains only the net has no separate return and cannot run the test below.</p>
+<hr />
+<h3>A. The sketch, stated as four objects</h3>
+<p>The sketch takes one empirical pattern, that bet adjustments and return gaps look different for adjacent weekends than for gaps of \(k\ge 2\), and reads it as reference updating after the outcome is realized. That reading uses a single phrase, “the forecast error,” for four different objects.</p>
+<p><strong>(1) The realized net outcome.</strong> The draw itself: \(N_t\), or equivalently the pair \((S_t, R_t)\). In an expectations-based model this draw is news. It is scored, when it arrives, against the belief the gambler held while the stake was at risk. A draw that had positive probability under a correct belief is still news. The belief said this outcome could happen. It did not say this outcome would be the one that happened.</p>
+<p><strong>(2) The forecast error relative to the mean.</strong> \(\varepsilon_t = R_t - \mu\), with \(\mu\) the mean of the prior belief about \(R\). This is a scalar innovation. It is not the Kőszegi–Rabin surprise. Gain–loss is the realized money outcome scored against the whole lagged distribution of money outcomes. For a fixed belief, that score depends on where \(R_t\) sits in the distribution and on the scale \(S_t\) that turns the ratio into money. Two weekends with the same \(\varepsilon_t\) and different outlays are different news. Two weekends with the same net are the same money outcome.</p>
+<p><strong>(3) An update of the probability law.</strong> A revision of \(F\), the distribution the gambler assigns to the next weekend’s return, because the last draw was high or low. This is learning. It has memory: a constant-gain or Bayesian rule puts more weight on the recent draw than on an old one, and the weights are an update rule. Rational expectations about a known stationary lottery has no such memory. The draw is informative about which point in \(F\) occurred. It is uninformative about \(F\).</p>
+<p><strong>(4) A movement of the reference that the next decision uses.</strong> Here the theories name different objects.
+- In Kőszegi–Rabin the reference is the belief about the next outcome, the whole distribution. It moves when that belief moves. Under a stationary return law the distribution of \(R\) stays put. The distribution of money outcomes moves only because the bankroll and the chosen outlay move.
+- In a break-even or lagged-status-quo model the reference is a level: get back to zero profit, or recover the stake that was lost. That level moves with the realized outcome relative to the target, with \(F\) held fixed.</p>
+<p>The sketch’s inference runs: if the belief is correct, forecast errors are white noise, so two errors are the same object, so choice does not respond to them; if choice responds more to the recent error, the belief must have changed. Object (2) is doing the work of (1), (3), and (4) in that sentence. Those three do not move together.</p>
+<p>Personal equilibrium keeps the timing straight. The plan for weekend \(t\) is credible only given the belief that plan induces. The settlement is then judged against that lagged belief. The plan for weekend \(t+1\) is a new equilibrium in the new budget. Last weekend’s surprise enters the new plan through the cash it left, not as a leftover reference distribution.</p>
+<hr />
+<h3>B. What the rational-expectations model predicts for the next outlay</h3>
+<p>Assume each weekend is an i.i.d. draw from a stationary return distribution the gambler knows. The reference at the start of the weekend is the rational belief about that weekend’s lottery.</p>
+<p><strong>The return law inside the reference does not respond to the draw.</strong> \(\varepsilon_t\) and \(\varepsilon_{t-k}\) are equally uninformative about next weekend’s \(F\). A high draw and a low draw leave the same \(F\) in place for next time. Rational expectations rules out revising a known i.i.d. lottery because one weekend came in high or low.</p>
+<p><strong>The next outlay does respond to the draw, through the budget.</strong> \(N_t\) changes the bankroll. The next plan is the personal equilibrium at the new wealth, so \(S_{t+1}\) is a function of that wealth. Gain–loss news is the utility of the same settlement, experienced at realization against the lagged distribution. It can change how a given cash shock is absorbed into the new plan, because the new plan is built to be credible under gain–loss preferences. That is still a function of the money shock and the budget. It is not a revision of \(F\), and it does not leave \(\varepsilon_t\) behind as its own state variable.</p>
+<p><strong>What this rules out for the next stake.</strong> Conditional on the cash the weekend left, and on person-level scale, the ratio that produced the cash is irrelevant. A net of \(-5{,}000\) from an outlay of \(5{,}000\) (a wipeout, \(R=0\)) and a net of \(-5{,}000\) from an outlay of \(50{,}000\) (\(R=0.9\)) are different surprises relative to the lagged distribution. They are the same wealth shock. Under this null they lead to the same next outlay. The first surprise was already “paid” when it was scored against the belief that put probability on a loss. It does not become a new target.</p>
+<p><strong>What a level reference predicts instead.</strong> If the reference is break-even or the lost stake, those two settlements are different states at the same cash. The next outlay then depends on \(R_t\) beyond \(N_t\). Kőszegi–Rabin’s contrast with that mechanism is specific: a loss that the lagged belief already included does not create a chasing target.</p>
+<p><strong>Wealth, belief revision, and lagged gain–loss, side by side.</strong></p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Role at realization</th>
+<th>Role in \(S_{t+1}\) under RE and a stationary \(F\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Object">Draw as news against the lagged distribution</td>
+<td data-label="Role at realization">Gain–loss is experienced now</td>
+<td data-label="Role in \(S_{t+1}\) under RE and a stationary \(F\)">Already scored. No further state variable</td>
+</tr>
+<tr>
+<td data-label="Object">Cash \(N_t\)</td>
+<td data-label="Role at realization">Budget shock</td>
+<td data-label="Role in \(S_{t+1}\) under RE and a stationary \(F\)">Shifts the next plan</td>
+</tr>
+<tr>
+<td data-label="Object">Mean error \(\varepsilon_t\)</td>
+<td data-label="Role at realization">A statistic of the draw</td>
+<td data-label="Role in \(S_{t+1}\) under RE and a stationary \(F\)">Matters only insofar as it is the cash</td>
+</tr>
+<tr>
+<td data-label="Object">Revision of \(F\)</td>
+<td data-label="Role at realization">None</td>
+<td data-label="Role in \(S_{t+1}\) under RE and a stationary \(F\)">None</td>
+</tr>
+<tr>
+<td data-label="Object">Level target (break-even, lost stake)</td>
+<td data-label="Role at realization">Not the reference in this model</td>
+<td data-label="Role in \(S_{t+1}\) under RE and a stationary \(F\)">Does not enter</td>
+</tr>
+</tbody>
+</table></div>
+<p>So “the probabilistic belief is correct, therefore choice ignores the forecast error” is stronger than this model, and it is false in it. A response of the next outlay to last weekend’s settlement is what the wealth channel predicts. The response the model shuts down is a further response to the ratio at fixed cash.</p>
+<hr />
+<h3>C. The question, the null, and what the lag gap does not identify</h3>
+<p><strong>Null.</strong> The reference is the rational belief about a stationary weekend return distribution. The settlement is news against the lagged belief and it changes the bankroll. It does not revise the distribution. Hence, within a person, the next outlay depends on last weekend’s settlement only through the net cash (plus a scale term that does not interact with the ratio). Operationally: curves of \(S_t\) against \(N_{t-1}\), split by bins of \(S_{t-1}\), coincide up to a parallel shift for persistent scale. Equivalently, at a given net, a more extreme return ratio leaves the next outlay unchanged.</p>
+<p><strong>Alternative.</strong> Either the believed distribution of \(R\) updates with the realized ratio, or the reference level moves with that realization (break-even, unrecovered stake). Then the same net produced by different ratios leads to different next outlays. The direction separates the two alternatives later: learning moves the stake in the direction implied by a better or worse believed lottery; a break-even target moves it with the shortfall relative to the stake that was at risk. The rejection of the null is the non-parallel pattern, before any sign is assigned.</p>
+<p>The total-loss ray has no power. If \(R=0\), then \(N=-S\), so cash and scale are the same number. The comparison lives in partial losses and wins, where the same cash can come from a small outlay at an extreme ratio or a large outlay near even.</p>
+<p><strong>What “no difference between forecast errors” can identify.</strong> If \(\varepsilon_t\) and \(\varepsilon_{t-k}\) have the same relationship to future returns, the return process is serially uncorrelated at those lags. That is a fact about the lottery. It is the condition under which a rational belief has nothing to revise.</p>
+<p><strong>What it cannot identify.</strong>
+- White-noise returns do not imply that the reference is a belief. A break-even gambler facing an i.i.d. book also produces white-noise returns.
+- White-noise errors do not imply a flat stake response. Under the null, \(N_t = (\varepsilon_t + \mu - 1)S_t\), so the recent error moves the next outlay through cash.
+- Equal information in \(\varepsilon_t\) and \(\varepsilon_{t-k}\) does not imply equal coefficients in a regression of stake changes on return gaps. The recent cash shock is more likely to still be in the bankroll, and the lag-1 gap has the extra accounting link below.
+- \(\varepsilon_t\) is the wrong regressor for the null. The null is “\(R_{t-1}\) drops out once \(N_{t-1}\) is included,” not “\(R_{t-1}\) has a zero raw coefficient.”</p>
+<p><strong>The settlement confound.</strong> Scale and return are mechanically tied because the outlay is the denominator of the return and the base of the net. This is why a race-level regression of \(b_t - b_{t-1}\) on the return gap is not a clean reaction: the stake behind \(R_t\) sits in the lagged difference and in the conditioning variable. The project’s lag proposition already records the implication. If the return is independent of the stake and of the state in which the stake was placed, \(\mathbb{E}[b_t - b_{t-k}\mid r_t]\) is the same curve at every lag, up to a constant. A shape that appears only at lag 1 is then evidence about the position behind the return.</p>
+<p>Weekend aggregation does one job and leaves the other undone. It matches the bracket: hot follow-up bets and ticket mix are inside one settlement, so a race-level lag-1 V is no longer being read as a reaction. It does not break the identity. \(S_{t-1}\) is still inside \(R_{t-1}\) and inside \(S_t - S_{t-1}\). Any plot of outlay changes against return gaps at the weekend frequency recreates the race-level problem one level up.</p>
+<p>There is a second confound even in the cash comparison. At fixed net, outlay still measures how large a fraction of that weekend’s gambling budget was at risk, and large bettors can have a different wealth elasticity. Permanent scale is absorbed by a person effect. A transitory scale factor that merely shifts the level of \(S_t\) is the parallel shift allowed above. What remains as a threat to the alternative is a scale-dependent wealth elasticity: the same yen means less on a large weekend. Within-person deviations, rather than comparisons across people who habitually stake different amounts, are the variation that carries the test.</p>
+<p><strong>Why the lag comparison is not the test.</strong> A larger stake response to the lag-1 return gap than to the same gap at lags \(k\ge 2\) is predicted by the accounting identity that the outlay inside the lag-1 return is the outlay being differenced, under a stationary rational belief and under belief updating alike, so the discrepancy does not test whether the belief was revised.</p>
+<hr />
+<h3>The question in two versions</h3>
+<p><strong>One sentence.</strong> After a weekend settlement, does the next weekend’s outlay still depend on the return ratio once the net cash that settlement left is held fixed?</p>
+<p><strong>Three-sentence identification statement.</strong> If the weekend is one draw from a known stationary return distribution and the reference is the rational belief about that distribution, the draw is news against the lagged belief and it changes the bankroll, but the return law is unchanged, so two settlements that leave the same net lead to the same next outlay whatever ratio produced the cash. If instead the reference level or the believed return distribution moves with the realized ratio, then at the same net the next outlay still differs between a large loss ratio and a near-even settlement. The lag-1 versus lag-\(k\) stake response to a return gap does not implement this comparison, because those responses differ whenever the outlay inside the lag-1 return is the outlay being differenced, under either hypothesis.</p>
+</main>
+<nav class="pager"><a href="reading-memos.html">← Reading: the model memos</a><span></span></nav>
+</div>
+</body>
+</html>

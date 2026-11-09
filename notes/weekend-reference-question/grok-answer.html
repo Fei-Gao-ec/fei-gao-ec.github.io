@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Grok: what the settlement leaves</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+@media (max-width: 720px) {
+  .scroll { overflow: visible; }
+  table, tbody, tr, td { display: block; width: auto; min-width: 0; }
+  thead { display: none; }
+  tr { border-top: 1px solid var(--line); padding: 0.75rem 0 0.2rem; }
+  td { border: 0; padding: 0.15rem 0 0.55rem; }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    margin-bottom: 0.12rem;
+  }
+}
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Grok: what the settlement leaves</h1>
+<p class="kicker">Grok&#x27;s answer to whether a weekend settlement updates the reference, once the reference is the recent belief.</p>
+<main>
+<p>The weekend is the right unit for this question. The lag-1 versus lag-k gap is the wrong contrast. Under the reading you marked, a rational belief does respond to the cash a weekend leaves behind, and it does not acquire a new target from the return ratio that produced the cash.</p>
+<h2>What you are saying</h2>
+<p>You want one decision, then one realization, then the next decision. A JRA weekend is that object in the Mizuho settlement. The account locks from Friday night to Monday morning. Monday is one withdrawal for the weekend’s stakes and one deposit for the weekend’s prizes. Saturday’s winnings cannot be bet on Sunday. About five days pass before the next plan. Inside the weekend you do not see tickets, order, or revisions. You see the outlay \(S\), the prize \(P\), and therefore the net \(N = P - S\) and the return ratio \(R = P/S\).</p>
+<p>The pattern in front of you is that the stake change lines up differently with the return gap at lag 1 than at lags 2, 3, and 4. Lags 2–4 share one S-shape with a kink at break-even, \(R = 1\). Your guess has been that this is reference updating: the just-realized result moves the benchmark, and a longer-run benchmark sits underneath it. Pure “reference equals last outcome” did not produce that split, because a last-outcome rule shifts every lag together.</p>
+<p>Kőszegi–Rabin changes the guess. The benchmark for a weekend is the distribution she believed, recently, about that weekend’s outcome. The Monday settlement is one draw from that distribution. The question is whether that draw rewrites the belief she brings to the next Friday.</p>
+<h2>Where the sketch slips</h2>
+<p>“If the belief is right, the forecast error is white noise, so the choice ignores it. If the choice responds, the belief must have changed.” That sentence ties four different objects together.</p>
+<p>The <strong>draw</strong> is the settlement \((S, P)\), or equivalently \((N, R)\). In this theory it is news. It is scored, when it arrives, against the distribution she believed while the money was at risk. A loss she had assigned probability to is still felt. The belief said the loss could happen. It did not say this weekend would be the one.</p>
+<p>The <strong>forecast error</strong> is the scalar \(R - \mu\), the ratio minus the mean of that belief. Two weekends with the same error and different outlays are different amounts of money. The theory scores the money outcome against the whole distribution, not the distance of the ratio from its mean.</p>
+<p><strong>Learning</strong> would be a revision of the distribution itself: she thinks next weekend’s book is better or worse because this one paid well. A known, stable return law has nothing to revise. The draw tells her which point occurred. It does not tell her a new law.</p>
+<p>A <strong>new reference level</strong> is a different theory. Break-even, the unrecovered stake, or last weekend’s gross win is a number that moves with the realization. The probabilistic belief can stay exactly the same while that number changes.</p>
+<p>Rational expectations shuts down learning about a stable book. It does not shut down a response to the settlement. The cash changes the budget, and the next plan is the credible plan at the new budget. What it shuts down is a further response to the ratio. A net of −5,000 yen from a 5,000 yen wipeout and a net of −5,000 yen from a 50,000 yen weekend that almost broke even are the same budget shock. They are different distances from break-even. If the reference is the belief about a stable return distribution, the next outlay is the same. If the reference is a level tied to the stake or to getting back to even, it is not.</p>
+<p>White-noise returns do not identify which of those is true. A break-even gambler facing an i.i.d. book also produces white-noise ratios. The horse book can be unpredictable and the reference can still be a level.</p>
+<h2>Why lag 1 against lag \(k\) does not answer it</h2>
+<p>At lag 1, the stake inside the return is the stake inside the difference \(S_t - S_{t-1}\). The research memo already records the implication. If the return is independent of the stake that produced it, then</p>
+\[
+\mathbb{E}[S_t - S_{t-k} \mid R_t] = \mathbb{E}[S_t \mid R_t] - \mathbb{E}[S_{t-k}]
+\]
+<p>at every lag, up to a constant. A shape that exists only at lag 1 is the size of the position behind that return. It appears under a rational belief and under an updating rule alike. Moving the same plot from the ticket to the weekend preserves the identity: \(S_{t-1}\) is still the denominator of \(R_{t-1}\) and one term of \(S_t - S_{t-1}\).</p>
+<p>The five-day gap does a different job. It makes the weekend the plan. Hot follow-up bets inside Sunday are inside one settlement, so they are not a second reference. It does not turn the lag-1 gap into a measure of belief updating.</p>
+<p>There is a separate fact the lags do contain. Lags 2, 3, and 4 share one kink at \(R = 1\). A fixed break-even benchmark produces that. A belief that is only “the distribution of a stable book” does not, once cash is held fixed. That kink is the pattern a weekend test should be aimed at. The lag-1 twist is a different object, and the memo’s split of the stake that produced the return from the next stake is the way to finish it.</p>
+<h2>The question</h2>
+<p><strong>After a weekend settlement, and given the cash she actually has on the next Friday, does the return ratio of that settlement still change the next weekend’s outlay?</strong></p>
+<p>The null is the Kőszegi–Rabin reading you marked, closed with rational expectations. Each weekend is one draw from a return distribution she already knows. Monday’s settlement is news against the belief she held over the weekend, and it changes the bankroll. By the next Friday that news has been felt. The reference for the new weekend is the belief about the coming weekend. Under a stable book that belief does not depend on last week’s ratio. The next outlay depends on the budget she brings to Friday. It does not depend on whether the same cash came from a wipeout or from a near miss.</p>
+<p>The alternative is that something indexed by the ratio survives the five days. A break-even or unrecovered-stake target makes two settlements with the same cash and different ratios into different states, so the next outlay still moves with \(R\). A revision of the believed distribution does the same, with a different direction: she stakes more when she thinks the book improved. The rejection is the extra dependence on \(R\). The sign distinguishes the level target from learning.</p>
+<p>\(N\), \(S\), and \(R\) are two numbers, not three, because \(N = (R - 1)S\). The regression cannot include all three. The null is a shape restriction: within a person, the relation between Friday’s balance and the next outlay is the same across bins of last weekend’s outlay, up to a shift in level. Those curves separate when a given yen of cash came from a very different ratio. The total-loss ray has no power, because there \(N = -S\). The comparison is partial losses and wins, where the same cash can come from a small outlay at an extreme ratio or a large outlay near even.</p>
+<p>Friday’s balance is the right wealth control, not the Monday net by itself. She can spend the win before the next lock. The account between the locks is what makes the weekend design sharper than the ticket file. Given that balance, the ratio is redundant under the null and informative under the alternative.</p>
+<p>One fact has to be established first, because your sketch treats it as the same fact as the choice response. If weekend returns are serially uncorrelated, a probabilistic belief has nothing in the book to update, and a ratio effect at fixed Friday balance is a reference level or a preference, not learning. If weekend returns are persistent, learning is still a live alternative and the sign of the stake response has to match the change in the expected ratio. Equal unpredictability of \(R_t\) and \(R_{t-k}\) is that fact about the book. It is not evidence that the reference is the belief, and it is not evidence that the next outlay ignores the settlement.</p>
+<p>The house-money comparison you already estimate is the other half of the same null, and it should be stated separately so it does not get mixed into the ratio test. A salary she expected is already in the belief, so it is not news. A gambling settlement is a draw from a risky belief, so the surprise component is news. A larger stake response to gambling surprises than to expected income is what this theory predicts even when the return law never updates. It does not, by itself, say that last week’s ratio becomes the new reference.</p>
+</main>
+<nav class="pager"><span></span><a href="opus-opinion.html">Next: Opus: the Friday-balance null →</a></nav>
+</div>
+</body>
+</html>

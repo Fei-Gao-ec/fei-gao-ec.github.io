@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Reading: the model memos</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+@media (max-width: 720px) {
+  .scroll { overflow: visible; }
+  table, tbody, tr, td { display: block; width: auto; min-width: 0; }
+  thead { display: none; }
+  tr { border-top: 1px solid var(--line); padding: 0.75rem 0 0.2rem; }
+  td { border: 0; padding: 0.15rem 0 0.55rem; }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    margin-bottom: 0.12rem;
+  }
+}
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Reading: the model memos</h1>
+<p class="kicker">The subagent reading of the memos: definitions, the lag-1 identity, and what the break-even kink was taken to say.</p>
+<main>
+<p>The tex files constrain the question as follows. No new mechanism is proposed here.</p>
+<h2>1. Definitions</h2>
+<p><strong>Index.</strong> In the model, \(t\) is a successive bet, not a day or a weekend. Before bet \(t\), the bettor learns the return on the previous stake:</p>
+<p>```46:48:Model/One_period_model/one_period_model.tex
+Bets are indexed by \(t\). Before placing bet \(t\), the agent learns \(r_t \ge 0\), the return ratio (prize divided by stake) on the previous bet \(b_{t-1}\). In the data this is \(\mathrm{RR}_t\). The agent then chooses the stake \(b_t \ge 0\).</p>
+<pre><code>
+The same timing is in `Model/Research_memo/research_memo.tex` lines 60–61. The session note’s “race day” is a simulated device (another bet follows on the same day with probability \(\rho\)), not a measured unit (`Model/Session_case/session_case.tex` lines 45–46).
+
+**What the plotted micro data are.** The empirical note keeps four fields from `Panel` and says nothing else enters the plotted object (`Empirical/change_in_bet_by_return_ratio.tex` lines 49–64):
+
+- `cifno`: account
+- `key_index`: within-account record index
+- `amount_purchase`: stake on the current record
+- `amount_prize`: prize on the current record
+
+The unit is the account-record pair. After `amount_purchase &gt; 0`, RR is prize/stake, rounded to two decimals (`round(RR × 100)/100`). The collapse has 8,975 distinct rounded-RR rows. Figures keep the 500 rows with \(\mathrm{RR}&lt;5\), covering 25,781,293 of 26,170,053 restricted observations. Points are unweighted cell statistics (`lines 64–66, 90–106`).
+
+**RR and the bet change in that file.**
+
+```115:118:Empirical/change_in_bet_by_return_ratio.tex
+\(\item[\texttt{RR}]\) \(x/b\), then rounded to two decimal places.
+\(\item[\texttt{ChangeInBetLevel}]\) \(b^{\mathrm{lead}}-b\).
+\(\item[\texttt{ChangeInBetRatio}]\) \((b^{\mathrm{lead}}-b)/b\).
+</code></pre>
+<p>Level statistics are “in the same units as the stake”; RR and the ratio are dimensionless (<code>lines 111–113</code>). The modeling notes later treat those units as yen.</p>
+<p>The join that builds <code>lead_bet</code> attaches the stake from <code>key_index</code> \(t-1\); the join from <code>key_index</code> \(t+1\) is named <code>lag_bet</code> and is not used in the plotted extract (<code>lines 79–86</code>). The note never says whether a higher <code>key_index</code> is later in time. The research memo reads the same objects as: <code>amount_purchase</code> is the stake that produced \(\mathrm{RR}_t\), and <code>lead_bet</code> is the next stake (<code>research_memo.tex</code> lines 230–232). Under that reading, <code>ChangeInBetLevel</code> is \(b_t - b_{t-1}\) conditional on the return of \(b_{t-1}\).</p>
+<p><strong>The lag figures the models match are a second object.</strong> They are cell means of \(y = b_t - b_{t-k}\) against \(x = r_t - r_{t-k}\), \(x\) rounded to 0.01 and \(|x|&lt;5\), split into four cases: both returns zero; only \(r_t=0\); only \(r_{t-k}=0\); neither zero (<code>research_memo.tex</code> lines 60–61; <code>one_period_model.tex</code> lines 204–227, which uses \(k=2,3,4\) only).</p>
+<p><strong>Lottery margins, called the race-level panel.</strong> \(S=8{,}975\) distinct ratios rounded to 0.01; \(\Pr(r=0)=0.406\), \(\Pr(r&lt;1)=0.801\), \(\mathbb{E}[r]=0.695\) (<code>one_period_model.tex</code> lines 57–61). Returns are assumed i.i.d. and independent of the stake in the model (<code>lines 57–58</code>). Serial dependence is listed as an open check, not a result (<code>research_memo.tex</code> lines 233–234).</p>
+<h2>2. Lag 1 versus lags \(k\ge 2\), and the mechanical stake</h2>
+<p><strong>Reported shapes.</strong></p>
+<p>Lags 2, 3, and 4 are the same S: steep on \((-1,1)\), flat outside. Case (3) rises up to break-even and is flat beyond; case (2) is its mirror. The kink is at \(\mathrm{RR}=1\) (<code>research_memo.tex</code> lines 63–64).</p>
+<p>Lag 1, in the \((x,y)\) figure, differs: a bump near \(x\approx -0.4\), a trough near \(x\approx 0.3\), and a steep rise on \(x\in(0.5,1.5)\). Relative to the “lost both times” cell, case (2) lies above near zero and case (3) lies below, with a trough near break-even (<code>lines 65–66</code>).</p>
+<p>The race-level curve \(\mathbb{E}[b_t-b_{t-1}\mid\mathrm{RR}_t]\) is a separate V: trough at \(\mathrm{RR}=0.9\), \(-6{,}800\) yen (<code>research_memo.tex</code> line 66; <code>Model/Lag1_case/lag1_case.tex</code> lines 47–48). The lag-1 note also says bets rise after a total loss, fall most near break-even, and recover for large returns. Fitting the one-period stake rule to that curve gives \(R^2=0.11\) with the wrong sign (<code>lag1_case.tex</code> lines 47–48).</p>
+<p>Other reported data features: the both-zero cell is negative and grows with the lag, \(-534\), \(-763\), \(-1{,}405\), “read as lags 1, 2, 3” (<code>research_memo.tex</code> line 67). After a big win, bets stay high for several bets (case (2), far left; line 68; <code>one_period_model.tex</code> lines 259–261). The exact cell \(\mathrm{RR}=1.00\) is much less negative than its neighbors; the lag-1 note says that cell includes refunds on scratched runners (<code>lag1_case.tex</code> lines 145–146). The data-definition note does not mention refunds.</p>
+<p><strong>Identity, then the independence argument.</strong> By definition, for every \(k\ge 1\),</p>
+\[
+\mathbb{E}[b_t-b_{t-k}\mid\mathrm{RR}_t]=\mathbb{E}[b_t\mid\mathrm{RR}_t]-\mathbb{E}[b_{t-k}\mid\mathrm{RR}_t].
+\]
+<p>Here \(b_{t-1}\) is the stake that produced \(\mathrm{RR}_t\), and \(b_t\) is the next stake. The difference between the lag-1 curve and the lag-\(k\) curve is</p>
+\[
+\mathbb{E}[b_t-b_{t-1}\mid\mathrm{RR}_t]-\mathbb{E}[b_t-b_{t-k}\mid\mathrm{RR}_t]=\mathbb{E}[b_{t-k}-b_{t-1}\mid\mathrm{RR}_t].
+\]
+<p>The next-stake term \(\mathbb{E}[b_t\mid\mathrm{RR}_t]\) cancels. A gap between those two curves, as a function of \(\mathrm{RR}_t\), is a statement about lagged stake levels given the return. It is the size of the bet behind the return, together with earlier stakes, conditional on that return.</p>
+<p>Proposition 2 adds independence and then gets a constant gap (<code>research_memo.tex</code> lines 161–164):</p>
+<p>```161:164:Model/Research_memo/research_memo.tex
+\(\item\) \(\emph{Curve by last return.}\) If \(r_t\) is independent of everything determined before bet \(t-1\) was resolved, including \(b_{t-1}\), then for every \(k \ge 1\), \(\mathbb{E}[b_t - b_{t-k} \mid r_t] = \mathbb{E}[b_t \mid r_t] - \mathbb{E}[b_{t-k}]\). This holds for any reference rule, any memory, and stakes that depend on past stakes. A lag-1-specific V therefore measures \(\mathbb{E}[b_{t-1} \mid \mathrm{RR}_t]\), the size of the bet behind each return.</p>
+<pre><code>
+The organizing paragraph says the same thing for any preference, including time inconsistency (`lines 53–55`): if a bet’s return is independent of its stake and of the state in which it was placed, then \(\mathbb{E}[b_t-b_{t-k}\mid r_t]\) is the same curve at every lag, up to a constant. Features present at every lag come from how \(b_t\) reacts to \(r_t\). A feature present at lag 1 only has to come from the return side: who placed the bet behind \(r_t\), or on which ticket.
+
+The lag-1 note states the same link directly (`lag1_case.tex` lines 45–49, 149): at lag 1, \(b_{t-1}\) is the stake of the bet that produced \(r_t\); any change to the stake policy \(h\) appears at every lag; “the lag-1 pattern in this case comes from who placed the bet behind \(r_t\), not from a reaction to \(r_t\).” The research memo’s verdict on that fit is: “The lag-1 V is composition: nobody cuts the stake in reaction to a near-break-even return” (`research_memo.tex` line 133).
+
+The direct split the memo asks for, and has not reported as done, is (`lines 230–232`): mean of `amount_purchase` (stake that produced \(\mathrm{RR}_t\)) and mean of `lead_bet` (next stake), by \(\mathrm{RR}_t\). A peak near break-even in the first is the stake-return link. A V in the second is a reaction of the next stake.
+
+This proposition is about conditioning on \(r_t\) alone. It is not the claim that the \((x,y)=(r_t-r_{t-k},\, b_t-b_{t-k})\) scatter is the same object. At lag 1 that scatter puts \(b_{t-1}\) in \(y\) and \(r_{t-1}\) in \(x\).
+
+Independence is an assumption. The memo lists \(\Pr(r_{t+1}=0\mid r_t)\) and \(\Pr(r_{t+1}&gt;5\mid r_t)\) as checks; under i.i.d. they are flat at the 0.406 total-loss base rate (`lines 233–234`).
+
+## 3. What the kink at \(\mathrm{RR}=1\) is taken to say
+
+```63:64:Model/Research_memo/research_memo.tex
+\(\item\) \(\emph{Lag ladder.}\) Lags 2, 3 and 4 give the same S: steep inside \((-1, 1)\), plateaus outside. Case (3) rises up to break-even and is flat beyond; case (2) is its mirror image. The kink sits at break-even (\(\mathrm{RR} = 1\)), which points to a fixed break-even reference rather than a slowly updating one.
+</code></pre>
+<p>The one-period note’s fixed-reference policy is flat for every \(r\ge 1\), increasing on \([0,1]\), with a kink at break-even (<code>one_period_model.tex</code> lines 146–150). The history channel written as \(R_t=(1-r_t)b_{t-1}\) produces a reversed S, “the opposite sign of the data” (<code>lines 165–171</code>; bottom line at <code>research_memo.tex</code> line 48).</p>
+<p>An updating rule that mixes break-even with the previous return gets the lag ladder (lags \(k\ge 2\) identical, lag 1 different) and fails the twist and the V (<code>research_memo.tex</code> lines 49–52, 161–170). Proposition 3: for any such weights, case (2) has \(y\le 0\) and case (3) has \(y\ge 0\), because a total loss is always the largest shortfall. “The data have the reverse signs” (<code>lines 165–166</code>). The simulation gives a rising curve by last return, so \(R^2=0\) against the V (<code>lines 168–170</code>).</p>
+<h2>4. Kőszegi–Rabin, expectations, and the test already proposed</h2>
+<p>Kőszegi–Rabin is named once, as one of three routes from prospect theory to time inconsistency, and is not the route they simulate (<code>research_memo.tex</code> lines 175–181):</p>
+<p>```175:181:Model/Research_memo/research_memo.tex
+\(\item\) \(\emph{Probability weighting}\) (Barberis, 2012). ...
+\(\item\) \(\emph{Expectations-based reference points}\) (Kőszegi and Rabin, 2009; Pagel, 2017).
+\(\item\) \(\emph{Explicit present bias}\) (\(\beta\)-\(\delta\) discounting).
+Route 1 is the natural one because our model already has probability weighting. A one-period model cannot be time-inconsistent; a horizon such as a race day is needed.</p>
+<pre><code>
+The session note repeats that expectations-based reference points “generate a related time inconsistency,” after a Barberis (2012) plan-versus-action setup (`session_case.tex` lines 61–67). No Kőszegi–Rabin test is specified.
+
+The reference-updating exercise they did run is the \(\theta^{\pm}\) mix of break-even and the previous return, not an expectations-based reference (`research_memo.tex` lines 149–170). The hot/cool discussion says a reference that depends only on \(r_{t-1}\) would make lag 1 differ while keeping lags 2–4 identical, and then says lag order cannot test “hot” versus “cool” (`lines 137–145`):
+
+```141:144:Model/Research_memo/research_memo.tex
+\(\item\) lag order is not time since the result: at every lag \(b_t\) is the bet placed right after \(r_t\), so lag 1 cannot be ``hot'' and lag 2 ``cool''; the time gap between a result and the next bet is needed;
+\(\item\) risk-loving may show in the odds rather than the stake;
+\(\item\) lags 2 to 4 show stakes cut after shortfalls, so any hot chasing in stakes must be confined to short gaps or to odds.
+</code></pre>
+<p>Tests they propose (<code>research_memo.tex</code> lines 229–235; <code>session_case.tex</code> lines 115–118):</p>
+<ul>
+<li>Compare \(\mathbb{E}[b_t-b_{t-2}\mid\mathrm{RR}_t]\) with the lag-1 curve. If lag 2 has no V, “neither reference updating nor hot integration drives the lag-1 V.”</li>
+<li>Separate mean <code>amount_purchase</code> and mean <code>lead_bet</code> by \(\mathrm{RR}_t\).</li>
+<li>Check serial dependence of total losses and of \(r&gt;5\).</li>
+<li>If dates or race times exist: same-day versus different-day lag-1 pairs, the time gap from result to next bet, and whether stakes rise with position in the day after losses.</li>
+<li>The session model’s three predictions: the lag-1 twist lives in within-day pairs; mean bet change by \(\mathrm{RR}_t\) is the same at lags 1 and 2; stakes rise with position in the day after losses.</li>
+</ul>
+<p><code>Model/Usual_history_case/prospect_reference_state.tex</code> does state a reference-updating idea. The reference is a state, \(R_{t+1}=g(G_t,R_t)\) (lines 55–68). The simplest rule sets the reference of bet \(t\) equal to the previous bet’s gross win, \(R_t=G_{t-1}\). Other rules in lines 319–332 include break-even on the last bet, \(g(G,R)=-G\), session break-even, and adaptive \(g=(1-\eta)R+\eta G\). That file does not discuss the kink, Kőszegi–Rabin, or a test on the lag figures.</p>
+<h2>5. Weekend aggregation</h2>
+<p>Weekend aggregation is not mentioned. “Weekly” appears once, as an unresolved possibility about which sample the photos use (<code>research_memo.tex</code> line 235): “race-level or weekly; weekly bundles would move the lag-1 trough toward \(0.3\).” “Race day” is the session model’s horizon and a proposed split if dates exist.</p>
+<h2>6. What these files say the data cannot see</h2>
+<p>The plotted extract contains stake, prize, account, and <code>key_index</code> only (<code>change_in_bet_by_return_ratio.tex</code> lines 49–64). From that, the memos treat as unobserved, or as not yet checked:</p>
+<ul>
+<li>Clock time, within-race order, and the gap between a result and the next bet. Lag order is explicitly not that gap (<code>research_memo.tex</code> lines 141–143, 233–234). Dates and race times are conditional: “If dates or race times exist.”</li>
+<li>Plans, intentions, and expectations. The session model contrasts a morning plan with the stake actually placed (<code>session_case.tex</code> lines 61–66). The data note records placed stakes and prizes.</li>
+<li>Ticket or odds except as they are embedded in the realized ratio. The lag-1 model imposes the short-odds/long-odds split (<code>lag1_case.tex</code> lines 62–68). The memo says risk-loving may show in the odds (<code>research_memo.tex</code> line 143).</li>
+<li>The reference point itself.</li>
+<li>Whether successive <code>key_index</code> values are the same race, the same day, or a later day.</li>
+<li>Bets that were not placed. The RR sample requires <code>amount_purchase&gt;0</code>. A zero-stake indicator is defined and then dropped (<code>change_in_bet_by_return_ratio.tex</code> lines 90, 130).</li>
+</ul>
+<h2>Contradictions and unresolved gaps</h2>
+<p><strong><code>lead_bet</code> versus time.</strong> The data note’s arithmetic is: <code>lead_bet</code> on record \(t\) is the stake at <code>key_index</code> \(t-1\) (<code>change_in_bet_by_return_ratio.tex</code> lines 83–86). It never states the time order of <code>key_index</code>. The research memo calls <code>lead_bet</code> the next stake (<code>research_memo.tex</code> line 231). Those agree only if <code>key_index</code> decreases as time moves forward. If <code>key_index</code> increases with time, the plotted change is the previous stake minus the current stake, against the current record’s own return, and the sign relative to \(\mathbb{E}[b_t-b_{t-1}\mid\mathrm{RR}_t]\) flips. A later script comment outside this tex list, <code>Extracte_data/20261026/lag_by_rr_20261026.R</code> line 19, says the next bet is <code>key_index - 1</code>, which matches the memo.</p>
+<p><strong>Two curves, two troughs.</strong> The race-level V trough is at \(\mathrm{RR}=0.9\) (\(-6{,}800\) yen). The pooled lag-1 \((x,y)\) trough is at \(x\approx 0.3\), while case (3) in that split is near \(x=0.9\) (<code>lag1_case.tex</code> lines 142–144; <code>research_memo.tex</code> lines 65–66, 131). The lag-1 note says the two “may come from different samples.” The memo says the pooled and faceted figures look inconsistent at \(x=-5\), and that weekly bundles would move the lag-1 trough toward 0.3 (<code>research_memo.tex</code> line 235). The empirical tex defines only the by-RR collapse, not the \((r_t-r_{t-k})\) figures.</p>
+<p><strong>“Last outcome” is two different rules.</strong> The bottom line says moving the reference by the last outcome predicts the mirror image (<code>research_memo.tex</code> line 48). The equation that delivers that reversed S is the unrecovered shortfall \(R_t=(1-r_t)b_{t-1}\) (<code>one_period_model.tex</code> lines 165–171). In <code>prospect_reference_state.tex</code> lines 327–333, “last outcome” is \(R_t=G_{t-1}\), and “break-even on the last bet” is \(g=-G\); those two “move the reference in opposite directions.”</p>
+<p><strong>Units and labels the memos treat as settled.</strong> Yen amounts (\(-6{,}800\), about \(2{,}500\) yen, the drift cells) are in the modeling notes. The data note says only “the same units as the stake.” The both-zero drift figures are “read as” lags 1, 2, and 3, three numbers for four lags (<code>research_memo.tex</code> line 67). The refund interpretation of \(\mathrm{RR}=1.00\) is in the lag-1 note only.</p>
+</main>
+<nav class="pager"><a href="reading-past-chats.html">← Reading: past chats</a><a href="reading-weekend-logic.html">Next: Reading: weekend settlements →</a></nav>
+</div>
+</body>
+</html>

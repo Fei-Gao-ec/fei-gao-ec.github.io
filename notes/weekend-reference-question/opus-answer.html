@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Opus: belief or money target</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+@media (max-width: 720px) {
+  .scroll { overflow: visible; }
+  table, tbody, tr, td { display: block; width: auto; min-width: 0; }
+  thead { display: none; }
+  tr { border-top: 1px solid var(--line); padding: 0.75rem 0 0.2rem; }
+  td { border: 0; padding: 0.15rem 0 0.55rem; }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    margin-bottom: 0.12rem;
+  }
+}
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Opus: belief or money target</h1>
+<p class="kicker">Opus&#x27;s answer to the same question, starting from the literature rather than from Grok&#x27;s reading.</p>
+<main>
+<p>The reading exercise turns your question into one about beliefs. If the reference is her recent belief, then "reference updating after a realization" means the settled weekend changes what she believes about the next weekend. Under rational expectations about a stable betting lottery, it should not. Her next outlay will still respond to the settlement through the cash it leaves and through the news. So the sharp question is not whether choices respond. It is what kind of state the settlement leaves behind.</p>
+<p>For your past chats and project memos, I relied on the summaries produced earlier in this conversation and did not re-read them.</p>
+<h2>Your sketch: what is right, where it slips</h2>
+<p><strong>What is right.</strong> Under rational expectations, the forecast error is unpredictable. Last weekend's error and the error two weekends ago carry the same information about next weekend's return, which is none. A rational belief about a stable book has nothing to update.</p>
+<p><strong>First slip: that is a statement about beliefs, not choices.</strong> The settlement changes her cash, and the next plan is made with the new cash. In the 2009 model, the news also reshapes the plan. Surprise gains are spent sooner. Surprise losses are pushed into later periods. Choices respond even when the belief was right. "Choice does not respond to the forecast error" is not what the theory says. What it says is that choice responds only through what the outcome changed: cash, the revised plan, and the news.</p>
+<p><strong>Second slip: two different reference objects are merged.</strong> In Kőszegi–Rabin, the gain-loss feeling at settlement is the outcome scored against the belief she held over that weekend. That feeling is used up at settlement. The reference for next weekend is a different object: her belief about next weekend. "Reference updating" should mean that the second one moved. The 2007 paper makes the related point that a loss already included in her belief does not create a target of getting back to even.</p>
+<p><strong>Third slip: the forecast error is not observed.</strong> You see outlays and settlements, not beliefs. The test has to be about what her choices depend on.</p>
+<p><strong>Fourth slip: lag 1 against lag \(k\) is not the memory test.</strong> The outlay that produced last weekend's ratio is also inside the stake difference at lag 1, so a lag-1-only shape is partly accounting. Memory is a real question. It has to be asked as "do older outcomes still matter once the current state is fixed," not as "does the lag-1 curve look different."</p>
+<h2>Three things a settled weekend can leave behind</h2>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>What is left behind</th>
+<th>Theory</th>
+<th>What next weekend's outlay depends on</th>
+<th>Special role of break-even</th>
+<th>Memory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="What is left behind">Cash and a revised plan only</td>
+<td data-label="Theory">Kőszegi–Rabin, rational belief about a stable book</td>
+<td data-label="What next weekend&#x27;s outlay depends on">Pre-weekend balance, scale, and smoothly on the news</td>
+<td data-label="Special role of break-even">None</td>
+<td data-label="Memory">None beyond cash and plan</td>
+</tr>
+<tr>
+<td data-label="What is left behind">A revised belief about her returns</td>
+<td data-label="Theory">Kőszegi–Rabin reference with belief updating (learning, hot-hand or gambler's-fallacy beliefs)</td>
+<td data-label="What next weekend&#x27;s outlay depends on">Last ratio relative to what she believed, smoothly</td>
+<td data-label="Special role of break-even">None</td>
+<td data-label="Memory">Fades with each new weekend, by the update rule</td>
+</tr>
+<tr>
+<td data-label="What is left behind">A money target</td>
+<td data-label="Theory">Lagged status quo, Thaler–Johnson break-even, adaptive level</td>
+<td data-label="What next weekend&#x27;s outlay depends on">Shortfall relative to the target</td>
+<td data-label="Special role of break-even">Bend at zero net, \(R = 1\)</td>
+<td data-label="Memory">Lasts until she is back to even, then resets (cumulative), or fades geometrically (adaptive)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Here the news means last weekend's surprise in yen, \((R-\mu)S\), where \(\mu\) is the mean return she expected per yen staked.</p>
+<p>Row two is still Kőszegi–Rabin. It is the reference updating you are looking for, because the reference is the belief and the belief moved. Row three is a different theory: the reference is a level, not a belief.</p>
+<p>A break-even reference that resets every weekend, as in Kahneman–Tversky applied to each weekend separately, leaves nothing behind. On next weekend's outlay it looks like row one. Your design can test carry-over. It cannot test Kahneman–Tversky against Kőszegi–Rabin inside a single weekend.</p>
+<h2>Memory and update rules, asked the right way</h2>
+<p>Hold fixed last weekend's outcome and the state she started that weekend with. Then ask whether older weekends still predict next weekend's outlay.</p>
+<ul>
+<li><strong>Row one:</strong> no, beyond what is already in cash.</li>
+<li><strong>Row two:</strong> yes, with weights that fade as new weekends arrive. The pattern of weights is the update rule.</li>
+<li><strong>Row three, cumulative target:</strong> yes, until her running net crosses zero. After that, old losses stop mattering.</li>
+</ul>
+<p>That reset is the cleanest separator between belief updating and a money target. Take two gamblers with the same last weekend and the same cash. One has just recovered an earlier loss; the other has not. A belief about returns does not care whether the running net crossed zero. A get-back-to-even target does.</p>
+<h2>Traps the design has to avoid</h2>
+<ul>
+<li><strong>The accounting in the net.</strong> Because \(N = (R-1)S\), at a fixed net the outlay grows without bound as \(R\) approaches 1. Big-race weekends are temporarily large, so near-miss weekends are followed by smaller outlays and wipeouts by larger ones. That produces a V at \(R = 1\) with no reference at all. Compare weekends at the same outlay, not the same net.</li>
+<li><strong>Monday-to-Friday spending is part of the reaction.</strong> The balance on the next Friday is chosen in response to the news. Use the balance before the weekend began.</li>
+<li><strong>She chooses her own lottery.</strong> The distribution of \(R\) depends on her tickets. A change in style moves \(R\) and \(S\) together. That is a choice, not learning.</li>
+<li><strong>The weekend bracket leaks.</strong> She sees Saturday's results before betting on Sunday. If Sunday is a second decision, the weekend ratio is partly a reaction to Saturday.</li>
+<li><strong>The theory itself can look like chasing.</strong> The 2009 absorption pattern raises near-term spending after a surprise loss. That effect is tied to the news and is smooth in the ratio, so it does not bend at zero net.</li>
+</ul>
+<p>The kink at \(R = 1\) at lags 2 to 4 is good motivation for row three. It is not yet evidence, because the first trap can produce exactly that shape.</p>
+<h2>The question</h2>
+<p><strong>When a racing weekend settles, does it change the reference she brings to the next weekend? If it does, is the new reference a revised belief about her returns, or a money target such as getting back to even?</strong></p>
+<p>Identification rests on two cuts, each made at a given outlay and pre-weekend balance.</p>
+<p>The first cut is the shape of next weekend's outlay in last weekend's ratio:</p>
+<ul>
+<li>No dependence beyond cash supports a rational belief about a stable book.</li>
+<li>Smooth dependence supports belief updating.</li>
+<li>A bend at exactly \(R = 1\) supports a money target.</li>
+</ul>
+<p>The second cut is memory. Belief updating fades with time whatever the running net does. A cumulative money target persists until the running net returns to zero and then resets.</p>
+<p>Neither cut needs the lag-1 against lag-\(k\) comparison. Neither needs the forecast error to be observed.</p>
+<h2>Three decisions you need to make</h2>
+<ol>
+<li><strong>Is the weekend outlay consumption or a lottery over wealth?</strong> If it is consumption, the 2009 model applies and news reshapes the outlay directly. If it is a lottery over wealth, the 2007 model applies: the outlay is a choice of risk, judged against the belief about that risk.</li>
+<li><strong>Is the belief about the return per yen, \(R\), or about money, \(N\)?</strong> Learning about the book lives in \(R\). Break-even lives in \(N\). Kőszegi–Rabin is about outcomes in money or consumption. Your test variables follow from this choice.</li>
+<li><strong>What is the bracket, given that she sees Saturday's results?</strong> If you keep the weekend as the unit, say why Sunday is not a second decision, or treat that leak as the main threat.</li>
+</ol>
+<p>The house-money fact answers a separate question. Comparing gambling wins with bonuses of unanticipated amount tests whether the source of the money matters, because both are news under Kőszegi–Rabin. Keep it out of this question.</p>
+</main>
+<nav class="pager"><a href="opus-opinion.html">← Opus: the Friday-balance null</a><a href="reading-past-chats.html">Next: Reading: past chats →</a></nav>
+</div>
+</body>
+</html>

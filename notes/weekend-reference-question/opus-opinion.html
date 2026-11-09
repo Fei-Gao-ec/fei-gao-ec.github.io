@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Opus: the Friday-balance null</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+@media (max-width: 720px) {
+  .scroll { overflow: visible; }
+  table, tbody, tr, td { display: block; width: auto; min-width: 0; }
+  thead { display: none; }
+  tr { border-top: 1px solid var(--line); padding: 0.75rem 0 0.2rem; }
+  td { border: 0; padding: 0.15rem 0 0.55rem; }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    margin-bottom: 0.12rem;
+  }
+}
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Opus: the Friday-balance null</h1>
+<p class="kicker">Opus&#x27;s opinion on whether the Friday-balance test is what Kőszegi–Rabin says, and what the named alternatives predict.</p>
+<main>
+<h2>1. Is the null what the theory says?</h2>
+<p>No. The null claims more than Kőszegi–Rabin implies. The step that fails is assumption (ii): Friday's balance is not a sufficient statistic.</p>
+<p>Follow the timing.</p>
+<ul>
+<li><strong>During the weekend:</strong> the reference is her belief about the weekend's money outcome, given the outlay she chose.</li>
+<li><strong>At settlement:</strong> the news is the realized net judged against that distribution. If \(\mu\) is the mean of her belief about the return ratio, the surprise in yen is \((R-\mu)S\). At the same net, a larger outlay is better news, because she expected to lose more. So the ratio legitimately enters through the news, even when the net is held fixed.</li>
+<li><strong>After settlement:</strong> in the 2009 paper, the news revises the whole plan at once. That plan covers spending from Monday to Friday, next weekend's outlay, and later periods. The revision is asymmetric. Small surprise gains are spent now. Small surprise losses are pushed into the future. Because news about nearer periods weighs more, the cuts go furthest out.</li>
+</ul>
+<p>Friday's balance is the Monday-to-Friday part of that revision. The same plan that sets the next outlay also chooses that balance. It is an outcome of the reaction, not a control fixed before it.</p>
+<p>The plan she carries into Friday is also a state variable that the balance does not summarize. Compare two gamblers with the same Friday balance. One reached it through a surprise loss. The other always had that balance. The first has planned to keep near-term spending higher and cut later, so her next outlay is higher. That is a ratio effect at a fixed balance, with the sign of chasing, and her reference is still her belief.</p>
+<p>The other assumptions:</p>
+<ul>
+<li><strong>(i) Five days are enough to digest the news.</strong> The papers do not give a digestion speed. Under rational expectations, the plan for next weekend was already contingent on the outcome, so the gap is not where the null breaks.</li>
+<li><strong>(iii) A stable return law is the right benchmark.</strong> She chooses the lottery through her tickets. A stable return law describes her ticket mix, not the track. A change in that mix is a choice, not learning, and it moves \(R\) and \(S\) together.</li>
+<li><strong>(iv) The weekend is the bracket.</strong> This is weaker than it looks. The lock blocks Saturday's cash, not Saturday's results. Sunday's bets are chosen against a belief already revised by Saturday's news, so the weekend ratio is partly an outcome of that reaction.</li>
+</ul>
+<p>What the theory does imply is narrower. Next weekend's response to the settlement is a function of the news. That function has no special point at zero net unless her belief puts a mass point at break-even. With a takeout, a weekend that ends exactly at break-even is good news.</p>
+<h2>2. What each alternative predicts on the Friday-balance test</h2>
+<p><strong>Fixed break-even that resets each weekend.</strong> Each weekend is valued on its own net, starting from zero, so last weekend's ratio plays no role. On this test it predicts the same thing as the null. The test cannot separate a reset break-even reference from Kőszegi–Rabin. It also cannot produce the kink at lags 2 to 4, which requires the next outlay to depend on last weekend's ratio.</p>
+<p><strong>Adaptive reference with weight on the last outcome.</strong> Next weekend's gains and losses are measured from a level pulled toward last weekend's outcome. Earlier weekends' influence decays geometrically. It rejects the null, and the extra dependence is mostly smooth. Any bend sits at exactly zero net only if the weight on the last outcome is one, or the old reference was zero. Otherwise the bend's location moves with earlier weekends.</p>
+<p><strong>Thaler–Johnson house money and break-even.</strong> After a win, the prior gain cushions later losses, so the outlay is higher above \(R = 1\). After a loss, she is drawn to bets that offer a chance to get back to even, so the outlay rises with a recoverable shortfall below \(R = 1\). Both effects pivot at zero net. Their evidence is within a session, so whether a Monday settlement and five days still count as the same episode would need the paper. On the separate fact: comparing gambling wins with a bonus of unanticipated amount identifies house money, meaning the source of the money matters. Under Kőszegi–Rabin both are news, so the comparison with salary only shows news versus expected income, which Kőszegi–Rabin already predicts.</p>
+<p><strong>Barberis (2012), narrow framing in the casino model.</strong> The naive gambler plans to stop after losses, but in practice keeps going after losses and stops after gains. If each weekend is its own episode, with the reference at wealth on entry, there is no carry-over, which matches the null. If an episode spans weekends, the next outlay is higher after losing weekends and lower after winning ones. That is the opposite sign to house money on the gain side. Realization utility is Barberis and Xiong, not this paper. Because the Monday settlement realizes everything, it predicts no carry-over across the settlement.</p>
+<h2>3. The most likely false rejection</h2>
+<p>Temporary swings in outlay scale, such as big-race weekends, bite hardest. Combined with \(N = (R-1)S\), they produce the break-even signature by arithmetic alone.</p>
+<p>At a fixed net, the outlay is \(S = |N| / |R-1|\), which grows without bound as \(R\) approaches 1. Near-miss weekends, on either side of break-even, are therefore the unusually large weekends. Large outlays are partly temporary, so the next outlay falls back. Wipeouts and long-shot wins come from small weekends, so the next outlay rises.</p>
+<p>At a fixed net or Friday balance, the result is a V in next weekend's outlay with its trough at exactly \(R = 1\). Person fixed effects do not remove it, because the swings happen within a person.</p>
+<p>A rule that bets a fixed fraction of the bankroll adds a second problem: the curves become non-parallel even without temporary swings. The null's "level shift" functional form is an added assumption, not something Kőszegi–Rabin implies.</p>
+<p>The 2009 absorption effect described in section 1 also rejects the null. It does so because the null misstates the theory, not because of a confound. Serial correlation of returns barely bites. With a takeout, any persistence comes from ticket style, which is a choice.</p>
+<h2>4. A different question</h2>
+<p><strong>At a given outlay, and a given balance before the weekend began, does the next weekend's outlay bend at exactly zero net, \(R = 1\)?</strong></p>
+<p>At a fixed outlay, moving \(R\) through 1 changes the cash and the news smoothly and leaves scale unchanged. So temporary swings in scale, fractional betting, and spending of the win before Friday are all smooth through 1. The pre-weekend balance is set before the draw, so it is not an outcome of the reaction. Kőszegi–Rabin news, the 2009 absorption effect, and learning about returns are all smooth at 1, unless her belief has a mass point there. A bend at exactly 1, fixed across histories, therefore signals a target pinned at zero net and carried across the settlement. An adaptive reference shows up instead as a bend whose location moves with earlier weekends. Among the targets, the shape decides: the outlay rises in the shortfall and is flat above 1 for a carried-over break-even, rises on both sides for Thaler–Johnson, and rises below and falls above for a Barberis episode spanning weekends.</p>
+<p>The question rests on one assumption: Sunday's choices must not be what places weekend ratios near 1. A within-weekend chase to break-even would cluster chasers around 1 and bend the curve by composition. That would still reject the belief as the reference, but it would put the target inside the weekend rather than across the five-day gap.</p>
+</main>
+<nav class="pager"><a href="grok-answer.html">← Grok: what the settlement leaves</a><a href="opus-answer.html">Next: Opus: belief or money target →</a></nav>
+</div>
+</body>
+</html>

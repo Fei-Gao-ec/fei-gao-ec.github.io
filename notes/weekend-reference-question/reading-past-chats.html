@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Reading: past chats</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f6f3ec;
+  --fg: #1c1915;
+  --muted: #5e584e;
+  --line: #ddd4c6;
+  --quote: #efeae1;
+  --link: #7a341f;
+  --code: #efe6d8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #141311;
+    --fg: #f4efe6;
+    --muted: #b7b0a4;
+    --line: #33302a;
+    --quote: #221f1b;
+    --link: #f0c2ae;
+    --code: #2a261f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 1.0625rem/1.65 "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+}
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1rem 1.15rem 2.5rem; }
+.top { margin: 0 0 1.25rem; font-size: 0.92rem; }
+.top a { color: var(--link); text-decoration: none; }
+.kicker {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+h1 { font-size: 1.55rem; line-height: 1.25; font-weight: 650; margin: 0.2rem 0 0.6rem; }
+h2 { font-size: 1.28rem; line-height: 1.3; font-weight: 650; margin: 1.8rem 0 0.6rem; }
+h3 { font-size: 1.08rem; line-height: 1.35; font-weight: 650; margin: 1.4rem 0 0.45rem; }
+p { margin: 0.75rem 0; }
+a { color: var(--link); }
+ul, ol { margin: 0.6rem 0; padding-left: 1.25rem; }
+li { margin: 0.28rem 0; }
+li > p { margin: 0.35rem 0; }
+blockquote {
+  margin: 1rem 0;
+  padding: 0.15rem 0 0.15rem 0.9rem;
+  border-left: 3px solid var(--line);
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--code);
+  padding: 0.05em 0.28em;
+  border-radius: 0.2em;
+}
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 1rem 0; }
+table { border-collapse: collapse; font-size: 0.92rem; line-height: 1.4; min-width: 100%; }
+th, td {
+  border: 1px solid var(--line);
+  padding: 0.45rem 0.55rem;
+  vertical-align: top;
+  text-align: left;
+}
+th { font-weight: 650; }
+@media (max-width: 720px) {
+  .scroll { overflow: visible; }
+  table, tbody, tr, td { display: block; width: auto; min-width: 0; }
+  thead { display: none; }
+  tr { border-top: 1px solid var(--line); padding: 0.75rem 0 0.2rem; }
+  td { border: 0; padding: 0.15rem 0 0.55rem; }
+  td::before {
+    content: attr(data-label);
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 650;
+    margin-bottom: 0.12rem;
+  }
+}
+mjx-container[display="true"] { margin: 0.8rem 0 !important; overflow-x: auto; overflow-y: hidden; max-width: 100%; }
+.pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+.pager a { text-decoration: none; }
+.index-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+.index-list li { margin: 0; border-top: 1px solid var(--line); }
+.index-list a {
+  display: block;
+  padding: 0.85rem 0;
+  text-decoration: none;
+  color: var(--fg);
+}
+.index-list strong { display: block; color: var(--link); font-size: 1.05rem; font-weight: 650; }
+.index-list span { display: block; margin-top: 0.2rem; color: var(--muted); font-size: 0.95rem; }
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [["\\(","\\)"]], displayMath: [["\\[","\\]"]] },
+  options: { skipHtmlTags: ["script","noscript","style","textarea","pre","code"] }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+</head>
+<body>
+<div class="wrap">
+<p class="top"><a href="index.html">All notes</a></p>
+<h1>Reading: past chats</h1>
+<p class="kicker">The subagent reading of the earlier chat: the data, the lag pattern, and the hypotheses already considered.</p>
+<main>
+<p>This chat does contain the horse-race summary. The empirical material is the assistant’s 6 Nov 2026 brief (parent jsonl line 21), built from the chat-history subagent <code>aae4fd0c</code> and the model-and-data subagent <code>0a1c7acc</code>. The user’s own turns in this chat are the framing request (line 19), a request to revise the literature prompt (line 23), and a one-sentence edit before search (line 26). Numbers below are labeled as the user’s words, a pasted regression table, or an assistant/file reading.</p>
+<h2>1. What data exist</h2>
+<p>Japan. JRA horse racing, seen through Mizuho bank transactions. The user describes A-PAT: the account is locked from Friday midnight to Monday morning. Monday settles the weekend as one withdrawal for all weekend stakes and one deposit for all weekend wins. About five days sit between weekends. Saturday winnings cannot be staked on Sunday. Country and weekend frequency are the user’s institutional description (<code>5d8fa545</code>, carried into line 21).</p>
+<p><strong>Three units, and the chats say they are not the same object.</strong></p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Object</th>
+<th>What a row is</th>
+<th>Stake and prize</th>
+<th>Return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Object">Bank / presentation sample</td>
+<td data-label="What a row is">A gambling week, and the measure the user states is the weekend sum</td>
+<td data-label="Stake and prize">Weekend total stake and weekend total prize. Individual tickets are not observed</td>
+<td data-label="Return">Weekend prize / weekend stake, in a separate histogram</td>
+</tr>
+<tr>
+<td data-label="Object">Race extract (<code>Panel</code>, <code>try_20260818.R</code>)</td>
+<td data-label="What a row is">One bet</td>
+<td data-label="Stake and prize"><code>amount_purchase</code> (stake, yen) and <code>amount_prize</code> are both stored. <code>amount_purchase&gt;0</code></td>
+<td data-label="Return"><code>RR = amount_prize / amount_purchase</code>, rounded to 0.01</td>
+</tr>
+<tr>
+<td data-label="Object">Weekly ladder (<code>Panel_balanced</code>, <code>weekindex&gt;24</code>)</td>
+<td data-label="What a row is">A gambling week for <code>cifno</code> after the filter</td>
+<td data-label="Stake and prize"><code>bet_t1</code> and <code>amount_purchase</code> are both in the file. <code>RR = amount_prize / bet_t1</code></td>
+<td data-label="Return"><code>RR</code> and lags <code>RR_t_1</code>…<code>RR_t_4</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>Stake is observed in both extracts. The bank narrative observes it as a weekend sum. The race file observes it as <code>amount_purchase</code> on a bet. Net winnings are a constructed object, \(G=(RR-1)b\). A regression script uses <code>NetWin</code> in bins; that column is not defined in the file. There is no stored prospect-theory state \(R_t\).</p>
+<p><strong>Race extract (assistant reading of the August script; the user asked that figure not to be interpreted).</strong> 26.2 million person-race observations, 8,975 return-rate bins. Among them, \(RR=0\) is 40.6% (about 10.6 million), \(RR&lt;1\) is 80.1%, \(RR=1\) is 1.0% (258,633 observations; the lag-1 note says this cell includes refunds on scratched runners), \(RR&gt;1\) is 18.9%. Display often uses \(RR&lt;5\): 500 cells, 25,781,293 of 26,170,053 observations. Mean stake change \(\mathbb{E}[\Delta b\mid RR]\): about +736 yen at \(RR=0\), about −6,845 yen at \(RR=0.9\) (median −1,000), about −2,859 yen at \(RR=1\). Median change after a total loss is 0. The model notes still use this curve as the lag-1 V.</p>
+<p><strong>Weekly ladder.</strong> <code>20260924_reference_updating.R</code> keeps <code>weekindex&gt;24</code>, then <code>bet_t1&gt;0</code>, then reindexes <code>weekindex</code> within person. Whether <code>weekindex</code> is a calendar week or a betting week is missing. Person-level benchmarks on that window: <code>RR_mean</code>, <code>RR_total = sum(prize)/sum(bet)</code>, <code>bet_mean</code>.</p>
+<p><strong>Weekend histogram (assistant, 2 Nov 2026, <code>RR_NewWin_plotdata.RDS</code>).</strong> 1,837,062 gambling weeks with a positive stake. Share at exactly 0 about 43%. Median 0.22, mean 0.73, stake-weighted mean 0.78. The assistant marked a JRA payout band of 0.70–0.80. About 2.4% of weeks are above 4. The user called this return rate “fair” and the odds “not.”</p>
+<p><strong>Sample the user states.</strong> About 170,000 gamblers, September 2018 through June 2024 (<code>201809</code>–<code>202406</code>). About 110,000 of those accounts have no non-gambling outflow (called JRA-specialized; the gambling-share distribution is described as piled at 0 and at 1). About 13,000 of the accounts with other outflow have pension or salary; about 8,000 received SCP. About 1,500 bet every week. A regression paste the user wanted on slides uses 174,585 persons. Treat 170,000 as the user’s stated sample and 174,585 as the file count. No age, gender, or problem-gambling score. Consumption in the bank paper is outflow minus the gambling bet. Durable goods and shop names are not classified. The “8 million accounts, 7 years of salary” sentence in this same chat is an earnings-process example inside a literature-tree prompt. It is not the gambling sample.</p>
+<p><strong>Odds and within-weekend order.</strong> Ticket odds are not in the extracts. The user said they do not observe every stake, only the total over a window, and they cannot identify each bet. A within-Sunday sequence is not in the Monday settlement.</p>
+<h2>2. Documented patterns</h2>
+<p><strong>Bank-paper reduced form (user’s slide claim, plus coefficients they pasted and did not re-estimate here).</strong> A win raises later gambling and consumption. The same person treats gambling wins differently from salary, pension, bonus, and SCP. Slide sentence they kept: “House money drives re-betting. The danger is winning. Big wins with past gambling escalate light gamblers and trap heavy ones.” Pasted trimmed linear regression with several incomes: bets on wins 0.126, on SCP 0.0033, bonus 0.0011, salary 0.0010, pension 0.0016. Consumption: wins 0.243, SCP 0.289, bonus 0.176, salary 0.170, pension 0.110. Older MPG for light gamblers 0.075 (0.005) on 3,545,303 weeks; same spec on the new file 0.074 (0.011), 51,153,405 weeks. They also said the within-week win response is usable if it is not convex, and that the old big-win result “comes from the dynamic, and more in the long term.”</p>
+<p><strong>The lag ladder, in the user’s words (23 Oct 2026).</strong> They plot the change in return rate on the x-axis and the change in the next bet on the y-axis. First figure uses \(x=RR_t-RR_{t-1}\); second uses \(x=RR_t-RR_{t-2}\). They then corrected the y-axis: “I think the y axis is bet_{t} − bet_{t−k}. I am not sure.” Lags 3 and 4 “are in the same shape with lag 2.” They read lags 2–4 as fitting prospect theory. Lag 1 does not; they call it “twisted responses around 0.” Cells are also split into both returns 0, current 0 and lag not, current not and lag 0, and neither 0.</p>
+<p><strong>Break-even kink.</strong> The memo’s reading of the lag-2–4 figure is one S, steep on \((-1,1)\), kink at break-even \(RR=1\). The presentation figures are described as evidence for two references, “a total loss and the break even point,” with stakes intentionally not held fixed across those figures. How break-even enters the regression is missing. The race-level V is a different shape: trough near \(RR=0.9\), about −6,800 yen, and the user asked that August figure not to be interpreted.</p>
+<p><strong>Assistant readings of the lag plots, which the user did not state as their own result.</strong> Lag 1 flat near −2,000 yen for \(x&lt;-1\), a bump near −500 around \(x\approx-0.4\), a trough near −3,000 just right of zero, then a rise through about +3,500. Lag 2 trough near −4,500, plateau near +3,000. The mean change is negative almost everywhere, including at \(x=0\). The memo’s target for lag 1 is a bump near \(x\approx-0.4\), a trough near \(x\approx0.3\), and a steep rise on \((0.5,1.5)\). Case “both returns zero” is negative and larger at longer lags: −534, −763, −1,405, read as lags 1, 2, 3.</p>
+<p><strong>Lag-1 V may be mechanical.</strong> This is a proposition in <code>reference_case.tex</code>, restated in line 21. If the return is independent of the stake and of everything known when that stake was placed, then</p>
+\[\mathbb{E}[b_t-b_{t-k}\mid r_t]=\mathbb{E}[b_t\mid r_t]-\mathbb{E}[b_{t-k}]\]
+<p>for every lag \(k\ge 1\). A reference update changes \(\mathbb{E}[b_t\mid r_t]\), and every lag inherits that change. A twist that exists only at lag 1 is then \(\mathbb{E}[b_{t-1}\mid RR_t]\), the stake that produced the observed return. The same reply said the lag-1 versus lag-2 comparison cannot support “the reference updates slowly,” because lag 2 is smoother for mechanical reasons. The user did not retract that. The lag-1 model they set aside makes the same point in another way: the V is selection of who placed \(b_{t-1}\), not a cut in the new stake \(b_t\).</p>
+<p><strong>Code may not be plotting \(b_t-b_{t-k}\) against \(RR_t-RR_{t-k}\) at every lag.</strong> In <code>20260924_reference_updating.R</code>, <code>RR_t_k=lag(RR,k)</code> but the stake lags are off by one in the saved blocks: the file saved as lag 2 uses a two-step return lag and a one-step stake lag, and there is no saved block with both <code>RR_t_3</code> and <code>bet_t_3</code>. Plot scripts still label every series \(b_t-b_{t-k}\). <code>key_index</code> is commented as running backward; that direction was not checked against a dictionary. Line 21 says to treat the race-level V and the weekly S-shape as provisional until those alignments are confirmed. The memo already says a weekly bundle would move the lag-1 trough toward 0.3.</p>
+<p><strong>Session, day, weekend.</strong> The empirical unit the user states is the two-day weekend, then a five-day gap. Within-weekend order is not observed, so a within-Sunday hot streak is not in the Monday settlement. <code>session_case.tex</code> is a model, not a finding: after each bet, another bet falls on the same day with probability \(\rho\), and a share \(\omega\) of that day’s net is not absorbed. Stopping is not a choice. That case was simulated as a naive type only. The parent brief’s candidate for the lag-1 twist is a state that dies during the five-day gap, so it can distort the comparison of this weekend with the weekend just settled and is gone by lag 2.</p>
+<h2>3. Reference-point hypotheses already considered</h2>
+<p>Three latent references are written down. Line 21 says not to collapse them.</p>
+<div class="scroll"><table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Gain when</th>
+<th>History</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="Object">Break-even, with \(\lambda\) moving (<code>one_period_model.tex</code>)</td>
+<td data-label="Gain when">The new bet’s own return exceeds 1</td>
+<td data-label="History">Unrecovered share of the last stake raises \(\lambda_t=\lambda(1+\kappa\ell_t)\), \(\ell_t=\max(1-r_t,0)\)</td>
+</tr>
+<tr>
+<td data-label="Object">Unrecovered loss in yen (<code>usual_history_case.tex</code>)</td>
+<td data-label="Gain when">The new bet earns the shortfall back</td>
+<td data-label="History">\(R_t=(1-r_t)b_{t-1}\)</td>
+</tr>
+<tr>
+<td data-label="Object">Last outcome in yen (<code>prospect_cleanup.tex</code>, the executed notebook)</td>
+<td data-label="Gain when">The new gross win exceeds the previous gross win</td>
+<td data-label="History">\(R_{t+1}=G_t\), \(G=\gamma b\), \(\gamma=RR-1\), \(z=G-R\)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Fixed break-even.</strong> They first fixed \(R\) at break-even. The user later said \(R\) should always be positive, “Think about the break even point which \(R=\) bet,” and that a note with \(R&lt;0\) is wrong. \(\lambda\)-updating with a break-even reference can reproduce one S at lags 2–4, and the note predicts that same S at lag 1. It therefore does not produce a lag-1-only twist. On 26 Oct the user wrote the opposite mapping: reference updates fit the \(t,t-1\) figure, and \(\lambda\) updating fits \(t,t-2\). The assistant said that is not what the note shows. The user does not reply again in that file. By 4 Nov they had moved back to textbook outcome minus reference.</p>
+<p><strong>Slowly updating reference.</strong> The user’s guess on 23 Oct: the just-realized result is one reference, and people deviate from a long-term reference. The long-term reference has no formula. After a simulation they said reference updating alone does not generate the observed pattern. Line 21 draws the further conclusion that “the reference updates slowly” does not follow from lag 1 looking different, because a pure last-outcome rule moves all lags together. A weighted average \(R_{t+1}=(1-\eta)R_t+\eta G_t\) is coded as an option and is not the executed notebook.</p>
+<p><strong>Last outcome, currently running.</strong> On 4 Nov the user rejected the net-loss definition as the starting model: it “has complete deviated,” and mixing the outcome with break-even “could be true” but they do not believe it without the preliminary setting. Desired rule: this period’s reference is last period’s outcome, and the outcome is the gross win. \(z=\) outcome − reference. Wealth is large enough to ignore for now, so the policy is \(b(R)\). The executed notebook runs only \(R_{t+1}=G_t\). Simulated stake at \(R=0\) is about 2,900 yen (closed form \(\bar b=2{,}868\)). After a large loss, any stake up to \(|R|\) is a gain in every state. Preferences are not estimated. The user still asked, on 6 Nov, for a switch that can change the update rule.</p>
+<p><strong>Kőszegi–Rabin.</strong> Assistant language only. The user never writes Kőszegi or Rabin. Line 21: they have not adopted an expectations-based reference. The later search (line 31) reports that Kőszegi–Rabin put the reference in recent expectations, and that the speed papers (a fast earnings-shock absorption, and a slow average of recent income) are not a twist that exists only at lag 1. That is a search result, not a user conclusion.</p>
+<p><strong>Hot hand / cool head.</strong> The user did not say “hot hand.” Their words: after a new result the agent can act risk-loving, and once the head is cool, risk-averse. They called this another interpretation, using a two-ticket narrative but “not the same mechanism,” and asked to have the logic checked rather than installed as a two-ticket device. They also said to stick to prospect theory, a reference point, and time inconsistency. The session-case file is the within-day version of a hot stake. It was not adopted as the explanation of the weekend lag ladder.</p>
+<p><strong>House money.</strong> This is the name they use for the bank paper, with Thaler and Johnson (1990) on the slide “House money and break even point,” and Thaler (1999) in prose as mental accounting. They do not use that name for the lag-curve twist. In the literature prompt, house money stays a data fact. It is not its own theory branch.</p>
+<p><strong>Disposition.</strong> The user did not state a disposition hypothesis. The assistant mentioned Barberis and Xiong while answering the time-inconsistency question. The search later put realization on a branch (a realized loss reduces risk taking; the same loss left on paper raises it). That comparison was not a finding they claimed from these data. Paper losses inside the weekend are not observed: Monday is one settled stake and one settled prize.</p>
+<p><strong>Set aside, in the user’s words or by a request they made.</strong> Choosing both bets before any result is known. Starting from \(R=0\) and interpolating. A lag-1 story that imposes a stake scale and two tickets. They asked for assumptions on the reference instead.</p>
+<h2>4. Research questions already written</h2>
+<p>The user’s formulations, in order, as extracted in the chat-history brief:</p>
+<ul>
+<li>“We study how gamblers respond to wins.” Responses vary with sources of money, reference points (a total loss and the break-even point), and past gambling outcomes.</li>
+<li>23 Oct: the second lag figure fits prospect theory and the first does not, and the guess is reference updating. “This is a kind of new observation.”</li>
+<li>Same day, after the simulation failed: stick to prospect theory, a reference point, and time inconsistency.</li>
+<li>4 Nov: textbook \(z=\) outcome − reference; outcome is the gross win; reference is the last period’s outcome; given a gambling history, the gambler decides with a prospect-theory utility. <code>reference_updating_model.tex</code> “is still my idea.”</li>
+</ul>
+<p>In this chat, line 19, they said the surface task is identification of the reference and of reference updates, and that underneath they are approaching a mechanism they can sense and cannot verbalize. They asked for the data facts and the modeling first, as input to a literature search.</p>
+<p>The explicit search question they then launched is the assistant’s draft (line 24), after they deleted only the sentence that banned a favorite–longshot tree (line 26). The scope they sent:</p>
+<p>Dynamic reference points in risky choice: from a static prospect-theory value of outcome minus a fixed reference (status quo or break-even), to a reference that is a state variable, and then to models that separate a slow reference from a short-lived state created by realizing an outcome. The pattern a paper must be able to speak to: at lags 2, 3, and 4, the change in the next stake against the change in the return rate shares one S-shape, with a kink at break-even; lag 1 has an additional twist around zero. A reference equal to the previous outcome shifts every lag together, so that rule alone cannot produce a twist that exists only at lag 1. The agent chooses the stake before the new return is drawn.</p>
+<p>Line 21’s sharper constraint, which that scope restates: the unnamed piece has to put a state into the bet that is gone by lag 2, or it has to change which stakes generate the returns that are binned.</p>
+<h2>5. The user’s own words on what they want to identify</h2>
+<p>From this chat, line 19: “on the surface, we are doing some works of identification of reference and reference updates, but underneath we are apporaching some mechanism. however, i can sense it but not able to verbalizing it.”</p>
+<p>From the past chats, as quoted in the brief this chat commissioned:</p>
+<ul>
+<li>“we can’t identify each bets. Our measure is the total sum of gambling bets over a two-day horse race weekend.” Identification they do claim: the Monday settlement maps weekend bets to weekend wins, and the transactions between locks are informed by the newest gambling outcome. Because the next lock hits every JRA gambler, “The future gambling outcome information is alway orthogonal to the transaction sequence we observed between any two locks.” They called this “casual” in the script.</li>
+<li>House-money identification, as they describe it: the same person, different money. SCP is amount anticipated and timing unanticipated. Bonus is amount unanticipated and timing anticipated. Pension and salary are regular income, used to strengthen that comparison.</li>
+<li>“I think the second figure fits prospect theory which the first figure doesn't. My guess is this is because of reference updates (the just realized result is one important reference and people would deveiate from the long-term reference).”</li>
+<li>“We see an only reference updating is not generating observed pattern.” Then: “stick on the idea of prospect theory + reference point + time inconsistence.” “A failure in simulation is good.”</li>
+<li>“after receiving a new results from the last bet, agent can behaves risk-loving, but when the head is cool, then risk-averse.”</li>
+<li>“stick on the textbook level prospect theory notation: z = outcome - reference.” “the outcome is just gross win gamma and the refernece is the last period's outcome.”</li>
+<li>“At this stage we are exploring and it is okay to find a failure in modeling. But I want to stick on the reference points and prospect theory.”</li>
+<li>On the lag-1 device: they asked whether the assistant had “directly implicate[d] the mechanism by stake scale and two tickets,” and said they wanted assumptions on the reference, not that device.</li>
+<li>“if there is no reference updating, then the policy functions are linear around the reference point. But if there is a reference updating, then we will have two points and 4 responses around the two points.”</li>
+</ul>
+<p>A weekly local projection, in a text they said they were looking at, does not separate persistent house money from betting persistence: \(\beta_h=m_h+\rho\beta_{h-1}\) can be fit by many pairs, and what is identified is the cumulative response. Calling \(\rho\) habit needs extra assumptions they had not imposed. No chat records a formal estimator for \(\lambda\), curvature, or probability weights.</p>
+</main>
+<nav class="pager"><a href="opus-answer.html">← Opus: belief or money target</a><a href="reading-memos.html">Next: Reading: the model memos →</a></nav>
+</div>
+</body>
+</html>
